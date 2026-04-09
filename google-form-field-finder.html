@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Form Field Finder</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .instructions { background: #f0f8ff; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .form-container { border: 2px solid #ccc; padding: 20px; border-radius: 5px; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; }
+        button:hover { background: #45a049; }
+        #results { background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>🔍 Google Form Field ID Finder</h2>
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Open your Google Form in a new tab: <a href="https://docs.google.com/forms/d/e/1FAIpQLSejKmlWTIXyMOc-_reDhDOV61rSS6o92UrNz3kaB8bP7UpTtg/viewform" target="_blank">Open Form</a></li>
+            <li>Fill out the form with test data</li>
+            <li>Come back to this page and click "Find Field IDs" below</li>
+            <li>The correct field IDs will be displayed</li>
+        </ol>
+    </div>
+
+    <div class="form-container">
+        <h3>Test Your Google Form</h3>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSejKmlWTIXyMOc-_reDhDOV61rSS6o92UrNz3kaB8bP7UpTtg/viewform?embedded=true"
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
+
+    <button onclick="findFieldIds()">🔍 Find Field IDs</button>
+    <button onclick="clearResults()">🗑️ Clear Results</button>
+
+    <div id="results"></div>
+
+    <script>
+        function findFieldIds() {
+            const iframe = document.querySelector('iframe');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>🔍 Found Field IDs:</h3>';
+            
+            // Method 1: Look for input elements
+            const inputs = iframeDoc.querySelectorAll('input[name^="entry."], textarea[name^="entry."]');
+            
+            if (inputs.length > 0) {
+                results.innerHTML += '<h4>Method 1: Input Elements</h4>';
+                inputs.forEach((input, index) => {
+                    const label = iframeDoc.querySelector(`label[for="${input.id}"]`) || 
+                                  input.closest('[role="listitem"]')?.querySelector('.exportItemTitle');
+                    
+                    const fieldName = label?.textContent?.trim() || `Field ${index + 1}`;
+                    const fieldId = input.name;
+                    
+                    results.innerHTML += `<p><strong>${fieldName}:</strong> <code>${fieldId}</code></p>`;
+                });
+            }
+            
+            // Method 2: Look for data-item-id
+            const items = iframeDoc.querySelectorAll('[data-item-id]');
+            if (items.length > 0) {
+                results.innerHTML += '<h4>Method 2: Data Item IDs</h4>';
+                items.forEach((item) => {
+                    const title = item.querySelector('.exportItemTitle')?.textContent?.trim();
+                    const itemId = item.getAttribute('data-item-id');
+                    
+                    if (title && itemId) {
+                        results.innerHTML += `<p><strong>${title}:</strong> <code>entry.${itemId}</code></p>`;
+                    }
+                });
+            }
+            
+            // Method 3: Look for data-params
+            const paramsElements = iframeDoc.querySelectorAll('[data-params]');
+            if (paramsElements.length > 0) {
+                results.innerHTML += '<h4>Method 3: Data Params</h4>';
+                paramsElements.forEach((element) => {
+                    const params = element.getAttribute('data-params');
+                    const match = params.match(/\[\[(\d+),/);
+                    if (match) {
+                        const title = element.querySelector('.exportItemTitle')?.textContent?.trim() || 'Unknown Field';
+                        results.innerHTML += `<p><strong>${title}:</strong> <code>entry.${match[1]}</code></p>`;
+                    }
+                });
+            }
+            
+            if (results.innerHTML === '<h3>🔍 Found Field IDs:</h3>') {
+                results.innerHTML += '<p>❌ No field IDs found. Make sure the Google Form is loaded and try again.</p>';
+            } else {
+                results.innerHTML += '<h4>✅ Update your CallbackPopup.tsx with these field IDs:</h4>';
+                results.innerHTML += '<pre><code>const GOOGLE_FORM_FIELDS = {\n  name: "entry.XXXXX",\n  email: "entry.XXXXX", \n  phone: "entry.XXXXX",\n  subject: "entry.XXXXX"\n};</code></pre>';
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+        
+        // Auto-run when iframe loads
+        window.addEventListener('load', function() {
+            setTimeout(findFieldIds, 3000);
+        });
+    </script>
+</body>
+</html>

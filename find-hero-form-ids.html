@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Hero Form Field IDs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    h1 { color: #10b981; }
+    .step {
+      background: #16213e;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border-left: 4px solid #10b981;
+    }
+    code {
+      background: #0f3460;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #f39c12;
+    }
+    pre {
+      background: #0f3460;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+    a { color: #3498db; }
+    .warning {
+      background: #e74c3c22;
+      border-left: 4px solid #e74c3c;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Find Google Form Field IDs</h1>
+  
+  <div class="step">
+    <h2>Step 1: Open Your Google Form</h2>
+    <p>Open this URL in your browser:</p>
+    <pre><a href="https://docs.google.com/forms/d/e/1FAIpQLSfW_7YzeENiImLwnSJ-1CZN6ojS-te9QbZfsoMGy_ZtZ3VCCw/viewform" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSfW_7YzeENiImLwnSJ-1CZN6ojS-te9QbZfsoMGy_ZtZ3VCCw/viewform</a></pre>
+  </div>
+
+  <div class="step">
+    <h2>Step 2: Open Browser Console</h2>
+    <p>Press <code>F12</code> or <code>Ctrl+Shift+J</code> (Windows) / <code>Cmd+Option+J</code> (Mac)</p>
+  </div>
+
+  <div class="step">
+    <h2>Step 3: Copy & Paste This Script</h2>
+    <pre id="script-to-copy">
+// Find all form fields and their entry IDs
+console.log('🔍 Finding Google Form Field IDs...\n');
+
+const fields = {};
+
+// Find all input, textarea, and select elements with entry.* names
+document.querySelectorAll('input[name^="entry."], textarea[name^="entry."], select[name^="entry."]').forEach(input => {
+  // Try to find the label for this field
+  let label = '';
+  
+  // Method 1: Check for associated label
+  const labelElement = document.querySelector(`label[for="${input.id}"]`);
+  if (labelElement) {
+    label = labelElement.textContent.trim();
+  }
+  
+  // Method 2: Check parent container for label
+  if (!label) {
+    const parent = input.closest('div[jsname]');
+    if (parent) {
+      const labelEl = parent.querySelector('.exportItemTitle, .labelText, .freebirdFormviewerWidgetLabel');
+      if (labelEl) label = labelEl.textContent.trim();
+    }
+  }
+  
+  // Method 3: Check placeholder
+  if (!label && input.placeholder) {
+    label = input.placeholder;
+  }
+  
+  // Method 4: Use field type as fallback
+  if (!label) {
+    label = `${input.type} field`;
+  }
+  
+  fields[input.name] = label;
+  console.log(`📝 ${label}: ${input.name}`);
+});
+
+// Also find data-item-id attributes
+console.log('\n📋 Alternative method (data-item-id):');
+document.querySelectorAll('[data-item-id]').forEach(item => {
+  const labelEl = item.querySelector('.exportItemTitle, .labelText');
+  if (labelEl) {
+    const label = labelEl.textContent.trim();
+    const itemId = item.getAttribute('data-item-id');
+    if (label && itemId && !label.includes('Submit') && !label.includes('submit')) {
+      console.log(`📝 ${label}: entry.${itemId}`);
+    }
+  }
+});
+
+// Output as JavaScript object for easy copying
+console.log('\n✅ Copy this to your HeroSlider.tsx:');
+console.log('const GOOGLE_FORM_FIELDS = {');
+Object.entries(fields).forEach(([key, label]) => {
+  const cleanLabel = label.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  console.log(`  ${cleanLabel}: "${key}",  // ${label}`);
+});
+console.log('};');
+
+// Show summary
+console.log('\n📊 Summary:');
+console.log(`Total fields found: ${Object.keys(fields).length}`);
+console.log('Field IDs:', Object.keys(fields));
+    </pre>
+  </div>
+
+  <div class="step">
+    <h2>Step 4: Copy the Output</h2>
+    <p>The console will show output like:</p>
+    <pre>
+📝 Name *: entry.2086796676
+📝 Date of Arrival *: entry.1065451837
+📝 No. of Guests *: entry.1404910513
+📝 Phone number *: entry.1150899041
+📝 Address *: entry.212359180
+📝 Message *: entry.1052853893
+📝 Email *: entry.584959424
+    </pre>
+  </div>
+
+  <div class="step">
+    <h2>Step 5: Update HeroSlider.tsx</h2>
+    <p>Replace the <code>GOOGLE_FORM_FIELDS</code> object in <code>src/components/HeroSlider.tsx</code> with the IDs you found:</p>
+    <pre>
+const GOOGLE_FORM_FIELDS = {
+  name: 'entry.XXXXXXXX',    // From console output
+  date: 'entry.XXXXXXXX',    // From console output
+  guests: 'entry.XXXXXXXX',  // From console output
+  phone: 'entry.XXXXXXXX',   // From console output
+  address: 'entry.XXXXXXXX', // From console output
+  message: 'entry.XXXXXXXX', // From console output
+  email: 'entry.XXXXXXXX',   // From console output
+};
+    </pre>
+  </div>
+
+  <div class="warning">
+    <strong>⚠️ Important:</strong> If your Google Form doesn't have all 7 fields (Name, Date, Guests, Phone, Address, Message, Email), you need to add them first:
+    <ol>
+      <li>Go to <a href="https://docs.google.com/forms/" target="_blank">Google Forms</a></li>
+      <li>Edit your form</li>
+      <li>Add all required fields</li>
+      <li>Save and publish</li>
+      <li>Run this script again to get new field IDs</li>
+    </ol>
+  </div>
+
+  <script>
+    // Auto-select the script when page loads
+    document.addEventListener('click', (e) => {
+      if (e.target.tagName === 'PRE') {
+        const range = document.createRange();
+        range.selectNode(e.target);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        alert('Script copied to clipboard!');
+      }
+    });
+  </script>
+</body>
+</html>
