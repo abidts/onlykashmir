@@ -46,10 +46,10 @@ export default function Destinations({ onRequestCallback }: Props) {
 
   return (
     <section id="destinations" className="relative py-16 sm:py-24 bg-slate-950 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
-      
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-vintage-500/50 to-transparent" />
+
       {/* Background decoration */}
-      <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-sky-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-vintage-700/5 blur-3xl pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

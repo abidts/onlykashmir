@@ -16,7 +16,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.7',
     best: 'City Tours',
-    color: 'from-sky-500 to-blue-600',
+    color: 'from-vintage-900 to-vintage-700',
   },
   {
     name: 'Chevrolet Tavera',
@@ -27,7 +27,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.6',
     best: 'Family Trips',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-vintage-700 to-vintage-900',
   },
   {
     name: 'Toyota Etios',
@@ -38,7 +38,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.7',
     best: 'City & Highway',
-    color: 'from-sky-500 to-blue-600',
+    color: 'from-vintage-900 to-vintage-700',
   },
   {
     name: 'Toyota Camry',
@@ -49,7 +49,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.8',
     best: 'Business Travel',
-    color: 'from-purple-500 to-indigo-600',
+    color: 'from-vintage-800 to-vintage-900',
   },
   {
     name: 'Toyota Innova',
@@ -60,7 +60,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.9',
     best: 'Family Tours',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-vintage-700 to-vintage-900',
   },
   {
     name: 'Innova Crysta',
@@ -71,7 +71,7 @@ const allCabs = [
     transmission: 'Manual',
     rating: '4.9',
     best: 'Premium Family',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-vintage-700 to-vintage-900',
   },
   {
     name: 'Tempo Traveller (17)',
@@ -195,7 +195,7 @@ export default function Cabs({ showAll = false }: Props) {
               {/* Content */}
               <div className="p-4 sm:p-5">
                 <h3 className="text-base sm:text-lg font-bold text-white">{cab.name}</h3>
-                <p className="mt-1 text-xs text-emerald-400 font-medium">Best for: {cab.best}</p>
+                <p className="mt-1 text-xs text-vintage-400 font-medium">Best for: {cab.best}</p>
 
                 {/* Specs Grid */}
                 <div className="mt-3 sm:mt-4 grid grid-cols-3 gap-2">
@@ -208,7 +208,7 @@ export default function Cabs({ showAll = false }: Props) {
                     <span className="mt-1 text-[10px] sm:text-xs text-slate-400">{cab.fuel}</span>
                   </div>
                   <div className="flex flex-col items-center rounded-xl bg-slate-800/50 p-2">
-                    <Settings className="h-4 w-4 text-emerald-400" />
+                    <Settings className="h-4 w-4 text-vintage-400" />
                     <span className="mt-1 text-[10px] sm:text-xs text-slate-400">{cab.transmission}</span>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function Cabs({ showAll = false }: Props) {
                 {/* CTA Button */}
                 <button
                   onClick={() => onRequestCallback(`${cab.name} Cab Rental`)}
-                  className="mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:shadow-emerald-500/40 tap-scale btn-ripple"
+                  className="mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-vintage-900 to-vintage-700 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-vintage-900/20 transition-all hover:shadow-vintage-900/40 tap-scale btn-ripple"
                 >
                   <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Request Call Back

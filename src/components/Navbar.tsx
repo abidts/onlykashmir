@@ -42,7 +42,7 @@ export default function Navbar({ onRequestCallback }: Props) {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-gradient-to-r from-blue-950/95 via-indigo-950/95 to-purple-950/95 backdrop-blur-xl shadow-2xl border-b border-white/10 py-1' : 'bg-gradient-to-r from-blue-900/80 via-indigo-900/80 to-purple-900/80 backdrop-blur-xl py-1.5'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-gradient-to-r from-vintage-800/98 via-vintage-900/98 to-vintage-800/98 backdrop-blur-xl shadow-2xl border-b border-vintage-500/20 py-1' : 'bg-gradient-to-r from-vintage-800/90 via-vintage-900/90 to-vintage-800/90 backdrop-blur-xl py-1.5'}`}>
         <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}

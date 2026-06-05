@@ -28,7 +28,7 @@ const packages = [
     rating: '4.7',
     reviews: 198,
     tag: 'Family',
-    tagColor: 'from-vintage-400 to-blue-600',
+    tagColor: 'from-vintage-400 to-vintage-700',
     includes: ['Family Rooms', 'All Meals', 'Pony Ride', 'Shikara'],
   },
   {

@@ -17,7 +17,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-24 lg:bottom-8 right-4 lg:right-8 z-40 hidden lg:flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-xl shadow-emerald-500/30 transition-all duration-300 hover:scale-110 hover:shadow-emerald-500/50 tap-scale ${
+      className={`fixed bottom-24 lg:bottom-8 right-4 lg:right-8 z-40 hidden lg:flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-vintage-900 to-vintage-700 text-vintage-500 shadow-xl shadow-vintage-900/30 transition-all duration-300 hover:scale-110 hover:shadow-vintage-900/50 tap-scale ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
       }`}
       aria-label="Scroll to top"

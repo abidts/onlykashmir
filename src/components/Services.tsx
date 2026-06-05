@@ -9,19 +9,19 @@ const services = [
     icon: Package,
     title: 'Tour Packages',
     desc: 'Customized packages for honeymoon, family, group tours, and solo adventures.',
-    color: 'from-emerald-500 to-emerald-600',
-    iconBg: 'bg-emerald-500/10',
-    iconColor: 'text-emerald-400',
-    shadow: 'hover:shadow-emerald-500/20',
+    color: 'from-vintage-700 to-vintage-900',
+    iconBg: 'bg-vintage-700/10',
+    iconColor: 'text-vintage-400',
+    shadow: 'hover:shadow-vintage-700/20',
   },
   {
     icon: Hotel,
     title: 'Hotels & Stays',
     desc: 'Handpicked luxury hotels, houseboats, and cozy homestays.',
-    color: 'from-sky-500 to-sky-600',
-    iconBg: 'bg-sky-500/10',
-    iconColor: 'text-sky-400',
-    shadow: 'hover:shadow-sky-500/20',
+    color: 'from-vintage-900 to-vintage-800',
+    iconBg: 'bg-vintage-900/20',
+    iconColor: 'text-vintage-400',
+    shadow: 'hover:shadow-vintage-900/20',
   },
   {
     icon: Car,
@@ -45,10 +45,10 @@ const services = [
     icon: Camera,
     title: 'Photography Tours',
     desc: 'Guided tours to capture Kashmir\'s beauty.',
-    color: 'from-violet-500 to-violet-600',
-    iconBg: 'bg-violet-500/10',
-    iconColor: 'text-violet-400',
-    shadow: 'hover:shadow-violet-500/20',
+    color: 'from-vintage-500 to-vintage-600',
+    iconBg: 'bg-vintage-500/10',
+    iconColor: 'text-vintage-600',
+    shadow: 'hover:shadow-vintage-500/20',
   },
   {
     icon: PhoneCall,
@@ -64,13 +64,13 @@ const services = [
 export default function Services({ onRequestCallback }: Props) {
   return (
     <section id="services" className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] sm:h-[600px] w-[400px] sm:w-[600px] rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-vintage-500/50 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] sm:h-[600px] w-[400px] sm:w-[600px] rounded-full bg-vintage-700/5 blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto reveal">
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 text-sm font-medium text-emerald-400">
+          <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
             <Sparkles className="h-4 w-4" />
             Our Services
           </span>

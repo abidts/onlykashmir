@@ -87,13 +87,13 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-vintage-500/50 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-vintage-700/5 blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto reveal">
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 text-sm font-medium text-emerald-400">
+          <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
             <Sparkles className="h-4 w-4" />
             Testimonials
           </span>
@@ -115,11 +115,11 @@ export default function Testimonials() {
             <div
               key={review.name}
               className={`relative flex-shrink-0 w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-slate-900/80 border border-slate-800 p-5 sm:p-6 transition-all duration-500 snap-center ${
-                idx === current ? 'border-emerald-500/30 shadow-lg shadow-emerald-500/10' : ''
+                idx === current ? 'border-vintage-500/30 shadow-lg shadow-vintage-500/10' : ''
               }`}
             >
               {/* Quote icon */}
-              <Quote className="absolute top-4 right-4 h-8 w-8 sm:h-10 sm:w-10 text-emerald-500/10" />
+              <Quote className="absolute top-4 right-4 h-8 w-8 sm:h-10 sm:w-10 text-vintage-500/10" />
 
               {/* Stars */}
               <div className="flex gap-0.5">
@@ -134,13 +134,13 @@ export default function Testimonials() {
               </p>
 
               {/* Trip tag */}
-              <div className="mt-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 inline-block">
-                <span className="text-xs text-emerald-400 font-medium">{review.trip}</span>
+              <div className="mt-4 rounded-lg bg-vintage-500/10 border border-vintage-500/20 px-3 py-1.5 inline-block">
+                <span className="text-xs text-vintage-600 font-medium">{review.trip}</span>
               </div>
 
               {/* Author */}
               <div className="mt-4 flex items-center gap-3 border-t border-slate-800 pt-4">
-                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-sky-500 text-xs sm:text-sm font-bold text-white">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-br from-vintage-700 to-vintage-900 text-xs sm:text-sm font-bold text-white">
                   {review.avatar}
                 </div>
                 <div>
@@ -156,7 +156,7 @@ export default function Testimonials() {
         <div className="mt-6 sm:mt-10 flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-emerald-500 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/30 tap-scale"
+            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -166,14 +166,14 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2 rounded-full transition-all tap-scale ${
-                  i === current ? 'w-8 bg-emerald-500' : 'w-2 bg-slate-700 hover:bg-slate-600'
+                  i === current ? 'w-8 bg-vintage-500' : 'w-2 bg-slate-700 hover:bg-slate-600'
                 }`}
               />
             ))}
           </div>
           <button
             onClick={next}
-            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-emerald-500 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/30 tap-scale"
+            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -188,7 +188,7 @@ export default function Testimonials() {
             { value: '98%', label: 'Would Recommend' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-emerald-400">{stat.value}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-vintage-500">{stat.value}</div>
               <div className="text-xs sm:text-sm text-slate-400 mt-1">{stat.label}</div>
             </div>
           ))}

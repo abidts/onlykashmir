@@ -40,7 +40,7 @@ const adventures = [
     image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
     difficulty: 'Easy',
     duration: '1-3 Nights',
-    color: 'from-vintage-400 to-blue-600',
+    color: 'from-vintage-700 to-vintage-900',
   },
   {
     icon: Compass,
@@ -49,7 +49,7 @@ const adventures = [
     image: 'https://images.unsplash.com/photo-1682686581854-5e71f58e7e3f?w=800&q=80',
     difficulty: 'Moderate',
     duration: '1-4 Days',
-    color: 'from-violet-500 to-purple-600',
+    color: 'from-vintage-500 to-vintage-600',
   },
 ];
 
@@ -154,7 +154,7 @@ export default function Adventure({ onRequestCallback }: Props) {
                   {/* CTA Button */}
                   <button
                     onClick={() => onRequestCallback(`${adv.title} Adventure`)}
-                    className="mt-3 sm:mt-4 flex items-center justify-center gap-2 w-full rounded-xl bg-vintage-500/10 border border-vintage-500/30 px-4 py-2.5 text-xs sm:text-sm font-medium text-vintage-400 transition-all hover:bg-vintage-500 hover:text-white hover:border-vintage-500 tap-scale"
+                    className="mt-3 sm:mt-4 flex items-center justify-center gap-2 w-full rounded-xl bg-vintage-900/10 border border-vintage-900/30 px-4 py-2.5 text-xs sm:text-sm font-medium text-vintage-400 transition-all hover:bg-vintage-900 hover:text-vintage-500 hover:border-vintage-900 tap-scale"
                   >
                     <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     Request Call Back

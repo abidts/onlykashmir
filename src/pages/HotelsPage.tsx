@@ -155,7 +155,7 @@ export default function HotelsPage() {
                       e.stopPropagation();
                       onRequestCallback(`${hotel.name} Booking`);
                     }}
-                    className="mt-4 w-full flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/30 transition-all hover:shadow-emerald-500/50"
+                    className="mt-4 w-full flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold bg-gradient-to-r from-vintage-900 to-vintage-700 text-vintage-500 shadow-lg shadow-vintage-900/30 transition-all hover:shadow-vintage-900/50"
                   >
                     <Phone className="h-4 w-4" />
                     Book Now

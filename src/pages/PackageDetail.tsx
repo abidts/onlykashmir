@@ -342,7 +342,7 @@ const packages: Record<string, PackageData> = {
     rating: '4.7',
     reviews: 198,
     tag: 'Family',
-    tagColor: 'from-vintage-400 to-blue-600',
+    tagColor: 'from-vintage-400 to-vintage-700',
     description: 'A perfect family vacation package that balances sightseeing with leisure time. Designed keeping in mind the needs of families with children and elderly members. Enjoy quality time together in the lap of nature.',
     highlights: [
       'Family-friendly hotels',
@@ -662,7 +662,7 @@ const packages: Record<string, PackageData> = {
     rating: '4.9',
     reviews: 203,
     tag: 'Premium',
-    tagColor: 'from-purple-500 to-indigo-600',
+    tagColor: 'from-vintage-900 to-vintage-700',
     description: 'Embark on an extraordinary journey through two of India\'s most spectacular regions. Experience the lush valleys of Kashmir and the stark beauty of Ladakh\'s high-altitude landscapes. From serene lakes to mighty mountains, this premium package offers the ultimate Himalayan adventure.',
     highlights: [
       'Explore serene Kashmir valleys',

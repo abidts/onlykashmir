@@ -547,7 +547,7 @@ export default function HeroSlider() {
                         onChange={handleInputChange}
                         placeholder="Name *"
                         required
-                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs"
+                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
@@ -561,7 +561,7 @@ export default function HeroSlider() {
                           onBlur={handleDateBlur}
                           placeholder="Date of Arrival *"
                           required
-                          className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs [color-scheme:dark]"
+                          className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs [color-scheme:dark]"
                         />
                       </div>
                       <div>
@@ -573,7 +573,7 @@ export default function HeroSlider() {
                           placeholder="Guests *"
                           min="1"
                           required
-                          className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs"
+                          className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs"
                         />
                       </div>
                     </div>
@@ -582,7 +582,7 @@ export default function HeroSlider() {
                         <select
                           value={countryCode}
                           onChange={(e) => setCountryCode(e.target.value)}
-                          className="px-2 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold text-xs outline-none focus:border-emerald-500/50 transition cursor-pointer"
+                          className="px-2 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold text-xs outline-none focus:border-vintage-500/50 transition cursor-pointer"
                         >
                           {countryCodes.map((country) => (
                             <option key={country.code} value={country.code} className="bg-slate-900 text-white">
@@ -598,7 +598,7 @@ export default function HeroSlider() {
                           placeholder="Phone *"
                           pattern="[0-9]{10}"
                           required
-                          className="flex-1 px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs"
+                          className="flex-1 px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs"
                         />
                       </div>
                     </div>
@@ -610,7 +610,7 @@ export default function HeroSlider() {
                         onChange={handleInputChange}
                         placeholder="Email *"
                         required
-                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs"
+                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs"
                       />
                     </div>
                     <div>
@@ -621,7 +621,7 @@ export default function HeroSlider() {
                         onChange={handleInputChange}
                         placeholder="Address *"
                         required
-                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs"
+                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs"
                       />
                     </div>
                     <div>
@@ -632,13 +632,13 @@ export default function HeroSlider() {
                         placeholder="Message *"
                         rows={2}
                         required
-                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-emerald-500/50 transition text-xs resize-none"
+                        className="w-full px-3 py-2.5 bg-transparent border border-white/20 rounded-lg text-white font-semibold placeholder:text-slate-400 placeholder:font-semibold outline-none focus:border-vintage-500/50 transition text-xs resize-none"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full flex items-center justify-center gap-1.5 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 px-4 py-2.5 text-xs font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all hover:shadow-emerald-500/30 hover:scale-[1.02] tap-scale disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full flex items-center justify-center gap-1.5 rounded-lg bg-vintage-500/80 hover:bg-vintage-500 px-4 py-2.5 text-xs font-semibold text-vintage-800 shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/30 hover:scale-[1.02] tap-scale disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {submitting ? (
                         <>
@@ -679,7 +679,7 @@ export default function HeroSlider() {
       {/* Progress bar */}
       <div className="absolute bottom-20 sm:bottom-0 left-0 right-0 z-20 h-1 bg-white/10">
         <div
-          className="h-full bg-gradient-to-r from-emerald-500 to-sky-500 transition-all duration-[6000ms] ease-linear"
+          className="h-full bg-gradient-to-r from-vintage-500 to-vintage-600 transition-all duration-[6000ms] ease-linear"
           style={{ width: `${((current + 1) / slides.length) * 100}%` }}
         />
       </div>

@@ -159,7 +159,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-400 transition-colors group"
+                    className="flex items-center gap-2 text-sm text-slate-400 hover:text-vintage-500 transition-colors group"
                   >
                     <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
                     <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>

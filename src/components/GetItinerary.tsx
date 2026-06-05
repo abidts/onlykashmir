@@ -64,14 +64,14 @@ const GetItinerary: React.FC<GetItineraryProps> = ({ className = '', variant = '
                 <div className="flex flex-col items-center space-y-4 pt-4">
                   <button
                     onClick={() => setIsWhatsAppOpen(true)}
-                    className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold text-base shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-vintage-900 to-vintage-700 text-white font-semibold text-base shadow-2xl shadow-vintage-900/30 hover:shadow-vintage-900/50 transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <MessageCircle className="w-5 h-5" />
                     <span>Get Itinerary</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     
                     {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-vintage-700 to-vintage-900 opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
                   </button>
 
                   {/* Online Status */}
@@ -130,14 +130,14 @@ const GetItinerary: React.FC<GetItineraryProps> = ({ className = '', variant = '
                   {/* Get Itinerary Button */}
                   <button
                     onClick={() => setIsWhatsAppOpen(true)}
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-semibold text-lg shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-vintage-900 to-vintage-700 text-white font-semibold text-lg shadow-2xl shadow-vintage-900/30 hover:shadow-vintage-900/50 transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <MessageCircle className="w-6 h-6" />
                     <span>Get Itinerary</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                     
                     {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-vintage-700 to-vintage-900 opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
                   </button>
 
                   {/* Online Status */}

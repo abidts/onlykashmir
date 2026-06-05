@@ -102,7 +102,7 @@ export default function MobileBottomNav() {
                     isWhatsapp
                       ? 'text-white'
                       : isActive
-                        ? 'text-emerald-400'
+                        ? 'text-vintage-500'
                         : 'text-slate-400'
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function MobileBottomNav() {
                       <div className={`relative transition-transform duration-200 ${isActive ? 'scale-110' : ''}`}>
                         <item.icon className="h-6 w-6" />
                         {isActive && (
-                          <div className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-emerald-400" />
+                          <div className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-vintage-500" />
                         )}
                       </div>
                     </>
@@ -134,7 +134,7 @@ export default function MobileBottomNav() {
             {/* More Button */}
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className={`relative flex flex-1 flex-col items-center gap-1 py-3 transition-all tap-scale ${moreOpen ? 'text-emerald-400' : 'text-slate-400'}`}
+              className={`relative flex flex-1 flex-col items-center gap-1 py-3 transition-all tap-scale ${moreOpen ? 'text-vintage-500' : 'text-slate-400'}`}
             >
               <div className={`transition-transform duration-300 ${moreOpen ? 'rotate-45' : ''}`}>
                 {moreOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

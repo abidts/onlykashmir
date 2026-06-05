@@ -4,9 +4,9 @@ const ContactForm: React.FC = () => {
   return (
     <div className="w-full max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 p-6">
+        <div className="bg-gradient-to-r from-vintage-900 to-vintage-700 p-6">
           <h2 className="text-2xl font-bold text-white text-center">Get in Touch</h2>
-          <p className="text-emerald-100 text-center mt-2">Fill out the form below and we'll get back to you shortly</p>
+          <p className="text-vintage-400 text-center mt-2">Fill out the form below and we'll get back to you shortly</p>
         </div>
         
         <div className="p-2">

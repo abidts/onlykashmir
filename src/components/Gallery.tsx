@@ -36,12 +36,12 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="relative py-16 sm:py-24 bg-slate-950 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-vintage-500/50 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto reveal">
-          <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 text-sm font-medium text-violet-400">
+          <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
             <Sparkles className="h-4 w-4" />
             Gallery
           </span>
@@ -59,7 +59,7 @@ export default function Gallery() {
               onClick={() => setFilter(cat)}
               className={`flex-shrink-0 rounded-full px-4 py-2.5 text-sm font-medium transition-all tap-scale ${
                 filter === cat
-                  ? 'bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-lg shadow-violet-500/30'
+                  ? 'bg-gradient-to-r from-vintage-900 to-vintage-700 text-vintage-500 shadow-lg shadow-vintage-900/30'
                   : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
               }`}
             >

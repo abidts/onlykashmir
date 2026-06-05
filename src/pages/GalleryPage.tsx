@@ -14,7 +14,6 @@ const images = [
   { src: 'https://images.unsplash.com/photo-1683434576805-a4f85ea47bbf?w=800&q=80', title: 'Mountain Camping', category: 'Adventure' },
   { src: 'https://images.unsplash.com/photo-1722641277067-a7fba0ad1a59?w=800&q=80', title: 'J&K Campfire', category: 'Adventure' },
   { src: 'https://images.unsplash.com/photo-1704796531503-2ebd32bbaa8c?w=800&q=80', title: 'Snowy Peaks', category: 'Mountains' },
-  { src: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1771610703/Screenshot_2026-02-20_at_11.33.40_PM_gd5eyt.png', title: 'Luxury Travel Experience', category: 'Adventure' },
 
 ];
 
@@ -41,7 +40,7 @@ export default function GalleryPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 text-sm font-medium text-violet-400">
+            <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
               <Sparkles className="h-4 w-4" />
               Gallery
             </span>
@@ -59,7 +58,7 @@ export default function GalleryPage() {
                 onClick={() => setFilter(cat)}
                 className={`flex-shrink-0 rounded-full px-4 py-2.5 text-sm font-medium transition-all tap-scale ${
                   filter === cat
-                    ? 'bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-lg shadow-violet-500/30'
+                    ? 'bg-gradient-to-r from-vintage-900 to-vintage-700 text-vintage-500 shadow-lg shadow-vintage-900/30'
                     : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
                 }`}
               >

@@ -201,7 +201,7 @@ export default function CallbackPopup({ isOpen, onClose, subject }: Props) {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:shadow-emerald-500/50 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-vintage-900 to-vintage-700 py-3.5 text-base font-semibold text-vintage-500 shadow-lg shadow-vintage-900/30 transition-all hover:shadow-vintage-900/50 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send className="h-5 w-5" />
                 {submitting ? 'Sending...' : 'Request Call Back'}

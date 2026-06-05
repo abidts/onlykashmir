@@ -43,7 +43,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all text-center group">
-            <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-vintage-900/10 rounded-xl flex items-center justify-center text-vintage-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
               <MapPin className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>

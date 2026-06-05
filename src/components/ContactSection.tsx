@@ -54,7 +54,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400">
+                <div className="w-10 h-10 bg-vintage-900/10 rounded-lg flex items-center justify-center text-vintage-400">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>

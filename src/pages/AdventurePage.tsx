@@ -38,7 +38,7 @@ const adventures = [
     image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
     difficulty: 'Easy',
     duration: '1-3 Nights',
-    color: 'from-vintage-400 to-blue-600',
+    color: 'from-vintage-700 to-vintage-900',
   },
   {
     icon: Compass,
@@ -47,7 +47,7 @@ const adventures = [
     image: 'https://images.unsplash.com/photo-1682686581854-5e71f58e7e3f?w=800&q=80',
     difficulty: 'Moderate',
     duration: '1-4 Days',
-    color: 'from-violet-500 to-purple-600',
+    color: 'from-vintage-500 to-vintage-600',
   },
 ];
 
