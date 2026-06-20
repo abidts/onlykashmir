@@ -755,6 +755,82 @@ const packages: Record<string, PackageData> = {
   }
 };
 
+// Add aliases and new packages after base definition
+packages['kashmir-bliss'] = packages['jk-bliss'];
+packages['short-adventure'] = packages['short-adventure-trip'];
+packages['ladakh-escape'] = packages['adventure-explorer'];
+packages['srinagar-houseboat'] = {
+  name: 'Srinagar Houseboat Package',
+  slug: 'srinagar-houseboat',
+  duration: '3 Days / 2 Nights',
+  image: 'https://images.unsplash.com/photo-1597074866923-dc0589150bf6?w=1200&q=80',
+  destinations: ['Srinagar', 'Dal Lake'],
+  groupSize: '2-6',
+  rating: '4.9',
+  reviews: 256,
+  tag: 'Houseboat',
+  tagColor: 'from-vintage-500 to-vintage-700',
+  description: 'Experience authentic Kashmir with a luxury houseboat stay on Dal Lake. Enjoy Shikara rides, floating markets, and stunning views. Perfect for couples and families.',
+  highlights: [
+    'Luxury houseboat stay on Dal Lake',
+    'Sunrise & sunset Shikara rides',
+    'Visit floating vegetable market',
+    'Mughal Gardens tour',
+    'Kashmiri cuisine experience'
+  ],
+  itinerary: [
+    { day: 1, title: 'Arrival & Houseboat Check-in', description: 'Arrive in Srinagar, transfer to houseboat on Dal Lake. Evening Shikara ride to witness sunset.' },
+    { day: 2, title: 'Srinagar Local Sightseeing', description: 'Visit Mughal Gardens, Shankaracharya Temple, and explore local markets.' },
+    { day: 3, title: 'Departure', description: 'Breakfast on houseboat, then transfer to airport.' }
+  ],
+  images: [
+    'https://images.unsplash.com/photo-1597074866923-dc0589150bf6?w=1200&q=80',
+    'https://images.unsplash.com/photo-1600702653377-2bbad1049612?w=800&q=80'
+  ],
+  price: {
+    perPerson: 11999,
+    discount: 20,
+    includes: ['Houseboat stay', 'Breakfast & dinner', 'Shikara rides', 'Sightseeing', 'Transfers'],
+    excludes: ['Airfare', 'Lunch', 'Personal expenses']
+  }
+};
+packages['gulmarg-snow'] = {
+  name: 'Gulmarg Snow Package',
+  slug: 'gulmarg-snow',
+  duration: '4 Days / 3 Nights',
+  image: 'https://images.unsplash.com/photo-1683434576805-a4f85ea47bbf?w=1200&q=80',
+  destinations: ['Srinagar', 'Gulmarg'],
+  groupSize: '2-6',
+  rating: '5.0',
+  reviews: 187,
+  tag: 'Snow',
+  tagColor: 'from-cyan-500 to-blue-600',
+  description: 'Perfect winter package for snow lovers! Enjoy skiing, sledding, gondola rides, and pristine snow in Gulmarg.',
+  highlights: [
+    'Snow activities in Gulmarg',
+    'Gondola ride Phase 1 & 2',
+    'Skiing & sledding',
+    'Snowman making & photography',
+    'Warm accommodation'
+  ],
+  itinerary: [
+    { day: 1, title: 'Arrival in Srinagar', description: 'Arrive, check into hotel in Srinagar. Evening at leisure.' },
+    { day: 2, title: 'Gulmarg Snow Day', description: 'Full day in Gulmarg with all snow activities and gondola ride.' },
+    { day: 3, title: 'Gulmarg Exploration', description: 'Explore more snow activities, visit Drung Waterfall.' },
+    { day: 4, title: 'Departure', description: 'Return to Srinagar and transfer to airport.' }
+  ],
+  images: [
+    'https://images.unsplash.com/photo-1683434576805-a4f85ea47bbf?w=1200&q=80',
+    'https://images.unsplash.com/photo-1707045189683-4cced7a3a6b3?w=800&q=80'
+  ],
+  price: {
+    perPerson: 16999,
+    discount: 15,
+    includes: ['Accommodation', 'Breakfast & dinner', 'Gondola ride Phase 1', 'Transfers', 'Snow activity assistance'],
+    excludes: ['Airfare', 'Skiing equipment', 'Gondola Phase 2', 'Personal expenses']
+  }
+};
+
 export default function PackageDetail() {
   const { packageName } = useParams<{ packageName: string }>();
   const navigate = useNavigate();
