@@ -296,8 +296,8 @@ export default function DestinationDetail() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title={`${destination.name} - ${destination.tagline}`}
-        description={destination.desc}
+        title={`${destination.name} - Best Time to Visit & Things to Do | Only Kashmir`}
+        description={`Discover ${destination.name} in Kashmir! Find the best time to visit, top things to do & plan your trip with Only Kashmir Travel Agency.`}
         ogImage={destination.image}
         schema={destinationSchema}
       />
