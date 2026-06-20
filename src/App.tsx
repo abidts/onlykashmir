@@ -8,6 +8,7 @@ import ContactSection from './components/ContactSection';
 import ScrollToTop from './components/ScrollToTop';
 import MobileBottomNav from './components/MobileBottomNav';
 import TourPackages from './components/TourPackages';
+import SEO from './components/SEO';
 
 export default function App() {
   // Intersection Observer for reveal animations
@@ -28,44 +29,42 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Only Kashmir",
+    "description": "Premium travel agency in Kashmir offering tour packages, hotel bookings, and car rentals.",
+    "url": "https://www.onlykashmir.com",
+    "telephone": "+91-XXXXXXXXXX", // Should be replaced with actual number if found
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Srinagar",
+      "addressRegion": "Jammu and Kashmir",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
     <div className="relative overflow-x-hidden bg-slate-950">
+      <SEO 
+        title="Best Travel Agency in Kashmir | Tour Packages & Hotels"
+        description="Experience paradise on earth! Best travel agency in Kashmir. Book curated tour packages, luxury hotels & reliable cabs. Know the best time to visit Kashmir, cost of Kashmir trip, and Kashmir travel packages cost. Is Kashmir safe for tourists? Yes! We make your Kashmir trip safe & unforgettable."
+        schema={homeSchema}
+      />
       <HeroSlider />
-      <section className="py-16 sm:py-24 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-playfair">
-              Our Popular Tour Packages
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-vintage-400 to-vintage-400 mx-auto rounded-full" />
-          </div>
-          <TourPackages />
-        </div>
-      </section>
+      
+      <TourPackages />
 
-      <section className="py-16 sm:py-24 relative bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-playfair">
-              Car Rentals & Cabs
-            </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-              Comfortable and reliable transportation for all your travel needs in Kashmir
-            </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto rounded-full mt-4" />
-          </div>
-          <Cabs />
-          <div className="mt-8 text-center">
-            <Link
-              to="/cabs"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
-            >
-              View All Cabs
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Cabs />
+      <div className="bg-slate-900 pb-16 text-center">
+        <Link
+          to="/cabs"
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
+        >
+          View All Cabs
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
 
       <section className="py-16 sm:py-24 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

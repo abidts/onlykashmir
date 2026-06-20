@@ -3,6 +3,7 @@ import { Star, MapPin, Wifi, Utensils, Mountain, Car, Coffee, Building, Phone } 
 import { CallbackContext } from '../components/Layout';
 import { getHotels } from '../services/api';
 import WhatsAppCTA from '../components/WhatsAppCTA';
+import SEO from '../components/SEO';
 
 type Hotel = {
   name: string;
@@ -45,6 +46,10 @@ export default function HotelsPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Luxury Hotels & Houseboats in Kashmir"
+        description="Book the best luxury hotels and traditional houseboats in Srinagar, Gulmarg, and Pahalgam. Experience Kashmiri hospitality with Only Kashmir."
+      />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}

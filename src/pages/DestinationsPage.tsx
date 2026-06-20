@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { getDestinations } from '../services/api';
 import WhatsAppCTA from '../components/WhatsAppCTA';
 import { CallbackContext } from '../components/Layout';
+import SEO from '../components/SEO';
+
 type Destination = {
   name: string;
   tagline: string;
@@ -37,6 +39,10 @@ export default function DestinationsPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Places to Visit in Kashmir | Best Travel Destinations in Jammu and Kashmir"
+        description="Find the best places to visit in Kashmir! Explore Srinagar, Gulmarg, Pahalgam, Sonamarg & Leh Ladakh. Discover best travel destinations & plan your Kashmir trip now."
+      />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           {/* Header */}

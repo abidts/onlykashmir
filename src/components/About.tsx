@@ -1,8 +1,13 @@
 import { Mountain, MapPin, Compass, Shield, Phone } from 'lucide-react';
+import SEO from './SEO';
 
 export default function About() {
   return (
     <section id="about" className="min-h-screen bg-slate-950 text-white py-16 sm:py-24">
+      <SEO 
+        title="About Us - Only Kashmir Tour & Travels"
+        description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir."
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">

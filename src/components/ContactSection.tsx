@@ -14,7 +14,7 @@ export default function ContactSection() {
       <div className="absolute inset-0 pointer-events-none">
         <img
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1920&q=60"
-          alt=""
+          alt="Beautiful Kashmir Landscape Background"
           className="h-full w-full object-cover opacity-[0.03]"
         />
       </div>

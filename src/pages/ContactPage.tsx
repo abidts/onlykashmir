@@ -1,9 +1,14 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-950 py-16 sm:py-24">
+      <SEO 
+        title="Contact Us - Only Kashmir Tour & Travels"
+        description="Get in touch with Only Kashmir Tour & Travels. Call us at +91 88996 66998 or email info@onlykashmir.com for booking inquiries and travel assistance."
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

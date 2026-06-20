@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Mountain, Flame, Truck, Tent, Compass, Phone, Sparkles } from 'lucide-react';
 import { CallbackContext } from '../components/Layout';
 import WhatsAppCTA from '../components/WhatsAppCTA';
+import SEO from '../components/SEO';
 
 const adventures = [
   {
@@ -56,7 +57,11 @@ export default function AdventurePage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <main className="pt-16 pb-16 sm:py-24">
+      <SEO 
+        title="Adventure Tours - Trekking, Camping & Off-Roading"
+        description="Experience thrill in Kashmir and Ladakh. From trekking the Great Lakes to off-roading through high passes, book your adventure trip with Only Kashmir."
+      />
+      <main className="pt-20 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto">

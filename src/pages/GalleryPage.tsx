@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X, ZoomIn, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const images = [
   { src: 'https://images.unsplash.com/photo-1665034640942-07c4170c2872?w=800&q=80', title: 'Kashmir Bliss', category: 'Lakes' },
@@ -36,6 +37,10 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Photo Gallery - Beautiful Landscapes of Kashmir"
+        description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, and Pahalgam through our gallery."
+      />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}

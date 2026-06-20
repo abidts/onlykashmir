@@ -3,6 +3,7 @@ import { Clock, MapPin, Users, Star, Check, Phone, Sparkles } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { CallbackContext } from '../components/Layout';
 import GetItinerary from '../components/GetItinerary';
+import SEO from '../components/SEO';
 
 const packages = [
   {
@@ -127,8 +128,68 @@ const packages = [
 export default function PackagesPage() {
   const onRequestCallback = useContext(CallbackContext) || (() => {});
 
+  const packagesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": packages.map((pkg, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": pkg.name,
+        "description": `${pkg.duration} tour to ${pkg.destinations.join(', ')}`,
+        "image": pkg.image,
+        "brand": {
+          "@type": "Brand",
+          "name": "Only Kashmir"
+        }
+      }
+    }))
+  };
+
+  const faqData = [
+    {
+      question: "How much will a 7 day trip to Kashmir cost?",
+      answer: "The cost of a 7-day Kashmir trip depends on your preferences. Our 'Grand J&K' package starts at ₹14,999 per person, including stays, meals, and transfers. For 5-star luxury, expect ₹25,000+. We offer flexible budgets - contact us for a customized quote!"
+    },
+    {
+      question: "Is 4 days enough for Kashmir?",
+      answer: "Yes! 4 days are perfect for a quick Kashmir trip covering Srinagar, Gulmarg, and Pahalgam. Check our 'Kashmir Bliss' package which is exactly 4 Days / 3 Nights!"
+    },
+    {
+      question: "Is Kashmir safe for tourists now?",
+      answer: "Absolutely! Kashmir is one of the safest destinations in India for tourists. Millions visit each year to enjoy its beauty. We provide 24/7 support and local guides for a worry-free experience."
+    },
+    {
+      question: "What is the best time to visit Kashmir?",
+      answer: "The best time to visit Kashmir is March-October for pleasant weather and tulip gardens. For snowfall and skiing, visit December-February."
+    },
+    {
+      question: "What is the best time to visit Kashmir for snowfall?",
+      answer: "December to February is ideal for snowfall in Kashmir. Gulmarg becomes a winter wonderland perfect for skiing and snow activities."
+    },
+    {
+      question: "What is the best time to visit Kashmir with family?",
+      answer: "March to June and September to October are perfect for family trips to Kashmir, with pleasant weather ideal for sightseeing and activities."
+    },
+    {
+      question: "What is the best time to visit Kashmir tulip garden?",
+      answer: "The Indira Gandhi Memorial Tulip Garden in Srinagar is open from late March to early April, which is the best time to see the tulips in full bloom."
+    },
+    {
+      question: "Is October good time to visit Kashmir?",
+      answer: "Yes! October is excellent for visiting Kashmir. The weather is pleasant, autumn colors are beautiful, and it's less crowded."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Tour Packages - Explore Kashmir & Ladakh | Prices & FAQ"
+        description="Browse our handcrafted tour packages for Kashmir, Ladakh, and Katra. Find Kashmir travel packages cost, how much a 7-day trip to Kashmir costs, and answers to all your Kashmir trip questions."
+        schema={packagesSchema}
+        faq={faqData}
+      />
       <main className="pt-20 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -238,6 +299,34 @@ export default function PackagesPage() {
               </div>
             ))}
           </div>
+
+          {/* FAQ Section */}
+          <section className="mt-20 sm:mt-28">
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+                <Sparkles className="h-4 w-4" />
+                FAQ
+              </span>
+              <h2 className="mt-4 font-playfair text-3xl sm:text-4xl font-bold text-white">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {faqData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6"
+                >
+                  <h3 className="font-bold text-lg text-white mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-slate-300">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Get Itinerary CTA Section */}
           <div className="mt-16 sm:mt-24">

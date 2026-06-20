@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, MapPin, Star, Phone, Sparkles, Calendar, Clock, Users } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const destinations: Record<string, {
   name: string;
@@ -283,8 +284,23 @@ export default function DestinationDetail() {
     );
   }
 
+  const destinationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "name": destination.name,
+    "description": destination.desc,
+    "image": destination.image,
+    "publicAccess": true
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title={`${destination.name} - ${destination.tagline}`}
+        description={destination.desc}
+        ogImage={destination.image}
+        schema={destinationSchema}
+      />
       {/* Hero Section */}
       <div className="relative h-[50vh] sm:h-[60vh] overflow-hidden">
         <img

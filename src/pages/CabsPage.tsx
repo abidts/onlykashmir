@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Phone, Check, Shield, Clock, Star, Car } from 'lucide-react';
 import Cabs from '../components/Cabs';
 import { CallbackContext } from '../components/Layout';
+import SEO from '../components/SEO';
 
 interface FormData {
   name: string;
@@ -48,6 +49,10 @@ const CabsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Car Rental & Taxi Services in Kashmir"
+        description="Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip."
+      />
       {/* Main Content */}
       <div className="pt-14 sm:pt-18 pb-20 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

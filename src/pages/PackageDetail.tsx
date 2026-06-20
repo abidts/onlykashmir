@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { CallbackContext } from '../components/Layout';
+import SEO from '../components/SEO';
 import {
   ArrowLeft,
   MapPin,
@@ -785,8 +786,28 @@ export default function PackageDetail() {
     );
   }
 
+  const packageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": packageData.name,
+    "description": packageData.description,
+    "image": packageData.image,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": packageData.price.perPerson,
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title={`${packageData.name} - ${packageData.duration}`}
+        description={packageData.description}
+        ogImage={packageData.image}
+        schema={packageSchema}
+      />
       {/* Hero Section */}
       <div className="relative h-[50vh] sm:h-[60vh] overflow-hidden">
         <img
