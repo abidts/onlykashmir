@@ -47,8 +47,8 @@ export default function App() {
   return (
     <div className="relative overflow-x-hidden bg-slate-950">
       <SEO 
-        title="Best Travel Agency in Kashmir | Tour Packages & Hotels"
-        description="Experience paradise on earth! Best travel agency in Kashmir. Book curated tour packages, luxury hotels & reliable cabs. Know the best time to visit Kashmir, cost of Kashmir trip, and Kashmir travel packages cost. Is Kashmir safe for tourists? Yes! We make your Kashmir trip safe & unforgettable."
+        title="Best Travel Agency in Kashmir | Tour Packages from Delhi & Honeymoon"
+        description="Best travel agency in Kashmir! Book Kashmir tour packages from Delhi, Kashmir honeymoon package, Gulmarg tour package, Pahalgam tour package, Sonamarg tour package, Srinagar houseboat package, Gulmarg snow package & Dal Lake tours!"
         schema={homeSchema}
       />
       <HeroSlider />

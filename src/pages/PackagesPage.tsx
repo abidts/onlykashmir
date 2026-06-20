@@ -165,6 +165,10 @@ export default function PackagesPage() {
       answer: "The best time to visit Kashmir is March-October for pleasant weather and tulip gardens. For snowfall and skiing, visit December-February."
     },
     {
+      question: "What is the best time to visit Gulmarg?",
+      answer: "Best time to visit Gulmarg: December-March for snow and skiing, April-September for green meadows and flowers. Gulmarg is beautiful year-round!"
+    },
+    {
       question: "What is the best time to visit Kashmir for snowfall?",
       answer: "December to February is ideal for snowfall in Kashmir. Gulmarg becomes a winter wonderland perfect for skiing and snow activities."
     },
@@ -179,14 +183,66 @@ export default function PackagesPage() {
     {
       question: "Is October good time to visit Kashmir?",
       answer: "Yes! October is excellent for visiting Kashmir. The weather is pleasant, autumn colors are beautiful, and it's less crowded."
+    },
+    {
+      question: "What is included in a Gulmarg tour package?",
+      answer: "Our Gulmarg tour package includes hotel stay, breakfast, transfers, sightseeing, and Gondola ride options (Phase 1 & Phase 2). Contact us for a custom plan!"
+    },
+    {
+      question: "What is included in a Pahalgam tour package?",
+      answer: "Our Pahalgam tour package includes hotel stay, breakfast, transfers, sightseeing of Betaab Valley, Aru Valley, Chandanwari, and local activities."
+    },
+    {
+      question: "What is included in a Sonamarg tour package?",
+      answer: "Our Sonamarg tour package includes hotel stay, breakfast, transfers, sightseeing of Thajiwas Glacier, and optional activities like rafting and pony rides."
+    },
+    {
+      question: "Do you offer Srinagar houseboat packages?",
+      answer: "Yes! We offer premium Srinagar houseboat packages on Dal Lake with Shikara rides, meals, and beautiful views of the mountains."
+    },
+    {
+      question: "Can you provide a Kashmir tour package from Delhi?",
+      answer: "Absolutely! We provide complete Kashmir tour packages from Delhi including train/flight assistance, transfers, hotels, and sightseeing. Contact us for details!"
+    },
+    {
+      question: "Do you have a Kashmir honeymoon package?",
+      answer: "Yes! Our Honeymoon Special package is 5 Days / 4 Nights and includes luxury stays, houseboat stay in Dal Lake, Gondola ride, and romantic experiences!"
+    },
+    {
+      question: "Do you offer Gulmarg snow packages?",
+      answer: "Yes! We offer Gulmarg snow packages in December-February with skiing, snowboarding, sledding, and Gondola rides!"
+    },
+    {
+      question: "Can I book Srinagar houseboats directly?",
+      answer: "Yes! We offer Srinagar houseboat booking for all budgets - budget, premium, and luxury houseboats on Dal Lake & Nigeen Lake."
+    },
+    {
+      question: "Is Sonamarg a good day trip from Srinagar?",
+      answer: "Yes! Sonamarg makes a perfect day trip from Srinagar (3 hours drive one way). Visit Thajiwas Glacier and enjoy the scenic drive!"
+    },
+    {
+      question: "Where can I get a Gulmarg Gondola ticket guide?",
+      answer: "Gulmarg Gondola tickets are available online or at the ticket counter. Phase 1 is to Kongdori, Phase 2 goes to Affarwat. We include Gondola assistance in all our Gulmarg packages!"
+    },
+    {
+      question: "Can you plan a 3-day Kashmir itinerary?",
+      answer: "Yes! Our 3-day Kashmir itinerary (Short & Adventure Trip) covers Srinagar, Gulmarg, and Tangmarg with adventure activities!"
+    },
+    {
+      question: "Can you plan a 5-day Kashmir itinerary?",
+      answer: "Yes! Our 5-day Kashmir itinerary (Honeymoon Special) covers Srinagar, Gulmarg, Pahalgam, and Sonamarg - perfect for couples!"
+    },
+    {
+      question: "What are the top sightseeing places in Pahalgam?",
+      answer: "Top Pahalgam sightseeing: Betaab Valley, Aru Valley, Chandanwari, Baisaran, and Lidder River rafting!"
     }
   ];
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Tour Packages - Explore Kashmir & Ladakh | Prices & FAQ"
-        description="Browse our handcrafted tour packages for Kashmir, Ladakh, and Katra. Find Kashmir travel packages cost, how much a 7-day trip to Kashmir costs, and answers to all your Kashmir trip questions."
+        title="Kashmir Tour Packages | Honeymoon, Gulmarg, Pahalgam, Houseboats"
+        description="Book best Kashmir tour packages from Delhi! Find honeymoon packages, Gulmarg tour package, Pahalgam tour package, Sonamarg tour package, Srinagar houseboat packages & Kashmir itineraries 3 days, 5 days, 7 days."
         schema={packagesSchema}
         faq={faqData}
       />

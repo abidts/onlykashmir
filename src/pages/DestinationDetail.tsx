@@ -17,15 +17,15 @@ const destinations: Record<string, {
 }> = {
   gulmarg: {
     name: 'Gulmarg',
-    tagline: 'Meadow of Flowers',
+    tagline: 'Meadow of Flowers & Gondola Ride',
     image: 'https://images.unsplash.com/photo-1683434576805-a4f85ea47bbf?auto=format&fit=crop&w=1200&q=80',
-    desc: 'World-class skiing destination and the highest gondola ride in Asia.',
+    desc: 'World-class skiing and highest Gondola in Asia. Best time to visit Gulmarg for snow: Dec-Feb.',
     rating: '4.9',
-    highlight: 'Ski Paradise',
-    fullDesc: 'Gulmarg, meaning "Meadow of Flowers", is a breathtaking hill station in the Pir Panjal range of the Himalayas. It is renowned for its world-class skiing slopes, the Gulmarg Gondola (one of the highest cable cars in the world), and stunning alpine scenery. During winter, it transforms into a skier\'s paradise, while summer brings lush green meadows dotted with vibrant wildflowers. The colonial-era St. Mary\'s Church and the serene Alpather Lake are must-visit attractions.',
-    bestTime: 'December to March (Winter Sports), April to September (Summer)',
+    highlight: 'Gondola & Skiing',
+    fullDesc: 'Gulmarg, meaning "Meadow of Flowers", is a breathtaking hill station in the Pir Panjal range of the Himalayas. It is renowned for its world-class skiing slopes, the famous Gulmarg Gondola (one of the highest cable cars in the world), and stunning alpine scenery. During winter, it transforms into a skier\'s paradise, while summer brings lush green meadows dotted with vibrant wildflowers. The colonial-era St. Mary\'s Church and the serene Alpather Lake are must-visit attractions. Gulmarg Gondola tickets cover Phase 1 to Kongdori and Phase 2 to Affarwat.',
+    bestTime: 'Best time to visit Gulmarg: December-March for snow and skiing, April-September for green meadows and flowers.',
     duration: '3-4 Days',
-    activities: ['Skiing & Snowboarding', 'Gondola Ride (Phase 1 & 2)', 'Trekking to Alpather Lake', 'Golfing at the highest green golf course', 'Sleigh rides in winter'],
+    activities: ['Skiing & Snowboarding', 'Gulmarg Gondola Ride (Phase 1 & 2)', 'Trekking to Alpather Lake', 'Golfing at the highest green golf course', 'Sleigh rides in winter'],
     gallery: [
       'https://images.unsplash.com/photo-1707045189683-4cced7a3a6b3?auto=format&w=1200&q=80',
       'https://images.unsplash.com/photo-1626017088971-6a2a5f0d8c97?w=800&q=80',
@@ -34,15 +34,15 @@ const destinations: Record<string, {
   },
   pahalgam: {
     name: 'Pahalgam',
-    tagline: 'Valley of Shepherds',
+    tagline: 'Valley of Shepherds & Sightseeing',
     image: 'https://images.unsplash.com/photo-1564509180796-129e4f4f6de9?auto=format&fit=crop&w=1200&q=80',
-    desc: 'A pristine valley with lush meadows, rivers, and the starting point of Amarnath Yatra.',
+    desc: 'Pahalgam sightseeing guide: Betaab Valley, Aru Valley & more!',
     rating: '4.8',
-    highlight: 'River Valley',
-    fullDesc: 'Pahalgam is a serene valley located in the Anantnag district of Kashmir. Surrounded by snow-capped mountains and lush green forests, it is a perfect destination for nature lovers. The Lidder River flows through the valley, adding to its charm. Pahalgam serves as the base camp for the annual Amarnath Yatra pilgrimage. Popular attractions include Betaab Valley, Aru Valley, Chandanwari, and the Baisaran meadows.',
+    highlight: 'Sightseeing Hub',
+    fullDesc: 'Pahalgam is a serene valley located in the Anantnag district of Kashmir. Surrounded by snow-capped mountains and lush green forests, it is a perfect destination for nature lovers. The Lidder River flows through the valley, adding to its charm. Pahalgam serves as the base camp for the annual Amarnath Yatra pilgrimage. Top Pahalgam sightseeing places include Betaab Valley, Aru Valley, Chandanwari, and the Baisaran meadows.',
     bestTime: 'April to October',
     duration: '3-4 Days',
-    activities: ['River Rafting on Lidder River', 'Trekking to Tarsar Lake', 'Horse Riding in Baisaran', 'Visit Betaab Valley', 'Camping by the riverside'],
+    activities: ['Pahalgam Sightseeing: Betaab Valley', 'River Rafting on Lidder River', 'Trekking to Tarsar Lake', 'Horse Riding in Baisaran', 'Visit Aru Valley', 'Visit Chandanwari', 'Camping by the riverside'],
     gallery: [
       'https://images.unsplash.com/photo-1600702653377-2bbad1049612?w=800&q=80',
       'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80',
@@ -50,16 +50,16 @@ const destinations: Record<string, {
     ],
   },
   sonmarg: {
-    name: 'Sonmarg',
-    tagline: 'Meadow of Gold',
+    name: 'Sonamarg',
+    tagline: 'Meadow of Gold & Day Trip',
     image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&q=80',
-    desc: 'Gateway to Ladakh with glaciers, meadows, and the stunning Thajiwas Glacier.',
+    desc: 'Sonamarg day trip from Srinagar is perfect! Visit Thajiwas Glacier.',
     rating: '4.9',
-    highlight: 'Golden Meadows',
-    fullDesc: 'Sonmarg, meaning "Meadow of Gold", is a picturesque hill station located on the banks of the Sindh River. Surrounded by towering glaciers and snow-capped peaks, it serves as the gateway to Ladakh. The Thajiwas Glacier is a major attraction, accessible by pony ride. Adventure enthusiasts can enjoy trekking to Vishansar Lake, white-water rafting, and camping under the stars.',
+    highlight: 'Day Trip Destination',
+    fullDesc: 'Sonamarg, meaning "Meadow of Gold", is a picturesque hill station located on the banks of the Sindh River. A Sonamarg day trip from Srinagar is perfect! Surrounded by towering glaciers and snow-capped peaks, it serves as the gateway to Ladakh. The Thajiwas Glacier is a major attraction, accessible by pony ride. Adventure enthusiasts can enjoy trekking to Vishansar Lake, white-water rafting, and camping under the stars.',
     bestTime: 'May to September',
-    duration: '2-3 Days',
-    activities: ['Visit Thajiwas Glacier', 'Trekking to Vishansar & Krishansar Lakes', 'White Water Rafting', 'Camping', 'Pony Rides'],
+    duration: '2-3 Days or Sonamarg day trip',
+    activities: ['Sonamarg Day Trip from Srinagar', 'Visit Thajiwas Glacier', 'Trekking to Vishansar & Krishansar Lakes', 'White Water Rafting', 'Camping', 'Pony Rides'],
     gallery: [
       'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&q=80',
       'https://images.unsplash.com/photo-1537126694932-c0f39026528e?w=800&q=80',
@@ -68,15 +68,15 @@ const destinations: Record<string, {
   },
   'dal-lake': {
     name: 'Dal Lake',
-    tagline: 'Jewel of Srinagar',
+    tagline: 'Jewel of Srinagar & Houseboats',
     image: 'https://images.unsplash.com/photo-1597074866923-dc0589150bf6?w=1200&q=80',
-    desc: 'Iconic houseboat stays, Shikara rides, and floating gardens on crystal waters.',
+    desc: 'Dal Lake Srinagar - Book houseboats, enjoy Shikara rides!',
     rating: '4.9',
-    highlight: 'Houseboat Stay',
-    fullDesc: 'Dal Lake is the heart and soul of Srinagar, often referred to as the "Jewel in the Crown of Kashmir". The lake is famous for its traditional houseboats, colorful Shikaras, and floating vegetable gardens. A stay on a houseboat offers a unique experience of Kashmiri hospitality. The Mughal Gardens on the banks, including Shalimar Bagh and Nishat Bagh, add to the lake\'s charm.',
+    highlight: 'Houseboat Booking',
+    fullDesc: 'Dal Lake is the heart and soul of Srinagar, often referred to as the "Jewel in the Crown of Kashmir". We offer Srinagar houseboat booking for all budgets! The lake is famous for its traditional houseboats, colorful Shikaras, and floating vegetable gardens. A stay on a houseboat offers a unique experience of Kashmiri hospitality. The Mughal Gardens on the banks, including Shalimar Bagh and Nishant Bagh, add to the lake\'s charm.',
     bestTime: 'April to October',
     duration: '2-3 Days',
-    activities: ['Shikara Ride at Sunrise', 'Stay in a Traditional Houseboat', 'Visit Floating Market', 'Explore Mughal Gardens', 'Photography at Dawn'],
+    activities: ['Dal Lake Shikara Ride at Sunrise', 'Srinagar Houseboat Booking', 'Stay in a Traditional Houseboat', 'Visit Floating Market', 'Explore Mughal Gardens', 'Photography at Dawn'],
     gallery: [
       'https://images.unsplash.com/photo-1597074866923-dc0589150bf6?w=800&q=80',
       'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80',
@@ -386,6 +386,28 @@ export default function DestinationDetail() {
               ))}
             </div>
           </div>
+
+          {/* Gulmarg Gondola Guide (only if destination is Gulmarg) */}
+          {destination.name === 'Gulmarg' && (
+            <div className="mb-12 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+              <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-white mb-6">
+                Gulmarg Gondola Ticket Guide
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                  <h3 className="font-semibold text-white mb-2">Phase 1: Gulmarg to Kongdori</h3>
+                  <p className="text-slate-300 text-sm">Takes you up to 10,000 ft - beautiful meadows and views!</p>
+                </div>
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                  <h3 className="font-semibold text-white mb-2">Phase 2: Kongdori to Affarwat</h3>
+                  <p className="text-slate-300 text-sm">Takes you up to 13,500 ft - breathtaking Himalayan views!</p>
+                </div>
+              </div>
+              <p className="text-slate-300 mt-6 text-sm">
+                We can help you with Gulmarg Gondola ticket bookings in advance! Contact us to add it to your Gulmarg tour package.
+              </p>
+            </div>
+          )}
 
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-vintage-500/10 to-vintage-400/10 border border-vintage-500/20 rounded-3xl p-8 text-center">
