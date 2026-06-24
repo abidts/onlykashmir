@@ -28,8 +28,15 @@ const SEO = ({
 }: SEOProps) => {
   const siteName = 'Only Kashmir';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const url = window.location.href;
-  const canonicalUrl = canonical || url;
+  
+  // Ensure canonical URL always uses www.onlykashmir.com
+  const currentUrl = window.location.href;
+  let canonicalUrl = canonical || currentUrl;
+  // Replace non-www with www for consistency
+  if (!canonicalUrl.includes('www.onlykashmir.com')) {
+    canonicalUrl = canonicalUrl.replace('onlykashmir.com', 'www.onlykashmir.com');
+  }
+  const url = canonicalUrl;
 
   const organizationSchema = {
     "@context": "https://schema.org",
