@@ -40,8 +40,8 @@ export default function DestinationsPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Places to Visit in Kashmir | Best Travel Destinations in Jammu and Kashmir"
-        description="Find the best places to visit in Kashmir! Explore Srinagar, Gulmarg, Pahalgam, Sonamarg & Leh Ladakh. Discover best travel destinations & plan your Kashmir trip now."
+        title="Kashmir Destinations - Best Places to Visit in Kashmir | Top Kashmir Places"
+        description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more!"
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">

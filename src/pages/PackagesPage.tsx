@@ -241,8 +241,8 @@ export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Kashmir Tour Packages | Honeymoon, Gulmarg, Pahalgam, Houseboats"
-        description="Book best Kashmir tour packages from Delhi! Find honeymoon packages, Gulmarg tour package, Pahalgam tour package, Sonamarg tour package, Srinagar houseboat packages & Kashmir itineraries 3 days, 5 days, 7 days."
+        title="Top Tour Packages in Kashmir | Best Travel Packages & Tours and Travels"
+        description="Only Kashmir Tours and Travels - Top tour packages in Kashmir! Book travel packages, Kashmir tours, honeymoon packages, Gulmarg tours, Srinagar houseboats, Dal Lake shikara rides & enjoy travel!"
         schema={packagesSchema}
         faq={faqData}
       />

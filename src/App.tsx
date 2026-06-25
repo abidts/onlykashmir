@@ -32,23 +32,46 @@ export default function App() {
   const homeSchema = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "name": "Only Kashmir",
-    "description": "Premium travel agency in Kashmir offering tour packages, hotel bookings, and car rentals.",
+    "name": "Only Kashmir Tours and Travels",
+    "description": "Top travel agency in Srinagar & Kashmir. Book top tour packages, explore Kashmir destinations, best places to visit, hotels, houseboats, Dal Lake shikara rides, Gulmarg & enjoy travel!",
     "url": "https://www.onlykashmir.com",
-    "telephone": "+91-XXXXXXXXXX", // Should be replaced with actual number if found
+    "telephone": "+91-8899666998",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Srinagar",
       "addressRegion": "Jammu and Kashmir",
       "addressCountry": "IN"
-    }
+    },
+    "priceRange": "₹₹-₹₹₹",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Srinagar"
+      },
+      {
+        "@type": "City",
+        "name": "Gulmarg"
+      },
+      {
+        "@type": "City",
+        "name": "Pahalgam"
+      },
+      {
+        "@type": "City",
+        "name": "Sonamarg"
+      },
+      {
+        "@type": "City",
+        "name": "Leh Ladakh"
+      }
+    ]
   };
 
   return (
     <div className="relative overflow-x-hidden bg-slate-950">
       <SEO 
-        title="Best Travel Agency in Kashmir | Tour Packages from Delhi & Honeymoon"
-        description="Best travel agency in Kashmir! Book Kashmir tour packages from Delhi, Kashmir honeymoon package, Gulmarg tour package, Pahalgam tour package, Sonamarg tour package, Srinagar houseboat package, Gulmarg snow package & Dal Lake tours!"
+        title="Only Kashmir Tours and Travels - Best Travel Agency in Kashmir & Srinagar | Top Tour Packages"
+        description="Only Kashmir Tour and Travels - Top Travel Agency in Srinagar & Kashmir. Book top tour packages, explore Kashmir destinations, best places to visit, hotels, houseboats, Dal Lake shikara rides, Gulmarg, Srinagar & enjoy travel!"
         schema={homeSchema}
       />
       <HeroSlider />
