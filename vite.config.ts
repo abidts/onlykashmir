@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss(),viteSingleFile()],
-  base: mode === 'production' ? '/onlykashmir/' : '/',
+  base: '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

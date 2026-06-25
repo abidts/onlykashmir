@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote, Sparkles, ThumbsUp } from 'lucide-react';
+import SEO from '../components/SEO';
 const reviews = [
   {
     name: 'Rahul Sharma',
@@ -86,6 +87,10 @@ export default function ReviewsPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <SEO 
+        title="Reviews & Testimonials - Happy Travelers"
+        description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages."
+      />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
