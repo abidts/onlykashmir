@@ -29,12 +29,12 @@ const SEO = ({
   const siteName = 'Only Kashmir';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   
-  // Ensure canonical URL always uses www.onlykashmir.com
-  const currentUrl = window.location.href;
-  let canonicalUrl = canonical || currentUrl;
-  // Replace non-www with www for consistency
-  if (!canonicalUrl.includes('www.onlykashmir.com')) {
-    canonicalUrl = canonicalUrl.replace('onlykashmir.com', 'www.onlykashmir.com');
+  // Use provided canonical or default to home page
+  const baseUrl = 'https://www.onlykashmir.com';
+  let canonicalUrl = canonical || baseUrl;
+  // Ensure URL always uses www.onlykashmir.com
+  if (!canonicalUrl.startsWith(baseUrl)) {
+    canonicalUrl = baseUrl + (canonicalUrl.startsWith('/') ? canonicalUrl : '/' + canonicalUrl);
   }
   const url = canonicalUrl;
 

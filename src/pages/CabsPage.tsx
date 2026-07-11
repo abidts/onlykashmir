@@ -52,6 +52,7 @@ const CabsPage: React.FC = () => {
       <SEO 
         title="Car Rental & Taxi Services in Kashmir"
         description="Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip."
+        canonical="https://www.onlykashmir.com/cabs"
       />
       {/* Main Content */}
       <div className="pt-14 sm:pt-18 pb-20 sm:pb-24">

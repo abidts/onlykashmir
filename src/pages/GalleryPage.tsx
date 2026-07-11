@@ -40,6 +40,7 @@ export default function GalleryPage() {
       <SEO 
         title="Photo Gallery - Beautiful Landscapes of Kashmir"
         description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, and Pahalgam through our gallery."
+        canonical="https://www.onlykashmir.com/gallery"
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

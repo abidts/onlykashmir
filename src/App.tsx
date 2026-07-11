@@ -72,6 +72,7 @@ export default function App() {
       <SEO 
         title="Only Kashmir Tours and Travels - Best Travel Agency in Kashmir & Srinagar | Top Tour Packages"
         description="Only Kashmir Tour and Travels - Top Travel Agency in Srinagar & Kashmir. Book top tour packages, explore Kashmir destinations, best places to visit, hotels, houseboats, Dal Lake shikara rides, Gulmarg, Srinagar & enjoy travel!"
+        canonical="https://www.onlykashmir.com/"
         schema={homeSchema}
       />
       <HeroSlider />

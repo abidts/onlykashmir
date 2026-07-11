@@ -60,6 +60,7 @@ export default function AdventurePage() {
       <SEO 
         title="Adventure Tours - Trekking, Camping & Off-Roading"
         description="Experience thrill in Kashmir and Ladakh. From trekking the Great Lakes to off-roading through high passes, book your adventure trip with Only Kashmir."
+        canonical="https://www.onlykashmir.com/adventure"
       />
       <main className="pt-20 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

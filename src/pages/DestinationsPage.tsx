@@ -42,6 +42,7 @@ export default function DestinationsPage() {
       <SEO 
         title="Kashmir Destinations - Best Places to Visit in Kashmir | Top Kashmir Places"
         description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more!"
+        canonical="https://www.onlykashmir.com/destinations"
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">

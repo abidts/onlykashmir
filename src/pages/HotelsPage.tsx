@@ -49,6 +49,7 @@ export default function HotelsPage() {
       <SEO 
         title="Luxury Hotels & Houseboats in Kashmir"
         description="Book the best luxury hotels and traditional houseboats in Srinagar, Gulmarg, and Pahalgam. Experience Kashmiri hospitality with Only Kashmir."
+        canonical="https://www.onlykashmir.com/hotels"
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

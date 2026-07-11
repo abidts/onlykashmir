@@ -7,6 +7,7 @@ export default function About() {
       <SEO 
         title="About Us - Only Kashmir Tour & Travels"
         description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir."
+        canonical="https://www.onlykashmir.com/about"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}

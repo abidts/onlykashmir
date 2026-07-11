@@ -243,6 +243,7 @@ export default function PackagesPage() {
       <SEO 
         title="Top Tour Packages in Kashmir | Best Travel Packages & Tours and Travels"
         description="Only Kashmir Tours and Travels - Top tour packages in Kashmir! Book travel packages, Kashmir tours, honeymoon packages, Gulmarg tours, Srinagar houseboats, Dal Lake shikara rides & enjoy travel!"
+        canonical="https://www.onlykashmir.com/packages"
         schema={packagesSchema}
         faq={faqData}
       />

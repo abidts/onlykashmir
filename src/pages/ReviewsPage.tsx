@@ -90,6 +90,7 @@ export default function ReviewsPage() {
       <SEO 
         title="Reviews & Testimonials - Happy Travelers"
         description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages."
+        canonical="https://www.onlykashmir.com/reviews"
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

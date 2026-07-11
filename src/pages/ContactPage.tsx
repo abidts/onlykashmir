@@ -8,6 +8,7 @@ const ContactPage: React.FC = () => {
       <SEO 
         title="Contact Us - Only Kashmir Tour & Travels"
         description="Get in touch with Only Kashmir Tour & Travels. Call us at +91 88996 66998 or email info@onlykashmir.com for booking inquiries and travel assistance."
+        canonical="https://www.onlykashmir.com/contact"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

@@ -15,7 +15,7 @@ export default function LocationMap() {
           <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-800 bg-slate-900">
             <div className="aspect-video w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1041.8485080516655!2d74.77071400942071!3d34.07298315733815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1775680507324!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26482.84759067877!2d82.7325294!3d21.0680074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa23b3da6dc1fa2f7:0xace6b98d717bcfbc!2sOnly+Kashmir+Tour+%26+Travels!5e0!3m2!1sen!2sin!4v1720584000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

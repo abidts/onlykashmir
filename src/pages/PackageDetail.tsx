@@ -881,6 +881,7 @@ export default function PackageDetail() {
       <SEO 
         title={`${packageData.name} - ${packageData.duration}`}
         description={packageData.description}
+        canonical={`https://www.onlykashmir.com/packages/${packageName}`}
         ogImage={packageData.image}
         schema={packageSchema}
       />
