@@ -7,7 +7,7 @@ interface Props {
   subject?: string;
 }
 
-const FORM_SUBMIT_ACTION = 'https://formsubmit.co/ajax/onlykashmirtt@gmail.com';
+const FORM_SUBMIT_ACTION = 'https://formsubmit.co/ajax/info@onlykashmir.com';
 const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSc0o5tr9oybaZicDd4AIqeSQWX8YWpSNQkNiw-NZTwj26rr8A/formResponse';
 
 // Google Form field mapping - these need to match your actual Google Form fields

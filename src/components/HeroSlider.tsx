@@ -173,7 +173,7 @@ export default function HeroSlider() {
 
     try {
       // Submit to FormSubmit for email notification
-      const emailRes = await fetch('https://formsubmit.co/ajax/onlykashmirtt@gmail.com', {
+      const emailRes = await fetch('https://formsubmit.co/ajax/info@onlykashmir.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
