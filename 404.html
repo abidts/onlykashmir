@@ -5,52 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Only Kashmir Tours and Travels</title>
   <script>
-    // Handle clean URLs by redirecting to .html files for GitHub Pages
+    // Single Page Application redirect for GitHub Pages
+    // This preserves the path so React Router can handle client-side routing
     (function() {
       var pathname = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
-
-      // If already has .html, don't redirect
-      if (pathname.endsWith('.html')) {
-        return;
-      }
-
-      // Map clean URLs to .html files
-      var urlMap = {
-        '/destinations': '/destinations.html',
-        '/destinations/srinagar': '/destinations-srinagar.html',
-        '/destinations/gulmarg': '/destinations-gulmarg.html',
-        '/destinations/pahalgam': '/destinations-pahalgam.html',
-        '/destinations/sonamarg': '/destinations-sonamarg.html',
-        '/destinations/dal-lake': '/destinations-dal-lake.html',
-        '/destinations/leh-ladakh': '/destinations-leh-ladakh.html',
-        '/destinations/manasbal-lake': '/destinations-manasbal-lake.html',
-        '/destinations/sinthon-top': '/destinations-sinthon-top.html',
-        '/destinations/doodhpathri': '/destinations-doodhpathri.html',
-        '/destinations/drung-waterfall': '/destinations-drung-waterfall.html',
-        '/destinations/mughal-gardens-srinagar': '/destinations-mughal-gardens-srinagar.html',
-        '/destinations/amarnath-cave': '/destinations-amarnath-cave.html',
-        '/packages': '/packages.html',
-        '/packages/kashmir-bliss': '/packages-kashmir-bliss.html',
-        '/packages/honeymoon-special': '/packages-honeymoon-special.html',
-        '/packages/grand-jk': '/packages-grand-jk.html',
-        '/packages/family-fun': '/packages-family-fun.html',
-        '/packages/adventure-explorer': '/packages-adventure-explorer.html',
-        '/packages/budget-jk': '/packages-budget-jk.html',
-        '/adventure': '/adventure.html',
-        '/gallery': '/gallery.html',
-        '/reviews': '/reviews.html',
-        '/hotels': '/hotels.html',
-        '/about': '/about.html',
-        '/cabs': '/cabs.html',
-        '/contact': '/contact.html',
-      };
-
-      var targetFile = urlMap[pathname];
-      if (targetFile) {
-        window.location.replace(targetFile + search + hash);
-      }
+      var redirectUrl =
+        window.location.protocol +
+        '//' +
+        window.location.hostname +
+        (window.location.port ? ':' + window.location.port : '') +
+        '/' +
+        '?p=/' +
+        pathname.slice(1).replace(/&/g, '~and~') +
+        (search ? '&q=' + search.slice(1).replace(/&/g, '~and~') : '') +
+        hash;
+      window.location.replace(redirectUrl);
     })();
   </script>
 </head>
