@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'fs';
+import { mkdirSync, readFileSync, writeFileSync, existsSync, copyFileSync } from 'fs';
 import { dirname } from 'path';
 
-const src = 'dist/index.html';
+const src = 'public/404.html';
 const dest = 'dist/404.html';
 
 try {
@@ -12,9 +12,8 @@ try {
     process.exit(0);
   }
   
-  const html = readFileSync(src, 'utf8');
-  writeFileSync(dest, html, 'utf8');
-  console.log(`Created ${dest} (copy of index.html for SPA routing)`);
+  copyFileSync(src, dest);
+  console.log(`Created ${dest} (GitHub Pages SPA redirect)`);
 } catch (err) {
   console.error('Failed to create 404.html:', err);
   process.exit(1);
