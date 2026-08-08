@@ -2,7 +2,7 @@
 import { mkdirSync, readFileSync, writeFileSync, existsSync, copyFileSync } from 'fs';
 import { dirname } from 'path';
 
-const src = 'dist/index.html';
+const src = 'public/404.html';
 const dest = 'dist/404.html';
 
 try {
@@ -13,7 +13,7 @@ try {
   }
   
   copyFileSync(src, dest);
-  console.log(`Created ${dest} (copy of index.html for SPA routing)`);
+  console.log(`Created ${dest} (GitHub Pages SPA redirect)`);
 } catch (err) {
   console.error('Failed to create 404.html:', err);
   process.exit(1);
