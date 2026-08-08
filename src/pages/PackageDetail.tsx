@@ -873,6 +873,13 @@ export default function PackageDetail() {
       "priceCurrency": "INR",
       "price": packageData.price.perPerson,
       "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": packageData.rating,
+      "reviewCount": packageData.reviews,
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
 
