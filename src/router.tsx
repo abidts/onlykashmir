@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import App from './App';
 import Layout from './components/Layout';
 import DestinationsPage from './pages/DestinationsPage';
@@ -16,7 +16,7 @@ import ContactPage from './pages/ContactPage';
 // Use basename only in production (GitHub Pages)
 const basename = import.meta.env.PROD ? '/' : '/';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: (
