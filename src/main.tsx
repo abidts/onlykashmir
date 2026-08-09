@@ -10,7 +10,7 @@ const searchParams = new URLSearchParams(window.location.search);
 const redirectPath = searchParams.get('p');
 if (redirectPath) {
   // Replace the URL with the actual path without the query parameter
-  const newPath = redirectPath.replace(/~and~/g, '&');
+  const newPath = redirectPath;
   window.history.replaceState(null, '', newPath + window.location.hash);
 }
 

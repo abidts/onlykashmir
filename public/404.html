@@ -7,22 +7,10 @@
   <script>
     // Single Page Application redirect for GitHub Pages
     // This preserves the path so React Router can handle client-side routing
-    (function() {
-      var pathname = window.location.pathname;
-      var search = window.location.search;
-      var hash = window.location.hash;
-      var redirectUrl =
-        window.location.protocol +
-        '//' +
-        window.location.hostname +
-        (window.location.port ? ':' + window.location.port : '') +
-        '/' +
-        '?p=/' +
-        pathname.slice(1).replace(/&/g, '~and~') +
-        (search ? '&q=' + search.slice(1).replace(/&/g, '~and~') : '') +
-        hash;
-      window.location.replace(redirectUrl);
-    })();
+    var path = window.location.pathname;
+    var hash = window.location.hash;
+    var redirectUrl = '/' + '?p=' + path.substring(1) + hash;
+    window.location.replace(redirectUrl);
   </script>
 </head>
 <body>
