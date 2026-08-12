@@ -21,18 +21,36 @@
                 <li><a href="/hotels">Hotels</a></li>
                 <li><a href="/adventure">Adventure</a></li>
                 <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/callback">Request Call Back</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero" style="height: 50vh;">
-        <div class="hero-slide active">
-            <img src="https://res.cloudinary.com/dveg0ai0n/image/upload/v1771416621/gulmarg_wdwcyg.jpg" alt="Tour Package">
-            <div class="hero-content">
-                <h1>Tour Package Details</h1>
-                <p>Complete itinerary and information</p>
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tour Package">
+                <div class="hero-content">
+                    <h1>Tour Package Details</h1>
+                    <p>Complete itinerary and information</p>
+                </div>
             </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1651509094074-e8acaeb84d8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Package Experience">
+                <div class="hero-content">
+                    <h1>Unforgettable Experience</h1>
+                    <p>Memories that last a lifetime</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
         </div>
     </section>
 

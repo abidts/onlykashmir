@@ -144,6 +144,63 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 20;
+    transform: translateY(-50%);
+}
+
+.slider-prev,
+.slider-next {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 20;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: white;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
 .cta-button {
     display: inline-block;
     background: linear-gradient(135deg, #d4a574 0%, #c9956c 100%);
@@ -463,6 +520,169 @@ h2 {
     transform: scale(1.1);
 }
 
+/* Hero Plan a Trip Form */
+.hero-plan-form {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 280px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 15;
+}
+
+.hero-plan-form h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.hero-plan-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.hero-plan-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-plan-form input:focus {
+    outline: none;
+    border-color: rgba(251, 191, 36, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.plan-submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 0.5rem;
+}
+
+.plan-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.callback-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.callback-link-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Callback Trigger Button */
+.callback-trigger-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    z-index: 1000;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.callback-trigger-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Thank You Message */
+.thank-you-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.thank-you-content {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.thank-you-content h2 {
+    color: #f59e0b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.close-thank-you {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-thank-you:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar .container {
@@ -492,6 +712,28 @@ h2 {
 
     .contact-buttons {
         flex-direction: column;
+    }
+
+    .hero-plan-form {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 1rem 0;
+        right: auto;
+        top: auto;
+        display: block !important;
+    }
+
+    .callback-trigger-btn {
+        bottom: 90px;
+        right: 10px;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.8rem;
+    }
+
+    .callback-popup-content {
+        width: 95%;
+        padding: 1.5rem;
     }
 
     .footer-grid {

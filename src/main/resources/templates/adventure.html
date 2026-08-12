@@ -21,18 +21,36 @@
                 <li><a href="/hotels">Hotels</a></li>
                 <li><a href="/adventure">Adventure</a></li>
                 <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/callback">Request Call Back</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero" style="height: 50vh;">
-        <div class="hero-slide active">
-            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80" alt="Adventure Activities">
-            <div class="hero-content">
-                <h1>Adventure Activities</h1>
-                <p>Thrilling experiences in Kashmir</p>
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Adventure Activities">
+                <div class="hero-content">
+                    <h1>Adventure Activities</h1>
+                    <p>Thrilling experiences in Kashmir</p>
+                </div>
             </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200&q=80" alt="Skiing">
+                <div class="hero-content">
+                    <h1>Skiing in Gulmarg</h1>
+                    <p>World-class skiing experiences</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
         </div>
     </section>
 

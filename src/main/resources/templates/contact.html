@@ -21,18 +21,36 @@
                 <li><a href="/hotels">Hotels</a></li>
                 <li><a href="/adventure">Adventure</a></li>
                 <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/callback">Request Call Back</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero" style="height: 50vh;">
-        <div class="hero-slide active">
-            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80" alt="Contact Us">
-            <div class="hero-content">
-                <h1>Contact Us</h1>
-                <p>Get in touch with our travel experts</p>
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Contact Us">
+                <div class="hero-content">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch with our travel experts</p>
+                </div>
             </div>
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1566837497312-7be7830ae9b1?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Visit Our Office">
+                <div class="hero-content">
+                    <h1>Visit Our Office</h1>
+                    <p>Bemina, Srinagar, J&K, 190018</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
         </div>
     </section>
 
@@ -57,22 +75,26 @@
 
             <div class="package-card" style="padding: 2rem;">
                 <h3 style="text-align: center; margin-bottom: 2rem;">Send us a Message</h3>
-                <form style="max-width: 600px; margin: 0 auto;">
+                <form id="contact-form" style="max-width: 600px; margin: 0 auto;">
                     <div style="margin-bottom: 1rem;">
-                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Name</label>
-                        <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
+                        <label style="display: block; color: white; margin-bottom: 0.5rem; font-weight: 600;">Name *</label>
+                        <input type="text" name="name" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
                     </div>
                     <div style="margin-bottom: 1rem;">
-                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Email</label>
-                        <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
+                        <label style="display: block; color: white; margin-bottom: 0.5rem; font-weight: 600;">Email *</label>
+                        <input type="email" name="email" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
                     </div>
                     <div style="margin-bottom: 1rem;">
-                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Phone</label>
-                        <input type="tel" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem; font-weight: 600;">Phone *</label>
+                        <input type="tel" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
                     </div>
                     <div style="margin-bottom: 1rem;">
-                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Message</label>
-                        <textarea style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem; min-height: 150px;" required></textarea>
+                        <label style="display: block; color: white; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
+                        <input type="text" name="subject" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem; font-weight: 600;">Message *</label>
+                        <textarea name="message" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem; min-height: 150px;" required></textarea>
                     </div>
                     <button type="submit" class="view-all-btn" style="width: 100%;">Send Message</button>
                 </form>
