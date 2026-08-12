@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Only Kashmir Tours and Travels</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">ONLY KASHMIR</div>
+                <div class="tagline">Tour & Travels</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/destinations">Destinations</a></li>
+                <li><a href="/packages">Packages</a></li>
+                <li><a href="/cabs">Cabs</a></li>
+                <li><a href="/hotels">Hotels</a></li>
+                <li><a href="/adventure">Adventure</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="height: 50vh;">
+        <div class="hero-slide active">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80" alt="Contact Us">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>Get in touch with our travel experts</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="package-card" style="padding: 2rem; text-align: center;">
+                    <h3>📍 Address</h3>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Bemina, Srinagar, J&K, 190018</p>
+                </div>
+                <div class="package-card" style="padding: 2rem; text-align: center;">
+                    <h3>📞 Phone</h3>
+                    <p style="color: #94a3b8; margin-top: 1rem;">+91 88996 66998</p>
+                    <p style="color: #94a3b8;">+91 95962 24042</p>
+                </div>
+                <div class="package-card" style="padding: 2rem; text-align: center;">
+                    <h3>📧 Email</h3>
+                    <p style="color: #94a3b8; margin-top: 1rem;">info@onlykashmir.com</p>
+                </div>
+            </div>
+
+            <div class="package-card" style="padding: 2rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Send us a Message</h3>
+                <form style="max-width: 600px; margin: 0 auto;">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Name</label>
+                        <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Email</label>
+                        <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Phone</label>
+                        <input type="tel" style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; color: white; margin-bottom: 0.5rem;">Message</label>
+                        <textarea style="width: 100%; padding: 0.75rem; border: 1px solid #334155; background: #1e293b; color: white; border-radius: 0.5rem; min-height: 150px;" required></textarea>
+                    </div>
+                    <button type="submit" class="view-all-btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Only Kashmir Tour & Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918899666998" class="whatsapp-float" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
