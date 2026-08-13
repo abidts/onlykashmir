@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Layout from './components/Layout';
 import DestinationsPage from './pages/DestinationsPage';
@@ -13,10 +13,7 @@ import About from './components/About';
 import CabsPage from './pages/CabsPage';
 import ContactPage from './pages/ContactPage';
 
-// Use basename only in production (GitHub Pages)
-const basename = import.meta.env.PROD ? '/' : '/';
-
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: (
@@ -113,8 +110,6 @@ const router = createHashRouter([
       </Layout>
     ),
   },
-], {
-  basename,
-});
+]);
 
 export default router;

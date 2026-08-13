@@ -1,3 +1,18 @@
 #!/usr/bin/env node
-// 404.html no longer needed for hash routing
-console.log('Hash routing enabled - 404.html not needed');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const distDir = path.resolve(__dirname, '../dist');
+const indexPath = path.join(distDir, 'index.html');
+const fallbackPath = path.join(distDir, '404.html');
+
+if (fs.existsSync(indexPath)) {
+  fs.copyFileSync(indexPath, fallbackPath);
+  console.log('Created dist/404.html fallback for SPA routing');
+} else {
+  console.warn('index.html not found in dist; skipping 404 fallback');
+}
