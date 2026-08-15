@@ -45,8 +45,8 @@ const SEO = ({
     "url": "https://www.onlykashmir.com",
     "logo": "https://www.onlykashmir.com/assets/images/logo.png",
     "sameAs": [
-      "https://www.facebook.com/onlykashmir",
-      "https://www.instagram.com/onlykashmir"
+      "https://www.facebook.com/profile.php?id=61591604585922",
+      "https://www.instagram.com/onlykashmirtourandtravels/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",

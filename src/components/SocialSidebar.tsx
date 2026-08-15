@@ -4,7 +4,7 @@ export default function SocialSidebar() {
   return (
     <div className="hidden lg:flex fixed left-2 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-4">
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/onlykashmirtourandtravels/"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-10 w-10 items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors"
@@ -13,7 +13,7 @@ export default function SocialSidebar() {
         <Instagram className="h-5 w-5" />
       </a>
       <a
-        href="https://facebook.com"
+        href="https://www.facebook.com/profile.php?id=61591604585922"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-10 w-10 items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors"

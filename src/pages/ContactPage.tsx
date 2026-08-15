@@ -94,7 +94,7 @@ const ContactPage: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/onlykashmirtourandtravels/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
@@ -103,7 +103,7 @@ const ContactPage: React.FC = () => {
                 Instagram
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61591604585922"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30"
