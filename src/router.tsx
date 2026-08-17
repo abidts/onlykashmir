@@ -110,6 +110,14 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
+  {
+    path: '*',
+    element: (
+      <Layout>
+        <App />
+      </Layout>
+    ),
+  },
 ]);
 
 export default router;

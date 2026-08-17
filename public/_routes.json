@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/images/*",
+    "*.js",
+    "*.css",
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif",
+    "*.svg",
+    "*.webp",
+    "*.woff",
+    "*.woff2",
+    "*.ttf",
+    "*.ico",
+    "/robots.txt",
+    "/sitemap.xml",
+    "/CNAME"
+  ],
+  "rules": [
+    {
+      "include": "/*",
+      "method": ["GET", "HEAD"],
+      "exclude": [
+        "/api/*",
+        "/static/*"
+      ]
+    }
+  ]
+}
