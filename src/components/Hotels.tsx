@@ -105,7 +105,14 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
 
               {/* CTA Button */}
               <button
-                onClick={() => onRequestCallback()}
+                onClick={() => {
+                  onRequestCallback();
+                  try {
+                    (window as any).sendConversion?.('hotel_booking_inquiry', 0.0, 'INR');
+                  } catch (err) {
+                    console.warn('sendConversion failed', err);
+                  }
+                }}
                 className="mt-3 w-full flex items-center justify-center gap-2 rounded-xl bg-amber-500/10 border border-amber-500/20 px-3 py-2 text-sm font-semibold text-amber-400 transition-all hover:bg-amber-500 hover:text-white hover:border-amber-500"
               >
                 <Phone className="h-3.5 w-3.5" />

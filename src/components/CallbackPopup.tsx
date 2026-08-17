@@ -91,6 +91,12 @@ export default function CallbackPopup({ isOpen, onClose, subject }: Props) {
       console.log('Name:', formData.name, '| Email:', formData.email, '| Phone:', formData.phone);
 
       setSubmitted(true);
+      // Send Google Ads conversion for callback requests
+      try {
+        (window as any).sendConversion?.('callback_request', 1.0, 'INR');
+      } catch (e) {
+        console.warn('sendConversion failed', e);
+      }
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', phone: '' });
@@ -100,6 +106,11 @@ export default function CallbackPopup({ isOpen, onClose, subject }: Props) {
       console.error('Failed to submit callback form', err);
       // Even if submission fails, show success since no-cors doesn't return status
       setSubmitted(true);
+      try {
+        (window as any).sendConversion?.('callback_request', 1.0, 'INR');
+      } catch (e) {
+        console.warn('sendConversion failed', e);
+      }
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', phone: '' });

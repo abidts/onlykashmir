@@ -237,12 +237,23 @@ export default function HeroSlider() {
       console.log('✅ Plan Your Trip form submitted to Google Form');
 
       setSubmitted(true);
+      // Conversion for trip inquiry / plan your trip
+      try {
+        (window as any).sendConversion?.('plan_trip', 1.0, 'INR');
+      } catch (e) {
+        console.warn('sendConversion failed', e);
+      }
       setFormData({ name: '', date: '', guests: '', phone: '', address: '', message: '', email: '' });
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
       console.error('Form submission error:', error);
       // Even if submission fails, show success since no-cors doesn't return status
       setSubmitted(true);
+      try {
+        (window as any).sendConversion?.('plan_trip', 1.0, 'INR');
+      } catch (e) {
+        console.warn('sendConversion failed', e);
+      }
       setFormData({ name: '', date: '', guests: '', phone: '', address: '', message: '', email: '' });
       setTimeout(() => setSubmitted(false), 5000);
     } finally {

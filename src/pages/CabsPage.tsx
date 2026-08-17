@@ -43,6 +43,12 @@ const CabsPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Booking submitted:', formData);
+    // Send conversion for cab booking confirmation
+    try {
+      (window as any).sendConversion?.('cab_booking', 0.0, 'INR');
+    } catch (err) {
+      console.warn('sendConversion failed', err);
+    }
     setShowBookingForm(false);
     handleCallback();
   };

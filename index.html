@@ -5,10 +5,35 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN669Q9WN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);} 
       gtag('js', new Date());
 
       gtag('config', 'G-SZN669Q9WN');
+    </script>
+    <!-- Google tag (gtag.js) for AW-18267668792 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18267668792"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18267668792');
+    </script>
+    <!-- gtag conversion helper: call sendConversion('CONVERSION_LABEL', value, 'CURRENCY') -->
+    <script>
+      function sendConversion(label, value = 1.0, currency = 'INR') {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': `AW-18267668792/${label}`,
+            'value': value,
+            'currency': currency
+          });
+        } else {
+          console.warn('gtag not available yet — conversion not sent');
+        }
+      }
+      // Example usage:
+      // sendConversion('CONVERSION_LABEL', 10.00, 'INR');
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

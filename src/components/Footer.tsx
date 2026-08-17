@@ -52,6 +52,12 @@ export default function Footer() {
 
       if (response.ok) {
         setSubscribed(true);
+        // Conversion for newsletter signup
+        try {
+          (window as any).sendConversion?.('newsletter_signup', 0.0, 'INR');
+        } catch (e) {
+          console.warn('sendConversion failed', e);
+        }
         setEmail('');
         setTimeout(() => setSubscribed(false), 3000);
       }

@@ -1125,7 +1125,14 @@ export default function PackageDetail() {
                 </div>
 
                 <button
-                  onClick={() => onRequestCallback(`${packageData.name} Package`)}
+                  onClick={() => {
+                    onRequestCallback(`${packageData.name} Package`);
+                    try {
+                      (window as any).sendConversion?.('package_inquiry', packageData.price.perPerson || 0, 'INR');
+                    } catch (err) {
+                      console.warn('sendConversion failed', err);
+                    }
+                  }}
                   className="w-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-white font-semibold py-3.5 px-4 rounded-xl hover:shadow-lg hover:shadow-vintage-500/30 transition-all tap-scale mb-3"
                 >
                   Request a Call Back
