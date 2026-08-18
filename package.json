@@ -9,7 +9,7 @@
     "postbuild": "node scripts/copy-404.js",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx wrangler pages deploy dist --project-name onlykashmir"
   },
   "dependencies": {
     "clsx": "2.1.1",
