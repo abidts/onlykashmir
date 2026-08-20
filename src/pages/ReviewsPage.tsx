@@ -117,7 +117,7 @@ export default function ReviewsPage() {
       <SEO 
         title="Reviews & Testimonials - Happy Travelers | Customer Reviews"
         description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages. 5-star rated travel agency."
-        canonical="https://www.onlykashmir.com/reviews"
+        canonical="https://www.onlykashmir.com/#/reviews"
         schema={reviewsSchema}
       />
       <main className="pt-16 pb-16 sm:py-24">

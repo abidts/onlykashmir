@@ -363,7 +363,7 @@ export default function DestinationDetail() {
       <SEO 
         title={`${destination.name} - Best Time to Visit & Things to Do | Only Kashmir`}
         description={`Discover ${destination.name} in Kashmir! Find the best time to visit, top things to do & plan your trip with Only Kashmir Travel Agency. ${destination.desc}`}
-        canonical={`https://www.onlykashmir.com/destinations/${slug}`}
+        canonical={`https://www.onlykashmir.com/#/destinations/${slug}`}
         ogImage={destination.image}
         schema={destinationSchema}
         faq={currentFAQs}
