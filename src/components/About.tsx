@@ -2,12 +2,40 @@ import { Mountain, MapPin, Compass, Shield, Phone } from 'lucide-react';
 import SEO from './SEO';
 
 export default function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Only Kashmir Tour & Travels",
+    "description": "ONLY KASHMIR Tour & Travels is a premier travel agency dedicated to showcasing the unparalleled beauty of Kashmir. With years of experience and a passion for our land, we provide curated travel experiences that stay with you forever.",
+    "url": "https://www.onlykashmir.com",
+    "telephone": "+91-8899666998",
+    "email": "info@onlykashmir.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bemina",
+      "addressLocality": "Srinagar",
+      "addressRegion": "Jammu and Kashmir",
+      "postalCode": "190018",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹₹-₹₹₹",
+    "foundingDate": "2025",
+    "areaServed": [
+      "Srinagar",
+      "Gulmarg",
+      "Pahalgam",
+      "Sonmarg",
+      "Leh Ladakh"
+    ]
+  };
+
   return (
     <section id="about" className="min-h-screen bg-slate-950 text-white py-16 sm:py-24">
       <SEO 
-        title="About Us - Only Kashmir Tour & Travels"
-        description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir."
+        title="About Us - Only Kashmir Tour & Travels | Premier Travel Agency in Srinagar"
+        description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir. Local Kashmir experts since 2025."
         canonical="https://www.onlykashmir.com/about"
+        schema={aboutSchema}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}

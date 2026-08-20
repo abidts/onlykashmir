@@ -53,12 +53,50 @@ const CabsPage: React.FC = () => {
     handleCallback();
   };
 
+  const taxiServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "Only Kashmir Tour & Travels - Cab Services",
+    "description": "Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip.",
+    "telephone": "+91-8899666998",
+    "email": "info@onlykashmir.com",
+    "areaServed": [
+      "Srinagar",
+      "Gulmarg", 
+      "Pahalgam",
+      "Sonmarg",
+      "Leh Ladakh"
+    ],
+    "priceRange": "₹₹-₹₹₹"
+  };
+
+  const faqData = [
+    {
+      question: "How much does cab service cost in Kashmir?",
+      answer: "Cab service costs in Kashmir vary by vehicle type and distance. Swift Dzire starts from ₹12/km, Innova from ₹18/km, and Tempo Traveller from ₹25/km. Contact us for exact quotes."
+    },
+    {
+      question: "Can I book a cab for Srinagar to Gulmarg?",
+      answer: "Yes! We provide regular cab service from Srinagar to Gulmarg. The journey takes about 2.5 hours covering 50km. We offer both one-way and round-trip options."
+    },
+    {
+      question: "What vehicles are available for Kashmir cab service?",
+      answer: "We offer Swift Dzire, Toyota Etios, Innova Crysta, Mahindra Thar, and Tempo Traveller (17-26 seater) for groups. All vehicles are well-maintained and comfortable."
+    },
+    {
+      question: "Is it safe to travel by cab in Kashmir?",
+      answer: "Absolutely! Our drivers are experienced, licensed, and know the best routes. All vehicles are GPS-enabled and regularly maintained for your safety."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Car Rental & Taxi Services in Kashmir"
-        description="Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip."
+        title="Car Rental & Taxi Services in Kashmir | Best Cab Service & Taxi Booking"
+        description="Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip. 24/7 taxi service available."
         canonical="https://www.onlykashmir.com/cabs"
+        schema={taxiServiceSchema}
+        faq={faqData}
       />
       {/* Main Content */}
       <div className="pt-14 sm:pt-18 pb-20 sm:pb-24">

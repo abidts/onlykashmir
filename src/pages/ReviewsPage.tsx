@@ -85,12 +85,40 @@ export default function ReviewsPage() {
     }
   };
 
+  const reviewsSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Only Kashmir Tour & Travels",
+    "image": "https://www.onlykashmir.com/assets/images/logo.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": reviews.length,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": reviews.map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating,
+        "bestRating": "5"
+      },
+      "reviewBody": review.text
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Reviews & Testimonials - Happy Travelers"
-        description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages."
+        title="Reviews & Testimonials - Happy Travelers | Customer Reviews"
+        description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages. 5-star rated travel agency."
         canonical="https://www.onlykashmir.com/reviews"
+        schema={reviewsSchema}
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

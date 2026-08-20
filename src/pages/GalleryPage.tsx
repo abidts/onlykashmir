@@ -35,12 +35,25 @@ export default function GalleryPage() {
     }
   };
 
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Kashmir Photo Gallery",
+    "description": "Beautiful landscapes of Kashmir including lakes, mountains, valleys, and adventure activities",
+    "provider": {
+      "@type": "Organization",
+      "name": "Only Kashmir Tour & Travels",
+      "url": "https://www.onlykashmir.com"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title="Photo Gallery - Beautiful Landscapes of Kashmir"
-        description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, and Pahalgam through our gallery."
+        title="Photo Gallery - Beautiful Landscapes of Kashmir | Kashmir Tourism Photos"
+        description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, Pahalgam, and Dal Lake through our Kashmir tourism photo gallery."
         canonical="https://www.onlykashmir.com/gallery"
+        schema={gallerySchema}
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

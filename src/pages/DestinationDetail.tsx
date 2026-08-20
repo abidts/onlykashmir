@@ -293,14 +293,80 @@ export default function DestinationDetail() {
     "publicAccess": true
   };
 
+  const destinationFAQs = {
+    gulmarg: [
+      {
+        question: "What is the best time to visit Gulmarg?",
+        answer: "The best time to visit Gulmarg is December-March for snow and skiing, April-September for green meadows and flowers."
+      },
+      {
+        question: "How much does Gulmarg Gondola cost?",
+        answer: "Gulmarg Gondola tickets: Phase 1 (Kongdori) costs around ₹800, Phase 2 (Affarwat) costs around ₹1000. We include Gondola assistance in our Gulmarg packages."
+      }
+    ],
+    pahalgam: [
+      {
+        question: "What are the top places to visit in Pahalgam?",
+        answer: "Top Pahalgam sightseeing: Betaab Valley, Aru Valley, Chandanwari, Baisaran, and Lidder River rafting."
+      },
+      {
+        question: "How far is Pahalgam from Srinagar?",
+        answer: "Pahalgam is about 95km from Srinagar, taking approximately 3 hours by road."
+      }
+    ],
+    sonmarg: [
+      {
+        question: "Is Sonamarg a good day trip from Srinagar?",
+        answer: "Yes! Sonamarg makes a perfect day trip from Srinagar (3 hours drive one way). Visit Thajiwas Glacier and enjoy the scenic drive."
+      },
+      {
+        question: "What is special about Sonamarg?",
+        answer: "Sonamarg, meaning 'Meadow of Gold', is known for Thajiwas Glacier, alpine meadows, and serves as the gateway to Ladakh."
+      }
+    ],
+    'dal-lake': [
+      {
+        question: "How much does a houseboat stay cost on Dal Lake?",
+        answer: "Houseboat prices vary from ₹2,000-₹10,000 per night depending on luxury level. We offer budget, premium, and luxury houseboat booking."
+      },
+      {
+        question: "What is the best time for Dal Lake Shikara ride?",
+        answer: "Early morning (6-8 AM) and sunset (5-7 PM) are the best times for Shikara rides to avoid crowds and enjoy stunning views."
+      }
+    ],
+    'leh-ladakh': [
+      {
+        question: "What is the best time to visit Leh Ladakh?",
+        answer: "June to September is the best time to visit Leh Ladakh when roads are open and weather is pleasant."
+      },
+      {
+        question: "How many days are needed for Leh Ladakh trip?",
+        answer: "Minimum 5-7 days are recommended for Leh Ladakh to properly acclimatize and visit Pangong Lake, Nubra Valley, and local monasteries."
+      }
+    ],
+    srinagar: [
+      {
+        question: "What are the must-visit places in Srinagar?",
+        answer: "Must-visit places in Srinagar: Dal Lake, Mughal Gardens (Shalimar, Nishat, Chashma Shahi), Shankaracharya Temple, and Lal Chowk market."
+      },
+      {
+        question: "How many days are enough for Srinagar?",
+        answer: "2-3 days are enough for Srinagar to cover the main attractions including Mughal Gardens, Dal Lake, and local sightseeing."
+      }
+    ]
+  };
+
+  const currentFAQs = destinationFAQs[slug as keyof typeof destinationFAQs] || [];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
         title={`${destination.name} - Best Time to Visit & Things to Do | Only Kashmir`}
-        description={`Discover ${destination.name} in Kashmir! Find the best time to visit, top things to do & plan your trip with Only Kashmir Travel Agency.`}
+        description={`Discover ${destination.name} in Kashmir! Find the best time to visit, top things to do & plan your trip with Only Kashmir Travel Agency. ${destination.desc}`}
         canonical={`https://www.onlykashmir.com/destinations/${slug}`}
         ogImage={destination.image}
         schema={destinationSchema}
+        faq={currentFAQs}
       />
       {/* Hero Section */}
       <div className="relative h-[50vh] sm:h-[60vh] overflow-hidden">

@@ -868,19 +868,32 @@ export default function PackageDetail() {
     "name": packageData.name,
     "description": packageData.description,
     "image": packageData.image,
+    "brand": {
+      "@type": "Brand",
+      "name": "Only Kashmir Tour & Travels"
+    },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "INR",
       "price": packageData.price.perPerson,
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Only Kashmir Tour & Travels"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": packageData.rating,
+      "reviewCount": packageData.reviews
     }
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
-        title={`${packageData.name} - ${packageData.duration}`}
-        description={packageData.description}
+        title={`${packageData.name} - ${packageData.duration} | Kashmir Tour Package`}
+        description={`${packageData.description} Book ${packageData.name} Kashmir tour package starting at ₹${packageData.price.perPerson.toLocaleString()}. Includes ${packageData.destinations.join(', ')}. Best Kashmir travel deals.`}
         canonical={`https://www.onlykashmir.com/packages/${packageName}`}
         ogImage={packageData.image}
         schema={packageSchema}

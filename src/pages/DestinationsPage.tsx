@@ -37,12 +37,48 @@ export default function DestinationsPage() {
     });
   }, []);
 
+  const destinationsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": destinations.map((dest, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Place",
+        "name": dest.name,
+        "description": dest.desc,
+        "image": dest.image
+      }
+    }))
+  };
+
+  const faqData = [
+    {
+      question: "What are the best places to visit in Kashmir?",
+      answer: "The best places to visit in Kashmir include Srinagar (Dal Lake, Mughal Gardens), Gulmarg (skiing, Gondola), Pahalgam (Betaab Valley, Aru Valley), Sonmarg (Thajiwas Glacier), and Leh Ladakh (Pangong Lake, Nubra Valley)."
+    },
+    {
+      question: "How many days are enough for Kashmir trip?",
+      answer: "For a complete Kashmir experience, 5-7 days is ideal. This allows you to visit Srinagar, Gulmarg, Pahalgam, and Sonmarg comfortably. For shorter trips, 3-4 days can cover the main highlights."
+    },
+    {
+      question: "What is the best time to visit Kashmir?",
+      answer: "The best time to visit Kashmir is March to October for pleasant weather and blooming gardens. For snow activities, December to February is perfect, especially in Gulmarg."
+    },
+    {
+      question: "Is Kashmir safe for tourists?",
+      answer: "Yes, Kashmir is safe for tourists. Millions of visitors travel to Kashmir each year. We provide 24/7 support and experienced local guides to ensure a safe and memorable trip."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <SEO 
         title="Kashmir Destinations - Best Places to Visit in Kashmir | Top Kashmir Places"
-        description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more!"
+        description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more! Book your Kashmir trip today."
         canonical="https://www.onlykashmir.com/destinations"
+        schema={destinationsSchema}
+        faq={faqData}
       />
       <main className="pt-16 pb-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
