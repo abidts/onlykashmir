@@ -126,7 +126,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group">
               <div className="transition-transform group-hover:scale-110">
                 <LogoMark size={120} />
               </div>
@@ -134,7 +134,7 @@ export default function Footer() {
                 <span className="block font-playfair text-lg font-bold text-white">ONLY KASHMIR</span>
                 <span className="block font-dancing text-sm text-vintage-500 -mt-0.5">Tour & Travels</span>
               </div>
-            </a>
+            </Link>
             <p className="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">
               Your premier travel partner for exploring Kashmir. Creating unforgettable memories since 2025.
             </p>

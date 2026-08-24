@@ -894,7 +894,7 @@ export default function PackageDetail() {
       <SEO 
         title={`${packageData.name} - ${packageData.duration} | Kashmir Tour Package`}
         description={`${packageData.description} Book ${packageData.name} Kashmir tour package starting at ₹${packageData.price.perPerson.toLocaleString()}. Includes ${packageData.destinations.join(', ')}. Best Kashmir travel deals.`}
-        canonical={`https://www.onlykashmir.com/#/packages/${packageName}`}
+        canonical={`https://www.onlykashmir.com/packages/${packageName}`}
         ogImage={packageData.image}
         schema={packageSchema}
       />

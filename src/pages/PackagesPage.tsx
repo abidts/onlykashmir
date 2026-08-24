@@ -17,7 +17,7 @@ const packages = [
     tag: 'Best Seller',
     tagColor: 'from-vintage-500 to-vintage-600',
     includes: ['Hotel', 'Breakfast', 'Cab', 'Shikara'],
-    slug: 'kashmir-bliss',
+    slug: 'jk-bliss',
   },
   {
     name: 'Honeymoon Special',
@@ -43,7 +43,7 @@ const packages = [
     tag: 'Adventure',
     tagColor: 'from-orange-500 to-red-600',
     includes: ['Hotel', 'Meal', 'Transfer', 'Sightseeing', 'Activities'],
-    slug: 'short-adventure',
+    slug: 'short-adventure-trip',
   },
   {
     name: 'Ladakh Escape',
@@ -56,7 +56,7 @@ const packages = [
     tag: 'Premium',
     tagColor: 'from-vintage-900 to-vintage-700',
     includes: ['Camels', 'Dunes', 'All Meals', 'Transfer', 'Stay', 'Sightseeing'],
-    slug: 'ladakh-escape',
+    slug: 'kashmir-with-ladakh',
   },
   {
     name: 'Grand J&K',
@@ -109,14 +109,14 @@ export default function PackagesPage() {
       "@type": "ListItem",
       "position": index + 1,
       "item": {
-        "@type": "Product",
+        // A package card is an itinerary, not a standalone purchasable product.
+        // Marking it as Product makes Google require an offer, review, or rating
+        // for every card in this listing.
+        "@type": "TouristTrip",
         "name": pkg.name,
         "description": `${pkg.duration} tour to ${pkg.destinations.join(', ')}`,
         "image": pkg.image,
-        "brand": {
-          "@type": "Brand",
-          "name": "Only Kashmir Tour & Travels"
-        }
+        "url": `https://www.onlykashmir.com/packages/${pkg.slug}`
       }
     }))
   };
@@ -217,7 +217,7 @@ export default function PackagesPage() {
       <SEO 
         title="Top Tour Packages in Kashmir | Best Travel Packages & Tours and Travels"
         description="Only Kashmir Tours and Travels - Top tour packages in Kashmir! Book travel packages, Kashmir tours, honeymoon packages, Gulmarg tours, Srinagar houseboats, Dal Lake shikara rides & enjoy travel!"
-        canonical="https://www.onlykashmir.com/#/packages"
+        canonical="https://www.onlykashmir.com/packages"
         schema={packagesSchema}
         faq={faqData}
       />

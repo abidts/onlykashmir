@@ -76,7 +76,7 @@ export default function DestinationsPage() {
       <SEO 
         title="Kashmir Destinations - Best Places to Visit in Kashmir | Top Kashmir Places"
         description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more! Book your Kashmir trip today."
-        canonical="https://www.onlykashmir.com/#/destinations"
+        canonical="https://www.onlykashmir.com/destinations"
         schema={destinationsSchema}
         faq={faqData}
       />

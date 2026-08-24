@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Layout from './components/Layout';
 import DestinationsPage from './pages/DestinationsPage';
@@ -12,8 +12,9 @@ import HotelsPage from './pages/HotelsPage';
 import About from './components/About';
 import CabsPage from './pages/CabsPage';
 import ContactPage from './pages/ContactPage';
+import RequestCallbackPage from './pages/RequestCallbackPage';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: (
@@ -107,6 +108,14 @@ const router = createHashRouter([
     element: (
       <Layout>
         <ContactPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/request-callback',
+    element: (
+      <Layout>
+        <RequestCallbackPage />
       </Layout>
     ),
   },

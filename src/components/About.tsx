@@ -34,7 +34,7 @@ export default function About() {
       <SEO 
         title="About Us - Only Kashmir Tour & Travels | Premier Travel Agency in Srinagar"
         description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir. Local Kashmir experts since 2025."
-        canonical="https://www.onlykashmir.com/#/about"
+        canonical="https://www.onlykashmir.com/about"
         schema={aboutSchema}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

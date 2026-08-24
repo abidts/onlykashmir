@@ -52,7 +52,7 @@ export default function GalleryPage() {
       <SEO 
         title="Photo Gallery - Beautiful Landscapes of Kashmir | Kashmir Tourism Photos"
         description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, Pahalgam, and Dal Lake through our Kashmir tourism photo gallery."
-        canonical="https://www.onlykashmir.com/#/gallery"
+        canonical="https://www.onlykashmir.com/gallery"
         schema={gallerySchema}
       />
       <main className="pt-16 pb-16 sm:py-24">

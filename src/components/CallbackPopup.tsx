@@ -5,6 +5,7 @@ interface Props {
   isOpen: boolean;
   onClose: () => void;
   subject?: string;
+  embedded?: boolean;
 }
 
 const FORM_SUBMIT_ACTION = 'https://formsubmit.co/ajax/info@onlykashmir.com';
@@ -26,7 +27,7 @@ const GOOGLE_FORM_FIELDS = {
 // FormSubmit expects plain keys, keep names explicit for clarity
 const WHATSAPP_NUMBER = '+918899666998';
 
-export default function CallbackPopup({ isOpen, onClose, subject }: Props) {
+export default function CallbackPopup({ isOpen, onClose, subject, embedded = false }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -124,19 +125,24 @@ export default function CallbackPopup({ isOpen, onClose, subject }: Props) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
-      <div className="relative bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto animate-scale-in">
-        <button
+    <div className={embedded ? 'w-full' : 'fixed inset-0 z-[100] flex items-center justify-center p-4'}>
+      {!embedded && (
+        <div
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-all z-10"
-        >
-          <X className="w-4 h-4" />
-        </button>
+        />
+      )}
+
+      <div className={`relative bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl max-w-lg w-full overflow-y-auto ${embedded ? '' : 'max-h-[90vh] animate-scale-in'}`}>
+        {!embedded && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-all z-10"
+            aria-label="Close callback form"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
 
         {submitted ? (
           <div className="p-8 sm:p-12 flex flex-col items-center justify-center text-center">

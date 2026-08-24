@@ -1,9 +1,8 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { createContext, useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import WhatsAppButton from './WhatsAppButton';
 import SocialSidebar from './SocialSidebar';
-import CallbackPopup from './CallbackPopup';
 import Footer from './Footer';
 import MobileBottomNav from './MobileBottomNav';
 
@@ -14,17 +13,16 @@ interface LayoutProps {
 export const CallbackContext = createContext<((subject?: string) => void) | null>(null);
 
 export default function Layout({ children }: LayoutProps) {
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [popupSubject, setPopupSubject] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const openPopup = (subject?: string) => {
-    setPopupSubject(subject || '');
-    setPopupOpen(true);
+  const openCallbackPage = (subject?: string) => {
+    const search = subject ? `?subject=${encodeURIComponent(subject)}` : '';
+    navigate(`/request-callback${search}`);
   };
 
   useEffect(() => {
-    const handler = () => openPopup();
+    const handler = () => openCallbackPage();
     window.addEventListener('open-callback-from-contact', handler as EventListener);
     return () => window.removeEventListener('open-callback-from-contact', handler as EventListener);
   }, []);
@@ -36,18 +34,13 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <>
-      <Navbar onRequestCallback={() => openPopup()} />
+      <Navbar onRequestCallback={() => openCallbackPage()} />
       <SocialSidebar />
-      <CallbackContext.Provider value={openPopup}>
+      <CallbackContext.Provider value={openCallbackPage}>
         <main>
           {children}
         </main>
         <Footer />
-        <CallbackPopup
-          isOpen={popupOpen}
-          onClose={() => setPopupOpen(false)}
-          subject={popupSubject}
-        />
       </CallbackContext.Provider>
       <WhatsAppButton />
       <MobileBottomNav />
