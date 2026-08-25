@@ -92,11 +92,11 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       console.log('Name:', formData.name, '| Email:', formData.email, '| Phone:', formData.phone);
 
       setSubmitted(true);
-      // Send Google Ads conversion for callback requests
+      // Record the Google Ads lead only after the callback form has been sent.
       try {
-        (window as any).sendConversion?.('callback_request', 1.0, 'INR');
+        (window as any).gtag_report_conversion?.();
       } catch (e) {
-        console.warn('sendConversion failed', e);
+        console.warn('Callback conversion failed', e);
       }
       setTimeout(() => {
         setSubmitted(false);
@@ -105,13 +105,8 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       }, 2200);
     } catch (err) {
       console.error('Failed to submit callback form', err);
-      // Even if submission fails, show success since no-cors doesn't return status
+      // Do not report an Ads conversion when the submission itself throws an error.
       setSubmitted(true);
-      try {
-        (window as any).sendConversion?.('callback_request', 1.0, 'INR');
-      } catch (e) {
-        console.warn('sendConversion failed', e);
-      }
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', phone: '' });

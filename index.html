@@ -19,6 +19,14 @@
 
       gtag('config', 'AW-18267668792');
     </script>
+    <!-- Google Ads conversion: call after a callback request is successfully submitted. -->
+    <script>
+      function gtag_report_conversion() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18267668792/KAZcCJOAuOccELiC2oZE'
+        });
+      }
+    </script>
     <!-- gtag conversion helper: call sendConversion('CONVERSION_LABEL', value, 'CURRENCY') -->
     <script>
       function sendConversion(label, value = 1.0, currency = 'INR') {
