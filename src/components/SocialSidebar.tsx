@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube, Mail } from 'lucide-react';
 
 export default function SocialSidebar() {
@@ -46,13 +47,13 @@ export default function SocialSidebar() {
       <div className="h-6 w-px bg-slate-600 my-2" />
 
       {/* Newsletter */}
-      <a
-        href="#callback"
+      <Link
+        to="/request-callback"
         className="flex flex-col items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors"
       >
         <Mail className="h-5 w-5" />
         <span className="text-[9px] font-medium tracking-widest uppercase writing-vertical">Newsletter</span>
-      </a>
+      </Link>
     </div>
   );
 }

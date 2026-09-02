@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /destinations/
+Allow: /packages/
 
 Sitemap: https://www.onlykashmir.com/sitemap.xml

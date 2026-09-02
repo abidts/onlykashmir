@@ -66,6 +66,23 @@ const destinations: Record<string, {
       'https://images.unsplash.com/photo-1581791534721-e599df4417f6?w=800&q=80',
     ],
   },
+  sonamarg: {
+    name: 'Sonamarg',
+    tagline: 'Meadow of Gold & Day Trip',
+    image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&q=80',
+    desc: 'Sonamarg day trip from Srinagar is perfect! Visit Thajiwas Glacier.',
+    rating: '4.9',
+    highlight: 'Day Trip Destination',
+    fullDesc: 'Sonamarg, meaning "Meadow of Gold", is a picturesque hill station located on the banks of the Sindh River. A Sonamarg day trip from Srinagar is perfect! Surrounded by towering glaciers and snow-capped peaks, it serves as the gateway to Ladakh. The Thajiwas Glacier is a major attraction, accessible by pony ride. Adventure enthusiasts can enjoy trekking to Vishansar Lake, white-water rafting, and camping under the stars.',
+    bestTime: 'May to September',
+    duration: '2-3 Days or Sonamarg day trip',
+    activities: ['Sonamarg Day Trip from Srinagar', 'Visit Thajiwas Glacier', 'Trekking to Vishansar & Krishansar Lakes', 'White Water Rafting', 'Camping', 'Pony Rides'],
+    gallery: [
+      'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&q=80',
+      'https://images.unsplash.com/photo-1537126694932-c0f39026528e?w=800&q=80',
+      'https://images.unsplash.com/photo-1581791534721-e599df4417f6?w=800&q=80',
+    ],
+  },
   'dal-lake': {
     name: 'Dal Lake',
     tagline: 'Jewel of Srinagar & Houseboats',
@@ -406,34 +423,24 @@ export default function DestinationDetail() {
         answer: "Sonamarg, meaning 'Meadow of Gold', is known for Thajiwas Glacier, alpine meadows, and serves as the gateway to Ladakh."
       }
     ],
-    'dal-lake': [
+    'manasbal-lake': [
       {
-        question: "How much does a houseboat stay cost on Dal Lake?",
-        answer: "Houseboat prices vary from ₹2,000-₹10,000 per night depending on luxury level. We offer budget, premium, and luxury houseboat booking."
+        question: "What is special about Manasbal Lake?",
+        answer: "Manasbal Lake is known for its lotus flowers and clear waters. It's less crowded than Dal Lake and perfect for birdwatching and quiet Shikara rides."
       },
       {
-        question: "What is the best time for Dal Lake Shikara ride?",
-        answer: "Early morning (6-8 AM) and sunset (5-7 PM) are the best times for Shikara rides to avoid crowds and enjoy stunning views."
+        question: "How far is Manasbal Lake from Srinagar?",
+        answer: "Manasbal Lake is about 30km from Srinagar, making it a perfect day trip destination."
       }
     ],
-    'leh-ladakh': [
+    'sinthon-top': [
       {
-        question: "What is the best time to visit Leh Ladakh?",
-        answer: "June to September is the best time to visit Leh Ladakh when roads are open and weather is pleasant."
+        question: "What is the best time to visit Sinthon Top?",
+        answer: "June to September is the best time to visit Sinthon Top when the road is accessible and weather is pleasant."
       },
       {
-        question: "How many days are needed for Leh Ladakh trip?",
-        answer: "Minimum 5-7 days are recommended for Leh Ladakh to properly acclimatize and visit Pangong Lake, Nubra Valley, and local monasteries."
-      }
-    ],
-    srinagar: [
-      {
-        question: "What are the must-visit places in Srinagar?",
-        answer: "Must-visit places in Srinagar: Dal Lake, Mughal Gardens (Shalimar, Nishat, Chashma Shahi), Shankaracharya Temple, and Lal Chowk market."
-      },
-      {
-        question: "How many days are enough for Srinagar?",
-        answer: "2-3 days are enough for Srinagar to cover the main attractions including Mughal Gardens, Dal Lake, and local sightseeing."
+        question: "How high is Sinthon Top?",
+        answer: "Sinthon Top is located at approximately 12,500 feet elevation, offering panoramic views of the Pir Panjal range."
       }
     ],
     'mughal-gardens': [
@@ -466,6 +473,16 @@ export default function DestinationDetail() {
         answer: "April to October is the best time to visit Mughal Gardens. Autumn (September-October) is especially beautiful with Chinar tree colors."
       }
     ],
+    doodhpathri: [
+      {
+        question: "What is special about Doodhpathri?",
+        answer: "Doodhpathri, meaning 'Valley of Milk', is named after the frothy white Shaliganga stream. It's less commercialized than other Kashmir destinations."
+      },
+      {
+        question: "How far is Doodhpathri from Srinagar?",
+        answer: "Doodhpathri is about 45km from Srinagar, making it a perfect day trip destination."
+      }
+    ],
     'drung-fall': [
       {
         question: "When is the best time to visit Drung Waterfall?",
@@ -484,6 +501,36 @@ export default function DestinationDetail() {
       {
         question: "How far is Drung Waterfall from Gulmarg?",
         answer: "Drung Waterfall is about 15km from Gulmarg, located near Tangmarg on the Srinagar-Gulmarg highway."
+      }
+    ],
+    'dal-lake': [
+      {
+        question: "How much does a houseboat stay cost on Dal Lake?",
+        answer: "Houseboat prices vary from ₹2,000-₹10,000 per night depending on luxury level. We offer budget, premium, and luxury houseboat booking."
+      },
+      {
+        question: "What is the best time for Dal Lake Shikara ride?",
+        answer: "Early morning (6-8 AM) and sunset (5-7 PM) are the best times for Shikara rides to avoid crowds and enjoy stunning views."
+      }
+    ],
+    'leh-ladakh': [
+      {
+        question: "What is the best time to visit Leh Ladakh?",
+        answer: "June to September is the best time to visit Leh Ladakh when roads are open and weather is pleasant."
+      },
+      {
+        question: "How many days are needed for Leh Ladakh trip?",
+        answer: "Minimum 5-7 days are recommended for Leh Ladakh to properly acclimatize and visit Pangong Lake, Nubra Valley, and local monasteries."
+      }
+    ],
+    srinagar: [
+      {
+        question: "What are the must-visit places in Srinagar?",
+        answer: "Must-visit places in Srinagar: Dal Lake, Mughal Gardens (Shalimar, Nishat, Chashma Shahi), Shankaracharya Temple, and Lal Chowk market."
+      },
+      {
+        question: "How many days are enough for Srinagar?",
+        answer: "2-3 days are enough for Srinagar to cover the main attractions including Mughal Gardens, Dal Lake, and local sightseeing."
       }
     ]
   };

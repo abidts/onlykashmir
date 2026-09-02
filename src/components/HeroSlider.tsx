@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback, useRef, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Phone, Play, Sparkles, Send } from 'lucide-react';
 import { CallbackContext } from './Layout';
 
 const slides = [
   {
+    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
     image: 'https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Best Travel Agency in Kashmir',
     subtitle: 'Plan Your Dream Trip to Paradise',
@@ -11,6 +13,7 @@ const slides = [
     cta: 'Plan Your Trip',
   },
   {
+    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
     image: 'https://images.unsplash.com/photo-1651509094074-e8acaeb84d8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Gulmarg Magic',
     subtitle: 'Ski & Snow Adventures',
@@ -18,6 +21,7 @@ const slides = [
     cta: 'Explore Gulmarg',
   },
   {
+    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
     image: 'https://images.unsplash.com/photo-1599493867961-1bc9808137a9?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Pahalgam Beauty',
     subtitle: 'Nature\'s Masterpiece',
@@ -25,6 +29,7 @@ const slides = [
     cta: 'Discover Pahalgam',
   },
   {
+    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
     image: 'https://images.unsplash.com/photo-1701957494296-a42832ab0a17?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Golden Sonmarg',
     subtitle: 'Gateway to Ladakh',
@@ -32,6 +37,7 @@ const slides = [
     cta: 'Visit Sonmarg',
   },
   {
+    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
     image: 'https://images.unsplash.com/photo-1566837497312-7be7830ae9b1?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Kashmir Valley',
     subtitle: 'Land of Serenity',
@@ -320,11 +326,22 @@ export default function HeroSlider() {
             i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
           }`}
         >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
-          />
+          {slide.video ? (
+            <video
+              src={slide.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
+            />
+          ) : (
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
+            />
+          )}
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/40" />
@@ -378,13 +395,13 @@ export default function HeroSlider() {
                           <Phone className="h-5 w-5" />
                           <span>Request a Call Back</span>
                         </button>
-                        <a
-                          href="#packages"
+                        <Link
+                          to="/packages"
                           className="flex items-center justify-center gap-2 rounded-2xl sm:rounded-full border border-white/20 bg-white/5 px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40 tap-scale"
                         >
                           <Play className="h-5 w-5 text-vintage-400" />
                           {slide.cta}
-                        </a>
+                        </Link>
                         {/* Mobile Form Toggle */}
                         <button
                           onClick={() => setFormOpen(!formOpen)}

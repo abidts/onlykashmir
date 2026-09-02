@@ -13,6 +13,7 @@ import About from './components/About';
 import CabsPage from './pages/CabsPage';
 import ContactPage from './pages/ContactPage';
 import RequestCallbackPage from './pages/RequestCallbackPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -123,7 +124,7 @@ const router = createBrowserRouter([
     path: '*',
     element: (
       <Layout>
-        <App />
+        <NotFoundPage />
       </Layout>
     ),
   },

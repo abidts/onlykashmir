@@ -45,6 +45,9 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="robots" content="index,follow" />
+    <meta name="language" content="en-IN" />
     <title>Only Kashmir Tours and Travels - Best Travel Agency in Kashmir & Srinagar | Top Tour Packages</title>
     <meta name="description" content="Only Kashmir Tour and Travels - Top Travel Agency in Srinagar & Kashmir. Book top tour packages, explore Kashmir destinations, best places to visit, hotels, houseboats, Dal Lake shikara rides, Gulmarg, Srinagar & enjoy travel!" />
     <meta name="keywords" content="top tour packages, travel, top travel agency, top travel agency in srinagar, top travel agency in kashmir, kashmir, kashmir tour, kashmir travel, kashmir places, kashmir destination, kashmir best places, best place to visit, visit, enjoy, enjoy travel, srinagar, gulmarg, sinthon top, hotels, kashmir hotels, house boat, kashmir shikara ride, shikara ride, dal lake, travel packages, tour and travel, tours and travels, only kashmir, only kashmir tours and travels, only kashmir tour and travels, kash, kashmir" />
@@ -68,9 +71,13 @@
   </head>
   <body>
     <script>
-      // Single Page Application redirect handler for GitHub Pages
+      // Redirect legacy hash routes and normalize GitHub Pages SPA behavior
       (function() {
         var l = window.location;
+        if (l.hash && l.hash.indexOf('#/') === 0) {
+          window.history.replaceState(null, '', l.pathname + l.hash.replace(/^#/, ''));
+          return;
+        }
         if (l.search) {
           var q = {};
           l.search.slice(1).split('&').forEach(function(v) {
