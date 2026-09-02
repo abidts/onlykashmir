@@ -1,7 +1,34 @@
 import { useState } from 'react';
-import { X, ZoomIn, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight, Sparkles, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+
+const instagramVideos = [
+  {
+    title: 'Kashmir cinematic',
+    category: 'Reels',
+    thumbnail: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788342935/kashmir_cinematic_c5kwpv.jpg',
+    href: 'https://www.instagram.com/reel/C6KjYdvy8Jf/',
+  },
+  {
+    title: 'Snow drive',
+    category: 'Reels',
+    thumbnail: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788343418/snow_5_owoh5v.jpg',
+    href: 'https://www.instagram.com/reel/C6KjYdvy8Jf/',
+  },
+  {
+    title: 'Kashmir valley',
+    category: 'Reels',
+    thumbnail: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.jpg',
+    href: 'https://www.instagram.com/reel/C6KjYdvy8Jf/',
+  },
+  {
+    title: 'Travel moments',
+    category: 'Reels',
+    thumbnail: 'https://images.unsplash.com/photo-1694368906722-49decee647be?w=800&q=80',
+    href: 'https://www.instagram.com/onlykashmirtourandtravels/',
+  },
+];
 
 const images = [
   { src: 'https://images.unsplash.com/photo-1665034640942-07c4170c2872?w=800&q=80', title: 'Kashmir Bliss', category: 'Lakes' },
@@ -119,6 +146,54 @@ export default function GalleryPage() {
               </div>
             ))}
           </div>
+
+          <section className="mt-14 sm:mt-16">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-vintage-500">Instagram</p>
+                <h2 className="mt-2 font-playfair text-2xl sm:text-3xl font-bold text-white">Video Moments</h2>
+              </div>
+              <a
+                href="https://www.instagram.com/onlykashmirtourandtravels/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-vintage-500/30 bg-vintage-500/10 px-4 py-2 text-sm font-medium text-vintage-300 transition hover:bg-vintage-500/20"
+              >
+                Visit Instagram
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {instagramVideos.map((video) => (
+                <a
+                  key={video.title}
+                  href={video.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition hover:border-vintage-500/40 hover:shadow-lg hover:shadow-vintage-500/10"
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm ring-2 ring-white/30">
+                        <Play className="ml-1 h-5 w-5 fill-white text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-3">
+                    <p className="text-sm font-semibold text-white">{video.title}</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-vintage-500">{video.category}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
 
         {/* Lightbox */}

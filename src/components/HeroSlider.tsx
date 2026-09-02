@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Phone, Play, Sparkles, Send } from 'lucide-react';
 import { CallbackContext } from './Layout';
 
+const desktopHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788342935/kashmir_cinematic_c5kwpv.mp4';
+const mobileHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788343418/snow_5_owoh5v.mp4';
+
 const slides = [
   {
-    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
+    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Best Travel Agency in Kashmir',
     subtitle: 'Plan Your Dream Trip to Paradise',
@@ -13,7 +16,7 @@ const slides = [
     cta: 'Plan Your Trip',
   },
   {
-    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
+    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1651509094074-e8acaeb84d8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Gulmarg Magic',
     subtitle: 'Ski & Snow Adventures',
@@ -21,7 +24,7 @@ const slides = [
     cta: 'Explore Gulmarg',
   },
   {
-    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
+    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1599493867961-1bc9808137a9?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Pahalgam Beauty',
     subtitle: 'Nature\'s Masterpiece',
@@ -29,7 +32,7 @@ const slides = [
     cta: 'Discover Pahalgam',
   },
   {
-    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
+    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1701957494296-a42832ab0a17?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Golden Sonmarg',
     subtitle: 'Gateway to Ladakh',
@@ -37,7 +40,7 @@ const slides = [
     cta: 'Visit Sonmarg',
   },
   {
-    video: 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1787717021/Gulmarg_in_Jan_ws6tky.mp4',
+    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1566837497312-7be7830ae9b1?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Kashmir Valley',
     subtitle: 'Land of Serenity',
@@ -52,6 +55,7 @@ export default function HeroSlider() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isMobileView, setIsMobileView] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 1024 : false);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [formOpen, setFormOpen] = useState(false);
   const [dateFocused, setDateFocused] = useState(false);
@@ -267,6 +271,13 @@ export default function HeroSlider() {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth < 1024);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const goTo = useCallback((index: number) => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -328,7 +339,7 @@ export default function HeroSlider() {
         >
           {slide.video ? (
             <video
-              src={slide.video}
+              src={isMobileView ? mobileHeroVideo : slide.video}
               autoPlay
               muted
               loop
