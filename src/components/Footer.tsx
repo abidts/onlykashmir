@@ -143,11 +143,15 @@ export default function Footer() {
                 <img
                   src="https://res.cloudinary.com/dveg0ai0n/image/upload/v1772117700/Screenshot_2026-02-26_at_8.16.12_PM_pi0otz.png"
                   alt="J&K Tourism"
+                  loading="lazy"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain"
                 />
                 <img
                   src="https://res.cloudinary.com/dveg0ai0n/image/upload/v1772117701/Screenshot_2026-02-26_at_8.16.48_PM_ksbx9i.png"
                   alt="Ministry of Tourism, Government of India"
+                  loading="lazy"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain"
                 />
               </div>

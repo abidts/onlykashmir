@@ -165,6 +165,17 @@ body {
   100% { background-position: 100% 0; }
 }
 
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  width: max-content;
+  min-width: 100%;
+  animation: ticker-scroll 22s linear infinite;
+}
+
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
 .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }

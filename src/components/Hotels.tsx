@@ -60,6 +60,8 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
               <img
                 src={hotel.image}
                 alt={hotel.name}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />

@@ -91,6 +91,8 @@ export default function AdventurePage() {
                   <img
                     src={adv.image}
                     alt={adv.title}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />

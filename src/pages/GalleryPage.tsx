@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { X, ZoomIn, ChevronLeft, ChevronRight, Sparkles, Play, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const instagramVideos = [
@@ -127,6 +126,8 @@ export default function GalleryPage() {
                 <img
                   src={img.src}
                   alt={img.title}
+                  loading="lazy"
+                  decoding="async"
                   className={`w-full h-full sm:h-auto object-cover transition-transform duration-700 group-hover:scale-110 ${
                     i % 3 === 0 ? 'sm:h-64' : i % 3 === 1 ? 'sm:h-80' : 'sm:h-56'
                   }`}
@@ -177,6 +178,8 @@ export default function GalleryPage() {
                     <img
                       src={video.thumbnail}
                       alt={video.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />

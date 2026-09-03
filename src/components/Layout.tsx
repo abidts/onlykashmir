@@ -6,6 +6,13 @@ import SocialSidebar from './SocialSidebar';
 import Footer from './Footer';
 import MobileBottomNav from './MobileBottomNav';
 
+const tickerItems = [
+  'Winter Kashmir Special Packages Available',
+  'Call +91 88996 66998',
+  'Email info@onlykashmir.com',
+  'Free Travel Guidance • 24/7 Support',
+];
+
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -34,6 +41,16 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <>
+      <div className="fixed inset-x-0 top-0 z-[60] h-9 overflow-hidden border-b border-vintage-500/20 bg-vintage-900/95 text-white backdrop-blur-xl">
+        <div className="ticker-track flex h-full items-center whitespace-nowrap">
+          {[...tickerItems, ...tickerItems].map((item, index) => (
+            <div key={`${item}-${index}`} className="flex items-center gap-3 px-5 text-[11px] font-medium tracking-[0.12em] uppercase text-vintage-100/90 sm:text-xs">
+              <span>{item}</span>
+              <span className="text-vintage-500">•</span>
+            </div>
+          ))}
+        </div>
+      </div>
       <Navbar onRequestCallback={() => openCallbackPage()} />
       <SocialSidebar />
       <CallbackContext.Provider value={openCallbackPage}>

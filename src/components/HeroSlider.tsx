@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Phone, Play, Sparkles, Send } from 'lucide-react';
 import { CallbackContext } from './Layout';
 
-const desktopHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788342935/kashmir_cinematic_c5kwpv.mp4';
-const mobileHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/v1788343418/snow_5_owoh5v.mp4';
+const desktopHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/q_auto:eco,vc_auto,w_1920/v1788342935/kashmir_cinematic_c5kwpv.mp4';
+const mobileHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/q_auto:eco,vc_auto,w_720/v1788343418/snow_5_owoh5v.mp4';
 
 const slides = [
   {
@@ -337,19 +337,24 @@ export default function HeroSlider() {
             i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
           }`}
         >
-          {slide.video ? (
+          {slide.video && i === current ? (
             <video
               src={isMobileView ? mobileHeroVideo : slide.video}
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              poster={slide.image}
               className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
             />
           ) : (
             <img
               src={slide.image}
               alt={slide.title}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : 'low'}
+              decoding="async"
               className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
             />
           )}

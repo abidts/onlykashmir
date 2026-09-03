@@ -115,6 +115,8 @@ export default function DestinationsPage() {
                     <img
                       src={dest.image}
                       alt={dest.name}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />

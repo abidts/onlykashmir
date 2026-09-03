@@ -253,6 +253,8 @@ export default function PackagesPage() {
                     <img
                       src={pkg.image}
                       alt={pkg.name}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
