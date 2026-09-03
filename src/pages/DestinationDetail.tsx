@@ -663,7 +663,10 @@ export default function DestinationDetail() {
             <p className="text-slate-300 mb-6 max-w-xl mx-auto">
               Get in touch with our travel experts to customize your perfect Kashmir itinerary
             </p>
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-vintage-500 to-vintage-600 text-white rounded-2xl font-semibold hover:shadow-lg hover:shadow-vintage-500/30 transition-all tap-scale">
+            <button
+              onClick={() => onRequestCallback(`${destination.name} Trip`)}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-vintage-500 to-vintage-600 text-white rounded-2xl font-semibold hover:shadow-lg hover:shadow-vintage-500/30 transition-all tap-scale"
+            >
               <Phone className="h-5 w-5" />
               Request a Call Back
             </button>
