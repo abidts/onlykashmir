@@ -329,44 +329,59 @@ export default function HeroSlider() {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Slides */}
-      {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-all duration-1000 ease-out ${
-            i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-          }`}
-        >
-          {slide.video && i === current ? (
-            <video
-              src={isMobileView ? mobileHeroVideo : slide.video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster={slide.image}
-              className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
-            />
-          ) : (
-            <img
-              src={slide.image}
-              alt={slide.title}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              fetchPriority={i === 0 ? 'high' : 'low'}
-              decoding="async"
-              className={`h-full w-full object-cover ${i === current ? 'img-zoom-in' : ''}`}
-            />
-          )}
-          {/* Overlays */}
+      {/* Mobile uses one video-only background; desktop retains the slide backgrounds. */}
+      {isMobileView ? (
+        <div className="absolute inset-0">
+          <video
+            src={mobileHeroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/40" />
         </div>
-      ))}
+      ) : (
+        slides.map((slide, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-all duration-1000 ease-out ${
+              i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+            }`}
+          >
+            {slide.video && i === current ? (
+              <video
+                src={slide.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={slide.image}
+                className="h-full w-full object-cover img-zoom-in"
+              />
+            ) : (
+              <img
+                src={slide.image}
+                alt={slide.title}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : 'low'}
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/40" />
+          </div>
+        ))
+      )}
 
       {/* Floating Decorative Elements */}
-      <div className="absolute top-20 left-5 sm:left-10 h-48 sm:h-72 w-48 sm:w-72 rounded-full bg-vintage-500/10 blur-3xl animate-float pointer-events-none" />
-      <div className="absolute bottom-40 right-5 sm:right-10 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-vintage-400/10 blur-3xl animate-float pointer-events-none" style={{ animationDelay: '3s' }} />
+      <div className="absolute top-20 left-5 sm:left-10 h-48 sm:h-72 w-48 sm:w-72 rounded-full bg-vintage-500/10 blur-3xl animate-float pointer-events-none lg:block hidden" />
+      <div className="absolute bottom-40 right-5 sm:right-10 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-vintage-400/10 blur-3xl animate-float pointer-events-none lg:block hidden" style={{ animationDelay: '3s' }} />
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center">
