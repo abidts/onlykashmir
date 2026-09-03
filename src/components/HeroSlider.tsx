@@ -384,8 +384,8 @@ export default function HeroSlider() {
       <div className="absolute bottom-40 right-5 sm:right-10 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-vintage-400/10 blur-3xl animate-float pointer-events-none lg:block hidden" style={{ animationDelay: '3s' }} />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pt-16 sm:pt-20 pb-16">
+      <div className="relative z-10 flex h-full items-start lg:items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pt-36 sm:pt-24 lg:pt-20 pb-16">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content - Hero Text */}
             <div className="max-w-2xl">
