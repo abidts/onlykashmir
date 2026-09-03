@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, MapPin, Star, Phone, Sparkles, Calendar, Clock, Users } from 'lucide-react';
 import SEO from '../components/SEO';
+import { CallbackContext } from '../components/Layout';
 
 const destinations: Record<string, {
   name: string;
@@ -355,6 +357,7 @@ const destinations: Record<string, {
 export default function DestinationDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const onRequestCallback = useContext(CallbackContext) || (() => {});
   const destination = slug ? destinations[slug] : null;
 
   if (!destination) {
