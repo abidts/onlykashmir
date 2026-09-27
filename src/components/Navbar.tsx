@@ -48,11 +48,11 @@ export default function Navbar({ onRequestCallback }: Props) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
               <div className="transition-all group-hover:scale-105">
-                <LogoMark size={72} />
+                <LogoMark size={92} />
               </div>
               <div>
-                <span className="block font-playfair text-sm sm:text-base font-bold text-white leading-tight">ONLY KASHMIR</span>
-                <span className="block font-dancing text-[10px] sm:text-xs text-vintage-500 font-semibold leading-tight -mt-0.5">Tour & Travels</span>
+                <span className="block font-playfair text-base sm:text-lg font-bold text-white leading-tight">ONLY KASHMIR</span>
+                <span className="block font-dancing text-xs sm:text-sm text-vintage-500 font-semibold leading-tight -mt-0.5">Tour & Travels</span>
               </div>
             </Link>
 
