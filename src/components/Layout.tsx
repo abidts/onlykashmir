@@ -11,6 +11,7 @@ const tickerItems = [
   'Call +91 88996 66998',
   'Email info@onlykashmir.com',
   'Free Travel Guidance • 24/7 Support',
+  'Free Cancellation Available',
 ];
 
 interface LayoutProps {

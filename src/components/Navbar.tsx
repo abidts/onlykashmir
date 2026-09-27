@@ -48,7 +48,7 @@ export default function Navbar({ onRequestCallback }: Props) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
               <div className="transition-all group-hover:scale-105">
-                <LogoMark size={56} />
+                <LogoMark size={72} />
               </div>
               <div>
                 <span className="block font-playfair text-sm sm:text-base font-bold text-white leading-tight">ONLY KASHMIR</span>

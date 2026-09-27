@@ -1,4 +1,4 @@
-import logoImage from '../assets/images/logo.png';
+import logoImage from '../assets/logo.png';
 
 type Props = {
   size?: number;

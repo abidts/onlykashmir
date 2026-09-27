@@ -89,7 +89,7 @@ export default function ReviewsPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Only Kashmir Tour & Travels",
-    "image": "https://www.onlykashmir.com/assets/images/logo.png",
+    "image": "https://www.onlykashmir.com/logo.png",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

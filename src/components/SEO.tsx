@@ -29,7 +29,7 @@ const SEO = ({
   description = "Only Kashmir - Your ultimate guide to exploring the beauty of Kashmir. Book tour packages, hotels, and cabs.",
   canonical,
   ogType = 'website',
-  ogImage = 'https://www.onlykashmir.com/assets/images/logo.png',
+  ogImage = 'https://www.onlykashmir.com/logo.png',
   twitterCard = 'summary_large_image',
   schema,
   faq,
@@ -53,7 +53,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'Only Kashmir Tour & Travels',
     url: 'https://www.onlykashmir.com',
-    logo: 'https://www.onlykashmir.com/assets/images/logo.png',
+    logo: 'https://www.onlykashmir.com/logo.png',
     sameAs: [
       'https://www.facebook.com/profile.php?id=61591604585922',
       'https://www.instagram.com/onlykashmirtourandtravels/'
