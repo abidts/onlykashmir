@@ -42,17 +42,13 @@ export default function Navbar({ onRequestCallback }: Props) {
 
   return (
     <>
-      <nav className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-gradient-to-r from-vintage-800/98 via-vintage-900/98 to-vintage-800/98 backdrop-blur-xl shadow-2xl border-b border-vintage-500/20 py-1' : 'bg-transparent backdrop-blur-sm py-1.5'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-transparent py-1' : 'bg-transparent py-1.5'}`}>
         <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
+            <Link to="/" className="flex items-center group">
               <div className="transition-all group-hover:scale-105">
-                <LogoMark size={92} />
-              </div>
-              <div>
-                <span className="block font-playfair text-base sm:text-lg font-bold text-white leading-tight">ONLY KASHMIR</span>
-                <span className="block font-dancing text-xs sm:text-sm text-vintage-500 font-semibold leading-tight -mt-0.5">Tour & Travels</span>
+                <LogoMark size={150} animate={true} />
               </div>
             </Link>
 
@@ -106,7 +102,7 @@ export default function Navbar({ onRequestCallback }: Props) {
         />
         
         {/* Menu Content */}
-        <div className={`relative h-full flex flex-col pt-20 pb-8 px-6 transition-all duration-500 ${menuOpen ? 'translate-y-0' : '-translate-y-10'}`}>
+        <div className={`relative h-full flex flex-col pt-16 pb-8 px-6 transition-all duration-500 ${menuOpen ? 'translate-y-0' : '-translate-y-10'}`}>
           {/* Nav Links */}
           <div className="flex-1 overflow-y-auto py-4">
             {navLinks.map((link, i) => (

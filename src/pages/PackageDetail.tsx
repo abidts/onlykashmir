@@ -513,7 +513,7 @@ const packages: Record<string, PackageData> = {
     rating: '4.6',
     reviews: 320,
     tag: 'Budget',
-    tagColor: 'from-vintage-400 to-vintage-600',
+    tagColor: 'from-teal-500 to-cyan-600',
     description: 'Experience the magic of Kashmir without breaking the bank. This budget-friendly package covers the essential attractions of Srinagar and Gulmarg. Perfect for backpackers and budget-conscious travelers.',
     highlights: [
       'Affordable accommodation',

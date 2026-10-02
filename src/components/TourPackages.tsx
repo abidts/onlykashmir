@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, Users, Star, Check, Phone, ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
+import { Clock, MapPin, Users, Check, Phone, ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 import { CallbackContext } from './Layout';
 import PackageFlashyCTA from './PackageFlashyCTA';
 
@@ -43,6 +43,45 @@ const packages = [
     tag: 'Adventure',
     tagColor: 'from-orange-500 to-red-600',
     includes: ['Hotel', 'Meal', 'Transfer', 'Sightseeing', 'Activities'],
+  },
+  {
+    slug: 'budget-jk',
+    name: 'Budget J&K',
+    duration: '3 Days / 2 Nights',
+    image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&q=80',
+    destinations: ['Srinagar', 'Gulmarg'],
+    groupSize: '2-4',
+    rating: '4.6',
+    reviews: 320,
+    tag: 'Budget',
+    tagColor: 'from-teal-500 to-cyan-600',
+    includes: ['Hotel', 'Breakfast', 'Cab', 'Sightseeing'],
+  },
+  {
+    slug: 'kashmir-with-katra',
+    name: 'Kashmir With Katra',
+    duration: '6 Nights / 7 Days',
+    image: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1772188951/katra_w2iqdq.jpg',
+    destinations: ['Srinagar', 'Gulmarg', 'Pahalgam', 'Katra'],
+    groupSize: '2-8',
+    rating: '4.9',
+    reviews: 178,
+    tag: 'Spiritual',
+    tagColor: 'from-amber-500 to-orange-600',
+    includes: ['Hotel', 'All Meals', 'Cab', 'Houseboat', 'Vaishno Devi Darshan'],
+  },
+  {
+    slug: 'adventure-explorer',
+    name: 'Adventure Explorer',
+    duration: '8 Days / 7 Nights',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+    destinations: ['Srinagar', 'Sonmarg', 'Leh', 'Pangong', 'Nubra'],
+    groupSize: '2-6',
+    rating: '4.9',
+    reviews: 156,
+    tag: 'Adventure',
+    tagColor: 'from-orange-500 to-red-600',
+    includes: ['Camp + Hotel', 'All Meals', '4x4 Cab', 'Trek'],
   },
 ];
 

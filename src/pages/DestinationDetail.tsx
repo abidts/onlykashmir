@@ -68,23 +68,6 @@ const destinations: Record<string, {
       'https://images.unsplash.com/photo-1581791534721-e599df4417f6?w=800&q=80',
     ],
   },
-  sonamarg: {
-    name: 'Sonamarg',
-    tagline: 'Meadow of Gold & Day Trip',
-    image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&q=80',
-    desc: 'Sonamarg day trip from Srinagar is perfect! Visit Thajiwas Glacier.',
-    rating: '4.9',
-    highlight: 'Day Trip Destination',
-    fullDesc: 'Sonamarg, meaning "Meadow of Gold", is a picturesque hill station located on the banks of the Sindh River. A Sonamarg day trip from Srinagar is perfect! Surrounded by towering glaciers and snow-capped peaks, it serves as the gateway to Ladakh. The Thajiwas Glacier is a major attraction, accessible by pony ride. Adventure enthusiasts can enjoy trekking to Vishansar Lake, white-water rafting, and camping under the stars.',
-    bestTime: 'May to September',
-    duration: '2-3 Days or Sonamarg day trip',
-    activities: ['Sonamarg Day Trip from Srinagar', 'Visit Thajiwas Glacier', 'Trekking to Vishansar & Krishansar Lakes', 'White Water Rafting', 'Camping', 'Pony Rides'],
-    gallery: [
-      'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&q=80',
-      'https://images.unsplash.com/photo-1537126694932-c0f39026528e?w=800&q=80',
-      'https://images.unsplash.com/photo-1581791534721-e599df4417f6?w=800&q=80',
-    ],
-  },
   'dal-lake': {
     name: 'Dal Lake',
     tagline: 'Jewel of Srinagar & Houseboats',
@@ -232,79 +215,8 @@ const destinations: Record<string, {
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
     ],
   },
-  'drung-waterfall': {
-    name: 'Drung Waterfall',
-    tagline: 'Frozen Cascade',
-    image: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Dramatic waterfall near Tangmarg that freezes into icicles in winter.',
-    rating: '4.6',
-    highlight: 'Winter Marvel',
-    fullDesc:
-      'Drung (Dron) Waterfall sits close to Tangmarg on the way to Gulmarg. In peak winter the cascade turns into a wall of icicles, while summer reveals a thundering flow surrounded by pine forests. It is an easy stop from the Srinagar–Gulmarg highway and pairs well with nearby trout farms and local dhabas.',
-    bestTime: 'December to February for frozen view; May to September for flow',
-    duration: 'Half Day',
-    activities: [
-      'View the frozen waterfall and icicles',
-      'Short riverside walk and photography',
-      'Tea and kahwa at roadside stalls',
-      'Combine with Gulmarg or Tangmarg trout farm',
-      'Snow play in winter months',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
-    ],
-  },
+
   'mughal-gardens': {
-    name: 'Mughal Gardens (Srinagar)',
-    tagline: 'Nishat • Shalimar • Harwan • Pari Mahal • Cheshma Shahi',
-    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Terraced lawns, fountains, and Chinar-lined vistas along Dal Lake.',
-    rating: '4.8',
-    highlight: 'Heritage Gardens',
-    fullDesc:
-      'Srinagar’s Mughal garden circuit strings together Nishat Bagh’s twelve terraces, the royal pavilions of Shalimar, the hillside amphitheater of Harwan, the hilltop viewpoint of Pari Mahal, and the freshwater spring of Cheshma Shahi. Built by the Mughals for leisure and lake views, these gardens showcase Persian-inspired layouts, cascading water channels, and grand Chinars.',
-    bestTime: 'April to October (Chinar colors peak in autumn)',
-    duration: '1 Day',
-    activities: [
-      'Sunset stroll in Nishat and Shalimar terraces',
-      'Panoramic Dal Lake view from Pari Mahal',
-      'Spring water tasting at Cheshma Shahi',
-      'Picnic on Harwan lawns',
-      'Photography of Chinar foliage in autumn',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80',
-    ],
-  },
-  'mughal-gardens-srinagar': {
-    name: 'Mughal Gardens (Srinagar)',
-    tagline: 'Nishat • Shalimar • Harwan • Pari Mahal • Cheshma Shahi',
-    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Terraced lawns, fountains, and Chinar-lined vistas along Dal Lake.',
-    rating: '4.8',
-    highlight: 'Heritage Gardens',
-    fullDesc:
-      'Srinagar’s Mughal garden circuit strings together Nishat Bagh’s twelve terraces, the royal pavilions of Shalimar, the hillside amphitheater of Harwan, the hilltop viewpoint of Pari Mahal, and the freshwater spring of Cheshma Shahi. Built by the Mughals for leisure and lake views, these gardens showcase Persian-inspired layouts, cascading water channels, and grand Chinars.',
-    bestTime: 'April to October (Chinar colors peak in autumn)',
-    duration: '1 Day',
-    activities: [
-      'Sunset stroll in Nishat and Shalimar terraces',
-      'Panoramic Dal Lake view from Pari Mahal',
-      'Spring water tasting at Cheshma Shahi',
-      'Picnic on Harwan lawns',
-      'Photography of Chinar foliage in autumn',
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80',
-    ],
-  },
-  'mughal-gardens,-srinagar': {
     name: 'Mughal Gardens (Srinagar)',
     tagline: 'Nishat • Shalimar • Harwan • Pari Mahal • Cheshma Shahi',
     image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80',
@@ -416,16 +328,6 @@ export default function DestinationDetail() {
         answer: "Sonamarg, meaning 'Meadow of Gold', is known for Thajiwas Glacier, alpine meadows, and serves as the gateway to Ladakh."
       }
     ],
-    sonamarg: [
-      {
-        question: "Is Sonamarg a good day trip from Srinagar?",
-        answer: "Yes! Sonamarg makes a perfect day trip from Srinagar (3 hours drive one way). Visit Thajiwas Glacier and enjoy the scenic drive."
-      },
-      {
-        question: "What is special about Sonamarg?",
-        answer: "Sonamarg, meaning 'Meadow of Gold', is known for Thajiwas Glacier, alpine meadows, and serves as the gateway to Ladakh."
-      }
-    ],
     'manasbal-lake': [
       {
         question: "What is special about Manasbal Lake?",
@@ -456,26 +358,6 @@ export default function DestinationDetail() {
         answer: "April to October is the best time to visit Mughal Gardens. Autumn (September-October) is especially beautiful with Chinar tree colors."
       }
     ],
-    'mughal-gardens-srinagar': [
-      {
-        question: "What are the famous Mughal Gardens in Srinagar?",
-        answer: "The famous Mughal Gardens in Srinagar include Shalimar Bagh, Nishat Bagh, Chashma Shahi, Pari Mahal, and Harwan Garden."
-      },
-      {
-        question: "What is the best time to visit Mughal Gardens?",
-        answer: "April to October is the best time to visit Mughal Gardens. Autumn (September-October) is especially beautiful with Chinar tree colors."
-      }
-    ],
-    'mughal-gardens,-srinagar': [
-      {
-        question: "What are the famous Mughal Gardens in Srinagar?",
-        answer: "The famous Mughal Gardens in Srinagar include Shalimar Bagh, Nishat Bagh, Chashma Shahi, Pari Mahal, and Harwan Garden."
-      },
-      {
-        question: "What is the best time to visit Mughal Gardens?",
-        answer: "April to October is the best time to visit Mughal Gardens. Autumn (September-October) is especially beautiful with Chinar tree colors."
-      }
-    ],
     doodhpathri: [
       {
         question: "What is special about Doodhpathri?",
@@ -487,16 +369,6 @@ export default function DestinationDetail() {
       }
     ],
     'drung-fall': [
-      {
-        question: "When is the best time to visit Drung Waterfall?",
-        answer: "December to February is the best time to see the frozen waterfall as icicles. May to September shows the waterfall in full flow."
-      },
-      {
-        question: "How far is Drung Waterfall from Gulmarg?",
-        answer: "Drung Waterfall is about 15km from Gulmarg, located near Tangmarg on the Srinagar-Gulmarg highway."
-      }
-    ],
-    'drung-waterfall': [
       {
         question: "When is the best time to visit Drung Waterfall?",
         answer: "December to February is the best time to see the frozen waterfall as icicles. May to September shows the waterfall in full flow."

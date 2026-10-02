@@ -54,6 +54,19 @@ export const packages = [
   },
   {
     id: 5,
+    name: 'Short & Adventure Trip',
+    duration: '3 Days / 2 Nights',
+    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80',
+    destinations: ['Srinagar', 'Gulmarg', 'Tangmarg'],
+    groupSize: '2-6',
+    rating: '4.8',
+    reviews: 164,
+    tag: 'Adventure',
+    tagColor: 'from-orange-500 to-red-600',
+    includes: ['Hotel', 'Meal', 'Transfer', 'Sightseeing', 'Activities'],
+  },
+  {
+    id: 8,
     name: 'Adventure Explorer',
     duration: '8 Days / 7 Nights',
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
@@ -77,6 +90,19 @@ export const packages = [
     tag: 'Budget',
     tagColor: 'from-teal-500 to-cyan-600',
     includes: ['Hotel', 'Breakfast', 'Cab', 'Sightseeing'],
+  },
+  {
+    id: 7,
+    name: 'Kashmir With Katra',
+    duration: '6 Nights / 7 Days',
+    image: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1772188951/katra_w2iqdq.jpg',
+    destinations: ['Srinagar', 'Gulmarg', 'Pahalgam', 'Katra'],
+    groupSize: '2-8',
+    rating: '4.9',
+    reviews: 178,
+    tag: 'Spiritual',
+    tagColor: 'from-amber-500 to-orange-600',
+    includes: ['Hotel', 'All Meals', 'Cab', 'Houseboat', 'Vaishno Devi Darshan'],
   },
 ];
 
@@ -213,7 +239,7 @@ export const destinations = [
   },
   {
     id: 11,
-    name: 'Mughal Gardens, Srinagar',
+    name: 'Mughal Gardens Srinagar',
     image: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1771496841/Visit_with_us_kashmir_cheshma_shahi_vqgjqf.jpg',
     description: 'Terraced Persian-style gardens with fountains and Dal Lake views across Srinagar.',
     rating: '4.8',
@@ -222,7 +248,7 @@ export const destinations = [
   },
   {
     id: 12,
-    name: 'Amarnath Cave',
+    name: 'Amarnath',
     image: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1771496839/Journey_to_Shri_Amarnath_Cave_cxxqte.jpg',
     description: 'Sacred Himalayan pilgrimage trek to the ice lingam shrine.',
     rating: '4.9',

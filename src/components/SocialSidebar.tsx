@@ -23,7 +23,7 @@ export default function SocialSidebar() {
         <Facebook className="h-5 w-5" />
       </a>
       <a
-        href="https://x.com"
+        href="https://x.com/only_kashmir"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-10 w-10 items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors"

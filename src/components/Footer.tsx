@@ -126,13 +126,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center group">
               <div className="transition-transform group-hover:scale-110">
-                <LogoMark size={120} />
-              </div>
-              <div>
-                <span className="block font-playfair text-lg font-bold text-white">ONLY KASHMIR</span>
-                <span className="block font-dancing text-sm text-vintage-500 -mt-0.5">Tour & Travels</span>
+                <LogoMark size={192} animate={true} />
               </div>
             </Link>
             <p className="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">
@@ -251,7 +247,7 @@ export default function Footer() {
       <div className="border-t border-vintage-700/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
           <p className="text-[10px] sm:text-xs text-slate-500 text-center sm:text-left">
-            © 2026 ONLY KASHMIR Tour & Travels.
+            © 2026 All rights reserved.
           </p>
           <p className="text-[10px] sm:text-xs text-slate-500">
             Powered By <a
