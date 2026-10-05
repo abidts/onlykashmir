@@ -111,7 +111,7 @@ export default function TourPackages() {
   }, []);
 
   return (
-    <section id="packages" className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+    <section id="packages" className="relative py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#F0D8B6' }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
       {/* Background decoration */}
@@ -121,15 +121,15 @@ export default function TourPackages() {
         {/* Header */}
         <div className="flex flex-col items-start justify-between gap-4 sm:gap-6 reveal">
           <div className="max-w-2xl px-4 sm:px-0">
-            <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+            <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
               <Sparkles className="h-4 w-4" />
               Tour Packages
             </span>
-            <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Handcrafted Travel
               <span className="block gradient-text">Packages for You</span>
             </h2>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700">
               Choose from our curated packages. Contact us for custom itineraries!
             </p>
           </div>
@@ -153,7 +153,7 @@ export default function TourPackages() {
           {packages.map((pkg, index) => (
             <div
               key={pkg.name}
-              className="group relative flex-none w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-slate-900/80 border border-slate-800 transition-all duration-500 hover:border-slate-700 snap-start tap-scale"
+              className="group relative flex-none w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-white/90 border border-gray-200 transition-all duration-500 hover:border-gray-300 snap-start tap-scale"
               style={{
                 transform: activeCard === index ? 'scale(1)' : 'scale(0.98)',
                 opacity: activeCard === index ? 1 : 0.8,
@@ -174,7 +174,7 @@ export default function TourPackages() {
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/30 to-transparent" />
                 
                 {/* Tag */}
                 <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
@@ -190,13 +190,13 @@ export default function TourPackages() {
               {/* Details */}
               <div className="relative p-4 sm:p-5 pb-16 min-h-[180px] sm:min-h-[200px]">
                 {/* Duration & Group */}
-                <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400">
+                <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
                   <span className="flex items-center gap-1.5">
-                    <Clock className="h-4 w-4 text-vintage-400" />
+                    <Clock className="h-4 w-4 text-vintage-600" />
                     {pkg.duration}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Users className="h-4 w-4 text-vintage-400" />
+                    <Users className="h-4 w-4 text-vintage-600" />
                     {pkg.groupSize} People
                   </span>
                 </div>
@@ -204,13 +204,13 @@ export default function TourPackages() {
                 {/* Destinations */}
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {pkg.destinations.slice(0, 3).map((d) => (
-                    <span key={d} className="flex items-center gap-1 rounded-full bg-slate-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-slate-300">
-                      <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-400" />
+                    <span key={d} className="flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-700">
+                      <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-600" />
                       {d}
                     </span>
                   ))}
                   {pkg.destinations.length > 3 && (
-                    <span className="rounded-full bg-slate-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-400 font-medium">
+                    <span className="rounded-full bg-white/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-600 font-medium">
                       +{pkg.destinations.length - 3} more
                     </span>
                   )}
@@ -219,8 +219,8 @@ export default function TourPackages() {
                 {/* Includes */}
                 <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
                   {pkg.includes.map((item) => (
-                    <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-slate-400">
-                      <Check className="h-3 w-3 text-vintage-400" />
+                    <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-600">
+                      <Check className="h-3 w-3 text-vintage-600" />
                       {item}
                     </span>
                   ))}
@@ -261,14 +261,14 @@ export default function TourPackages() {
               className={`transition-all duration-300 rounded-full ${
                 i === activeCard
                   ? 'w-6 h-2 bg-vintage-500'
-                  : 'w-2 h-2 bg-slate-700'
+                  : 'w-2 h-2 bg-gray-400'
               }`}
             />
           ))}
         </div>
 
         {/* Swipe hint */}
-        <div className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500">
+        <div className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-600">
           <ChevronLeft className="h-4 w-4 swipe-hint sm:hidden" style={{ animationDirection: 'reverse' }} />
           <span className="sm:hidden">Swipe to explore</span>
           <ChevronRight className="h-4 w-4 swipe-hint sm:hidden" />

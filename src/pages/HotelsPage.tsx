@@ -45,7 +45,7 @@ export default function HotelsPage() {
   const hotelTypes = ['All', ...new Set(hotels.map(hotel => hotel.type))];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title="Luxury Hotels & Houseboats in Kashmir"
         description="Book the best luxury hotels and traditional houseboats in Srinagar, Gulmarg, and Pahalgam. Experience Kashmiri hospitality with Only Kashmir."
@@ -60,7 +60,7 @@ export default function HotelsPage() {
                 <Building className="h-4 w-4" />
                 Premium Stays
               </span>
-              <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Luxury Accommodations
                 <span className="block gradient-text">in Paradise</span>
               </h1>
@@ -69,7 +69,7 @@ export default function HotelsPage() {
 
           {/* Filters */}
           <div className="mt-8">
-            <label className="block text-sm font-medium text-slate-300 mb-2">Hotel Type</label>
+            <label className="block text-sm font-medium text-gray-300 mb-2">Hotel Type</label>
             <div className="flex flex-wrap gap-2">
               {hotelTypes.map(type => (
                 <button
@@ -77,8 +77,8 @@ export default function HotelsPage() {
                   onClick={() => setFilter(type)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     filter === type
-                      ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white'
-                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-gray-900'
+                      : 'bg-white-800 text-gray-300 hover:bg-white-700'
                   }`}
                 >
                   {type}
@@ -92,7 +92,7 @@ export default function HotelsPage() {
             {filteredHotels.map((hotel) => (
               <div
                 key={hotel.name}
-                className="group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 transition-all duration-500 hover:border-slate-700"
+                className="group relative overflow-hidden rounded-3xl bg-white-900 border border-slate-800 transition-all duration-500 hover:border-slate-700"
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
@@ -106,14 +106,14 @@ export default function HotelsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
 
                   {/* Rating badge */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1 text-sm font-medium text-white">
+                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1 text-sm font-medium text-gray-900">
                     <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                     {hotel.rating}
                   </div>
 
                   {/* Type tag */}
                   <div className="absolute top-3 left-3">
-                    <span className="rounded-full bg-amber-500/90 px-3 py-1 text-xs font-bold text-white">
+                    <span className="rounded-full bg-amber-500/90 px-3 py-1 text-xs font-bold text-gray-900">
                       {hotel.type}
                     </span>
                   </div>
@@ -123,7 +123,7 @@ export default function HotelsPage() {
                 <div className="p-5">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-xl font-bold text-white font-playfair">{hotel.name}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 font-playfair">{hotel.name}</h3>
                       <div className="flex items-center gap-1.5 text-emerald-400 mt-1">
                         <MapPin className="h-4 w-4" />
                         <span className="text-sm">{hotel.location}</span>
@@ -131,14 +131,14 @@ export default function HotelsPage() {
                     </div>
                   </div>
 
-                  <p className="mt-3 text-sm text-slate-400">{hotel.desc}</p>
+                  <p className="mt-3 text-sm text-gray-400">{hotel.desc}</p>
 
                   {/* Amenities */}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {hotel.amenities.map(amenity => (
                       <span
                         key={amenity}
-                        className="flex items-center gap-1 rounded-full bg-slate-800/80 px-2.5 py-1 text-[10px] text-slate-300"
+                        className="flex items-center gap-1 rounded-full bg-white-800/80 px-2.5 py-1 text-[10px] text-gray-300"
                       >
                         {amenity === 'Wifi' && <Wifi className="h-3 w-3" />}
                         {amenity === 'Restaurant' && <Utensils className="h-3 w-3" />}
@@ -175,8 +175,8 @@ export default function HotelsPage() {
 
           {filteredHotels.length === 0 && (
             <div className="text-center py-12">
-              <h3 className="text-xl font-medium text-slate-400">No hotels match your filters</h3>
-              <p className="mt-2 text-slate-500">Try adjusting your search criteria</p>
+              <h3 className="text-xl font-medium text-gray-400">No hotels match your filters</h3>
+              <p className="mt-2 text-gray-500">Try adjusting your search criteria</p>
             </div>
           )}
 

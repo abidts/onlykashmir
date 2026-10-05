@@ -15,7 +15,7 @@ export default function PackageFlashyCTA({ className = '' }: Props) {
   return (
     <div className={`relative mt-6 sm:mt-20 reveal ${className}`}>
       {/* Glossy/Glassy Animated Card */}
-      <div className="relative group overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-2xl border border-white/10 p-8 sm:p-12 transition-all duration-500 hover:border-vintage-500/30">
+      <div className="relative group overflow-hidden rounded-[2.5rem] bg-white shadow-2xl border border-gray-200 p-8 sm:p-12 transition-all duration-500 hover:border-vintage-500/30">
         
         {/* Animated Background Gradients */}
         <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-vintage-500/10 blur-[100px] animate-pulse pointer-events-none" />
@@ -33,13 +33,13 @@ export default function PackageFlashyCTA({ className = '' }: Props) {
               <span className="uppercase tracking-widest">Limited Edition Offer</span>
             </div>
 
-            <h2 className="font-playfair text-3xl sm:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="font-playfair text-3xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
               Latest & <span className="gradient-text-animated">Customized</span><br />
               Tour Packages
             </h2>
 
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-xl mb-8">
-              Experience the soul of Kashmir with itineraries tailored specifically to your dreams. 
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl mb-8">
+              Experience the soul of Kashmir with itineraries tailored specifically to your dreams.
               From hidden gems to luxury retreats, we craft it all.
             </p>
 
@@ -65,7 +65,7 @@ export default function PackageFlashyCTA({ className = '' }: Props) {
               <div className="absolute inset-0 w-1/2 h-full bg-white/20 -skew-x-[30deg] -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000" />
             </a>
             
-            <p className="text-xs sm:text-sm text-slate-400 font-medium italic flex items-center gap-2">
+            <p className="text-xs sm:text-sm text-gray-600 font-medium italic flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-vintage-500 animate-ping" />
               Expert travel consultants online now
             </p>

@@ -30,7 +30,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="min-h-screen bg-slate-950 text-white py-16 sm:py-24">
+    <section id="about" className="min-h-screen text-gray-900 py-16 sm:py-24" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title="About Us - Only Kashmir Tour & Travels | Premier Travel Agency in Srinagar"
         description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir. Local Kashmir experts since 2025."
@@ -47,7 +47,7 @@ export default function About() {
             <h1 className="font-playfair text-4xl sm:text-5xl font-bold leading-tight">
               ONLY KASHMIR Tour &amp; Travels
             </h1>
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed">
               ONLY KASHMIR Tour &amp; Travels is a premier travel agency dedicated to showcasing the unparalleled beauty of Kashmir. With years of experience and a passion for our land, we provide curated travel experiences that stay with you forever.
             </p>
           </div>
@@ -68,8 +68,8 @@ export default function About() {
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">{item.label}</p>
-                    <p className="font-semibold text-white">{item.value}</p>
+                    <p className="text-sm text-gray-400">{item.label}</p>
+                    <p className="font-semibold text-gray-900">{item.value}</p>
                   </div>
                 </div>
               ))}
@@ -94,8 +94,8 @@ export default function About() {
             },
           ].map((card) => (
             <div key={card.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-lg shadow-black/20">
-              <h3 className="text-xl font-semibold text-white mb-2">{card.title}</h3>
-              <p className="text-slate-400 leading-relaxed text-sm sm:text-base">{card.text}</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.title}</h3>
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{card.text}</p>
             </div>
           ))}
         </div>

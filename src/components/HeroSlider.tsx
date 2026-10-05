@@ -1,14 +1,10 @@
 import { useState, useEffect, useCallback, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Phone, Play, Sparkles, Send } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone, Sparkles, Send } from 'lucide-react';
 import { CallbackContext } from './Layout';
-
-const desktopHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/q_auto:eco,vc_auto,w_1920/v1788342935/kashmir_cinematic_c5kwpv.mp4';
-const mobileHeroVideo = 'https://res.cloudinary.com/dveg0ai0n/video/upload/q_auto:eco,vc_auto,w_720/v1788343418/snow_5_owoh5v.mp4';
 
 const slides = [
   {
-    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Best Travel Agency in Kashmir',
     subtitle: 'Plan Your Dream Trip to Paradise',
@@ -16,7 +12,6 @@ const slides = [
     cta: 'Plan Your Trip',
   },
   {
-    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1651509094074-e8acaeb84d8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Gulmarg Magic',
     subtitle: 'Ski & Snow Adventures',
@@ -24,7 +19,6 @@ const slides = [
     cta: 'Explore Gulmarg',
   },
   {
-    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1599493867961-1bc9808137a9?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Pahalgam Beauty',
     subtitle: 'Nature\'s Masterpiece',
@@ -32,7 +26,6 @@ const slides = [
     cta: 'Discover Pahalgam',
   },
   {
-    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1701957494296-a42832ab0a17?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Golden Sonmarg',
     subtitle: 'Gateway to Ladakh',
@@ -40,7 +33,6 @@ const slides = [
     cta: 'Visit Sonmarg',
   },
   {
-    video: desktopHeroVideo,
     image: 'https://images.unsplash.com/photo-1566837497312-7be7830ae9b1?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Kashmir Valley',
     subtitle: 'Land of Serenity',
@@ -329,55 +321,26 @@ export default function HeroSlider() {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Mobile uses one video-only background; desktop retains the slide backgrounds. */}
-      {isMobileView ? (
-        <div className="absolute inset-0">
-          <video
-            src={mobileHeroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+      {/* Static image backgrounds for both mobile and desktop */}
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-all duration-1000 ease-out ${
+            i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+          }`}
+        >
+          <img
+            src={slide.image}
+            alt={slide.title}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchPriority={i === 0 ? 'high' : 'low'}
+            decoding="async"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/40" />
         </div>
-      ) : (
-        slides.map((slide, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-all duration-1000 ease-out ${
-              i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-            }`}
-          >
-            {slide.video && i === current ? (
-              <video
-                src={slide.video}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={slide.image}
-                className="h-full w-full object-cover img-zoom-in"
-              />
-            ) : (
-              <img
-                src={slide.image}
-                alt={slide.title}
-                loading={i === 0 ? 'eager' : 'lazy'}
-                fetchPriority={i === 0 ? 'high' : 'low'}
-                decoding="async"
-                className="h-full w-full object-cover"
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/40" />
-          </div>
-        ))
-      )}
+      ))}
 
       {/* Floating Decorative Elements */}
       <div className="absolute top-20 left-5 sm:left-10 h-48 sm:h-72 w-48 sm:w-72 rounded-full bg-vintage-500/10 blur-3xl animate-float pointer-events-none lg:block hidden" />
@@ -430,7 +393,6 @@ export default function HeroSlider() {
                           to="/packages"
                           className="flex items-center justify-center gap-2 rounded-2xl sm:rounded-full border border-white/20 bg-white/5 px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40 tap-scale"
                         >
-                          <Play className="h-5 w-5 text-vintage-400" />
                           {slide.cta}
                         </Link>
                         {/* Mobile Form Toggle */}

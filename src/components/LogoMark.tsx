@@ -20,17 +20,32 @@ export default function LogoMark({ size = 40, className, variant = 'default', an
   };
 
   return (
-    <img
-      src={logoImage}
-      alt="Only Kashmir Tour & Travels"
+    <span
       className={className}
       style={{
+        position: 'relative',
+        display: 'block',
+        flexShrink: 0,
         width: size,
-        height: size,
-        objectFit: 'contain',
-        filter: getFilter(),
-        animation: animate ? 'seasonal-colors 16s ease-in-out infinite' : undefined,
+        height: size * (46 / 60),
+        overflow: 'hidden',
       }}
-    />
+    >
+      <img
+        src={logoImage}
+        alt="Only Kashmir Tour & Travels"
+        style={{
+          position: 'absolute',
+          left: -size / 3,
+          top: -(size * 23 / 60),
+          width: size * (5 / 3),
+          height: size * (5 / 3),
+          maxWidth: 'none',
+          objectFit: 'fill',
+          filter: getFilter(),
+          animation: animate ? 'seasonal-colors 16s ease-in-out infinite' : undefined,
+        }}
+      />
+    </span>
   );
 }

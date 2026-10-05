@@ -97,7 +97,7 @@ export default function Testimonials() {
             <Sparkles className="h-4 w-4" />
             Testimonials
           </span>
-          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             What Our Travelers
             <span className="block gradient-text">Say About Us</span>
           </h2>
@@ -114,7 +114,7 @@ export default function Testimonials() {
           {reviews.map((review, idx) => (
             <div
               key={review.name}
-              className={`relative flex-shrink-0 w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-slate-900/80 border border-slate-800 p-5 sm:p-6 transition-all duration-500 snap-center ${
+              className={`relative flex-shrink-0 w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-white-900/80 border border-slate-800 p-5 sm:p-6 transition-all duration-500 snap-center ${
                 idx === current ? 'border-vintage-500/30 shadow-lg shadow-vintage-500/10' : ''
               }`}
             >
@@ -129,7 +129,7 @@ export default function Testimonials() {
               </div>
 
               {/* Review text */}
-              <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3 sm:line-clamp-none">
+              <p className="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed line-clamp-3 sm:line-clamp-none">
                 &ldquo;{review.text}&rdquo;
               </p>
 
@@ -140,12 +140,12 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="mt-4 flex items-center gap-3 border-t border-slate-800 pt-4">
-                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-br from-vintage-700 to-vintage-900 text-xs sm:text-sm font-bold text-white">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-br from-vintage-700 to-vintage-900 text-xs sm:text-sm font-bold text-gray-900">
                   {review.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold text-white text-sm sm:text-base">{review.name}</div>
-                  <div className="text-xs text-slate-400">{review.location} • {review.date}</div>
+                  <div className="font-semibold text-gray-900 text-sm sm:text-base">{review.name}</div>
+                  <div className="text-xs text-gray-400">{review.location} • {review.date}</div>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function Testimonials() {
         <div className="mt-6 sm:mt-10 flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
+            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white-800 border border-slate-700 text-gray-900 transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -166,14 +166,14 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2 rounded-full transition-all tap-scale ${
-                  i === current ? 'w-8 bg-vintage-500' : 'w-2 bg-slate-700 hover:bg-slate-600'
+                  i === current ? 'w-8 bg-vintage-500' : 'w-2 bg-white-700 hover:bg-white-600'
                 }`}
               />
             ))}
           </div>
           <button
             onClick={next}
-            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-white transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
+            className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white-800 border border-slate-700 text-gray-900 transition-all hover:bg-vintage-500 hover:border-vintage-500 hover:shadow-lg hover:shadow-vintage-500/30 tap-scale"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -189,7 +189,7 @@ export default function Testimonials() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-vintage-500">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-slate-400 mt-1">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-gray-400 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>

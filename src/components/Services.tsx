@@ -11,7 +11,7 @@ const services = [
     desc: 'Customized packages for honeymoon, family, group tours, and solo adventures.',
     color: 'from-vintage-700 to-vintage-900',
     iconBg: 'bg-vintage-700/10',
-    iconColor: 'text-vintage-400',
+    iconColor: 'text-vintage-600',
     shadow: 'hover:shadow-vintage-700/20',
   },
   {
@@ -20,7 +20,7 @@ const services = [
     desc: 'Handpicked luxury hotels, houseboats, and cozy homestays.',
     color: 'from-vintage-900 to-vintage-800',
     iconBg: 'bg-vintage-900/20',
-    iconColor: 'text-vintage-400',
+    iconColor: 'text-vintage-600',
     shadow: 'hover:shadow-vintage-900/20',
   },
   {
@@ -29,7 +29,7 @@ const services = [
     desc: 'Premium fleet with experienced local drivers.',
     color: 'from-amber-500 to-amber-600',
     iconBg: 'bg-amber-500/10',
-    iconColor: 'text-amber-400',
+    iconColor: 'text-amber-600',
     shadow: 'hover:shadow-amber-500/20',
   },
   {
@@ -38,7 +38,7 @@ const services = [
     desc: '50+ curated destinations from Gulmarg to Leh.',
     color: 'from-rose-500 to-rose-600',
     iconBg: 'bg-rose-500/10',
-    iconColor: 'text-rose-400',
+    iconColor: 'text-rose-600',
     shadow: 'hover:shadow-rose-500/20',
   },
   {
@@ -74,11 +74,11 @@ export default function Services({ onRequestCallback }: Props) {
             <Sparkles className="h-4 w-4" />
             Our Services
           </span>
-          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Everything for a
             <span className="block gradient-text">Perfect Kashmir Trip</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400 px-4">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-400 px-4">
             From planning to execution, we handle every detail.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Services({ onRequestCallback }: Props) {
             <div
               key={service.title}
               onClick={() => onRequestCallback(service.title)}
-              className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-900/80 border border-slate-800 p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-slate-700 cursor-pointer tap-scale ${service.shadow} hover:shadow-2xl`}
+              className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white-900/80 border border-slate-800 p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-slate-700 cursor-pointer tap-scale ${service.shadow} hover:shadow-2xl`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* Glow effect */}
@@ -101,12 +101,12 @@ export default function Services({ onRequestCallback }: Props) {
               </div>
               
               {/* Content */}
-              <h3 className="mt-4 sm:mt-6 text-base sm:text-xl font-bold text-white">{service.title}</h3>
-              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">{service.desc}</p>
+              <h3 className="mt-4 sm:mt-6 text-base sm:text-xl font-bold text-gray-900">{service.title}</h3>
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-3">{service.desc}</p>
               
               {/* CTA - appears on hover for desktop, always visible on mobile */}
               <button
-                className={`mt-4 sm:mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${service.color} px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 tap-scale`}
+                className={`mt-4 sm:mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${service.color} px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-lg transition-all sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 tap-scale`}
                 onClick={(e) => {
                   e.stopPropagation();
                   onRequestCallback(service.title);

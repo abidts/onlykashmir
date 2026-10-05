@@ -56,7 +56,7 @@ export default function AdventurePage() {
   const onRequestCallback = useContext(CallbackContext) || (() => {});
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title="Adventure Tours - Trekking, Camping & Off-Roading"
         description="Experience thrill in Kashmir and Ladakh. From trekking the Great Lakes to off-roading through high passes, book your adventure trip with Only Kashmir."
@@ -70,11 +70,11 @@ export default function AdventurePage() {
               <Sparkles className="h-4 w-4" />
               Adventure Travel
             </span>
-            <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Unleash Your Inner
               <span className="block gradient-text">Adventurer</span>
             </h1>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400 px-4">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-400 px-4">
               Push your boundaries with thrilling outdoor experiences.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function AdventurePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
 
                   {/* Icon badge */}
-                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl glass text-white transition-transform group-hover:scale-110">
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl glass text-gray-900 transition-transform group-hover:scale-110">
                     <adv.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
 
@@ -106,16 +106,16 @@ export default function AdventurePage() {
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
                     {/* Tags */}
                     <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <span className={`rounded-full bg-gradient-to-r ${adv.color} px-2.5 py-0.5 text-[10px] sm:text-xs font-bold text-white`}>
+                      <span className={`rounded-full bg-gradient-to-r ${adv.color} px-2.5 py-0.5 text-[10px] sm:text-xs font-bold text-gray-900`}>
                         {adv.difficulty}
                       </span>
-                      <span className="rounded-full bg-white/10 backdrop-blur-sm px-2.5 py-0.5 text-[10px] sm:text-xs font-medium text-white">
+                      <span className="rounded-full bg-white/10 backdrop-blur-sm px-2.5 py-0.5 text-[10px] sm:text-xs font-medium text-gray-900">
                         {adv.duration}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-white font-playfair">{adv.title}</h3>
-                    <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">{adv.desc}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">{adv.title}</h3>
+                    <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-gray-300 leading-relaxed line-clamp-2">{adv.desc}</p>
                   </div>
                 </div>
 
@@ -127,7 +127,7 @@ export default function AdventurePage() {
                       e.stopPropagation();
                       onRequestCallback(`${adv.title} Adventure`);
                     }}
-                    className="mt-3 sm:mt-4 flex items-center justify-center gap-2 w-full rounded-xl bg-vintage-500/10 border border-vintage-500/30 px-4 py-2.5 text-xs sm:text-sm font-medium text-vintage-400 transition-all hover:bg-vintage-500 hover:text-white hover:border-vintage-500 tap-scale"
+                    className="mt-3 sm:mt-4 flex items-center justify-center gap-2 w-full rounded-xl bg-vintage-500/10 border border-vintage-500/30 px-4 py-2.5 text-xs sm:text-sm font-medium text-vintage-400 transition-all hover:bg-vintage-500 hover:text-gray-900 hover:border-vintage-500 tap-scale"
                   >
                     <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     Request Call Back

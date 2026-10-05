@@ -849,12 +849,12 @@ export default function PackageDetail() {
 
   if (!packageData) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-center">
-        <h2 className="text-2xl font-playfair font-bold text-white mb-4">Package not found</h2>
-        <p className="text-slate-400 mb-6">The package you're looking for doesn't exist or has been removed.</p>
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 text-center text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+        <h2 className="text-2xl font-playfair font-bold text-gray-900 mb-4">Package not found</h2>
+        <p className="text-gray-600 mb-6">The package you're looking for doesn't exist or has been removed.</p>
         <Link
           to="/packages"
-          className="px-6 py-3 bg-vintage-500 hover:bg-vintage-600 text-white rounded-xl font-semibold transition-all"
+          className="px-6 py-3 bg-vintage-500 hover:bg-vintage-600 text-gray-900 rounded-xl font-semibold transition-all"
         >
           View All Packages
         </Link>
@@ -890,7 +890,7 @@ export default function PackageDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title={`${packageData.name} - ${packageData.duration} | Kashmir Tour Package`}
         description={`${packageData.description} Book ${packageData.name} Kashmir tour package starting at ₹${packageData.price.perPerson.toLocaleString()}. Includes ${packageData.destinations.join(', ')}. Best Kashmir travel deals.`}
@@ -920,23 +920,23 @@ export default function PackageDetail() {
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12">
           <div className="container mx-auto">
             <div className="flex flex-wrap items-center gap-3 mb-3">
-              <span className={`rounded-full bg-gradient-to-r ${packageData.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
+              <span className={`rounded-full bg-gradient-to-r ${packageData.tagColor} px-3 py-1 text-xs font-bold text-gray-900 shadow-lg`}>
                 {packageData.tag}
               </span>
               <div className="flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-3 py-1">
                 <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                 <span className="text-sm font-medium">{packageData.rating}</span>
-                <span className="text-slate-400">({packageData.reviews} reviews)</span>
+                <span className="text-gray-400">({packageData.reviews} reviews)</span>
               </div>
             </div>
-            <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
+            <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
               {packageData.name}
             </h1>
             <div className="flex items-center gap-2 text-vintage-400 mb-3">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">{packageData.destinations.join(' → ')}</span>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-300">
+            <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-vintage-400" />
                 {packageData.duration}
@@ -966,8 +966,8 @@ export default function PackageDetail() {
                   onClick={() => setActiveTab(id as typeof activeTab)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm whitespace-nowrap transition-all ${
                     activeTab === id
-                      ? 'bg-vintage-500 text-white shadow-lg shadow-vintage-500/30'
-                      : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600'
+                      ? 'bg-vintage-500 text-gray-900 shadow-lg shadow-vintage-500/30'
+                      : 'bg-slate-900 border border-slate-800 text-gray-400 hover:text-gray-900 hover:border-slate-600'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -980,13 +980,13 @@ export default function PackageDetail() {
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6">
               {activeTab === 'overview' && (
                 <div>
-                  <h3 className="font-playfair text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                  <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-vintage-400" />
                     About This Package
                   </h3>
-                  <p className="text-slate-300 leading-relaxed mb-6">{packageData.description}</p>
+                  <p className="text-gray-300 leading-relaxed mb-6">{packageData.description}</p>
 
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <Mountain className="h-5 w-5 text-vintage-400" />
                     Package Highlights
                   </h4>
@@ -994,7 +994,7 @@ export default function PackageDetail() {
                     {packageData.highlights.map((highlight: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{highlight}</span>
+                        <span className="text-gray-300">{highlight}</span>
                       </li>
                     ))}
                   </ul>
@@ -1006,8 +1006,8 @@ export default function PackageDetail() {
                         <Bed className="h-5 w-5 text-vintage-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-slate-400">Accommodation</p>
-                        <p className="font-medium text-white">3/4/5 Star Hotels</p>
+                        <p className="text-xs text-gray-400">Accommodation</p>
+                        <p className="font-medium text-gray-900">3/4/5 Star Hotels</p>
                       </div>
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
@@ -1015,8 +1015,8 @@ export default function PackageDetail() {
                         <Utensils className="h-5 w-5 text-vintage-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-slate-400">Meals</p>
-                        <p className="font-medium text-white">Breakfast & Dinner</p>
+                        <p className="text-xs text-gray-400">Meals</p>
+                        <p className="font-medium text-gray-900">Breakfast & Dinner</p>
                       </div>
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
@@ -1024,8 +1024,8 @@ export default function PackageDetail() {
                         <Car className="h-5 w-5 text-amber-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-slate-400">Transport</p>
-                        <p className="font-medium text-white">Private Cab</p>
+                        <p className="text-xs text-gray-400">Transport</p>
+                        <p className="font-medium text-gray-900">Private Cab</p>
                       </div>
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
@@ -1033,8 +1033,8 @@ export default function PackageDetail() {
                         <MapPin className="h-5 w-5 text-rose-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-slate-400">Sightseeing</p>
-                        <p className="font-medium text-white">All Major Attractions</p>
+                        <p className="text-xs text-gray-400">Sightseeing</p>
+                        <p className="font-medium text-gray-900">All Major Attractions</p>
                       </div>
                     </div>
                   </div>
@@ -1043,7 +1043,7 @@ export default function PackageDetail() {
 
               {activeTab === 'itinerary' && (
                 <div>
-                  <h3 className="font-playfair text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                  <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                     <Calendar className="h-5 w-5 text-vintage-400" />
                     Day-wise Itinerary
                   </h3>
@@ -1051,7 +1051,7 @@ export default function PackageDetail() {
                     {packageData.itinerary.map((day: ItineraryDay, index: number) => (
                       <div key={day.day} className="flex gap-4">
                         <div className="flex flex-col items-center">
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-white font-bold text-sm">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-gray-900 font-bold text-sm">
                             {day.day}
                           </div>
                           {index < packageData.itinerary.length - 1 && (
@@ -1059,8 +1059,8 @@ export default function PackageDetail() {
                           )}
                         </div>
                         <div className="flex-1 pb-6">
-                          <h4 className="font-semibold text-white mb-2">{day.title}</h4>
-                          <p className="text-slate-400 text-sm leading-relaxed">{day.description}</p>
+                          <h4 className="font-semibold text-gray-900 mb-2">{day.title}</h4>
+                          <p className="text-gray-400 text-sm leading-relaxed">{day.description}</p>
                         </div>
                       </div>
                     ))}
@@ -1071,7 +1071,7 @@ export default function PackageDetail() {
               {activeTab === 'inclusions' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
+                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       <Check className="h-5 w-5 text-vintage-400" />
                       What's Included
                     </h4>
@@ -1079,13 +1079,13 @@ export default function PackageDetail() {
                       {packageData.price.includes.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-300">{item}</span>
+                          <span className="text-gray-300">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
+                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       <X className="h-5 w-5 text-rose-400" />
                       What's Not Included
                     </h4>
@@ -1093,7 +1093,7 @@ export default function PackageDetail() {
                       {packageData.price.excludes.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
                           <X className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-300">{item}</span>
+                          <span className="text-gray-300">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -1109,31 +1109,31 @@ export default function PackageDetail() {
               {/* Request Call Back Card */}
               <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl p-6">
                 <div className="mb-6">
-                  <h3 className="font-playfair text-xl font-bold text-white mb-2">Interested in this Package?</h3>
-                  <p className="text-slate-400 text-sm">Get a customized quote and all your questions answered</p>
+                  <h3 className="font-playfair text-xl font-bold text-gray-900 mb-2">Interested in this Package?</h3>
+                  <p className="text-gray-400 text-sm">Get a customized quote and all your questions answered</p>
                 </div>
 
                 <div className="space-y-3 mb-6 py-4 border-t border-b border-slate-700">
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400 flex items-center gap-2">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <Clock className="h-4 w-4" />
                       Duration
                     </span>
-                    <span className="font-medium text-white">{packageData.duration}</span>
+                    <span className="font-medium text-gray-900">{packageData.duration}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400 flex items-center gap-2">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <Users className="h-4 w-4" />
                       Group Size
                     </span>
-                    <span className="font-medium text-white">Up to {packageData.groupSize} people</span>
+                    <span className="font-medium text-gray-900">Up to {packageData.groupSize} people</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400 flex items-center gap-2">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <MapPin className="h-4 w-4" />
                       Destinations
                     </span>
-                    <span className="font-medium text-white">{packageData.destinations.length} Places</span>
+                    <span className="font-medium text-gray-900">{packageData.destinations.length} Places</span>
                   </div>
                 </div>
 
@@ -1146,14 +1146,14 @@ export default function PackageDetail() {
                       console.warn('sendConversion failed', err);
                     }
                   }}
-                  className="w-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-white font-semibold py-3.5 px-4 rounded-xl hover:shadow-lg hover:shadow-vintage-500/30 transition-all tap-scale mb-3"
+                  className="w-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-gray-900 font-semibold py-3.5 px-4 rounded-xl hover:shadow-lg hover:shadow-vintage-500/30 transition-all tap-scale mb-3"
                 >
                   Request a Call Back
                 </button>
 
                 <a
                   href="tel:+918899666998"
-                  className="flex items-center justify-center gap-2 w-full py-3 border border-slate-700 rounded-xl text-slate-300 hover:bg-slate-800 transition-all tap-scale"
+                  className="flex items-center justify-center gap-2 w-full py-3 border border-slate-700 rounded-xl text-gray-300 hover:bg-slate-800 transition-all tap-scale"
                 >
                   <Phone className="h-4 w-4" />
                   +91 88996 66998
@@ -1162,7 +1162,7 @@ export default function PackageDetail() {
 
               {/* Why Book With Us */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-                <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-amber-400" />
                   Why Book With Us
                 </h3>
@@ -1171,25 +1171,25 @@ export default function PackageDetail() {
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3.5 w-3.5 text-vintage-400" />
                     </div>
-                    <span className="text-slate-300 text-sm">Best Price Guarantee</span>
+                    <span className="text-gray-300 text-sm">Best Price Guarantee</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3.5 w-3.5 text-vintage-400" />
                     </div>
-                    <span className="text-slate-300 text-sm">No Hidden Charges</span>
+                    <span className="text-gray-300 text-sm">No Hidden Charges</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3.5 w-3.5 text-vintage-400" />
                     </div>
-                    <span className="text-slate-300 text-sm">24/7 Customer Support</span>
+                    <span className="text-gray-300 text-sm">24/7 Customer Support</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3.5 w-3.5 text-vintage-400" />
                     </div>
-                    <span className="text-slate-300 text-sm">Experienced Local Guides</span>
+                    <span className="text-gray-300 text-sm">Experienced Local Guides</span>
                   </li>
                 </ul>
               </div>

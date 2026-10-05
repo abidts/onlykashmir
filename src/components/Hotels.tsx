@@ -53,7 +53,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
         {featuredHotels.map((hotel) => (
           <div
             key={hotel.name}
-            className="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 transition-all duration-300 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10"
+            className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10"
           >
             {/* Image */}
             <div className="relative h-48 overflow-hidden">
@@ -64,7 +64,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
                 decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
 
               {/* Rating badge */}
               <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/60 backdrop-blur-sm px-2 py-0.5 text-xs font-medium text-white">
@@ -84,8 +84,8 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
             <div className="p-4">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-bold text-white font-playfair">{hotel.name}</h3>
-                  <div className="flex items-center gap-1 text-emerald-400 mt-0.5">
+                  <h3 className="text-lg font-bold text-gray-900 font-playfair">{hotel.name}</h3>
+                  <div className="flex items-center gap-1 text-emerald-600 mt-0.5">
                     <MapPin className="h-3.5 w-3.5" />
                     <span className="text-xs">{hotel.location}</span>
                   </div>
@@ -97,7 +97,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
                 {hotel.amenities.map(amenity => (
                   <span
                     key={amenity}
-                    className="flex items-center gap-1 rounded-full bg-slate-800/80 px-2 py-0.5 text-[10px] text-slate-300"
+                    className="flex items-center gap-1 rounded-full bg-gray-100/80 px-2 py-0.5 text-[10px] text-gray-700"
                   >
                     {getAmenityIcon(amenity)}
                     {amenity}
@@ -115,7 +115,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
                     console.warn('sendConversion failed', err);
                   }
                 }}
-                className="mt-3 w-full flex items-center justify-center gap-2 rounded-xl bg-amber-500/10 border border-amber-500/20 px-3 py-2 text-sm font-semibold text-amber-400 transition-all hover:bg-amber-500 hover:text-white hover:border-amber-500"
+                className="mt-3 w-full flex items-center justify-center gap-2 rounded-xl bg-amber-500/10 border border-amber-500/20 px-3 py-2 text-sm font-semibold text-amber-600 transition-all hover:bg-amber-500 hover:text-white hover:border-amber-500"
               >
                 <Phone className="h-3.5 w-3.5" />
                 Book Now

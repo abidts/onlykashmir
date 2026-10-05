@@ -265,7 +265,7 @@ export default function PackagesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title="Top Tour Packages in Kashmir | Best Travel Packages & Tours and Travels"
         description="Only Kashmir Tours and Travels - Top tour packages in Kashmir! Book travel packages, Kashmir tours, honeymoon packages, Gulmarg tours, Srinagar houseboats, Dal Lake shikara rides & enjoy travel!"
@@ -282,11 +282,11 @@ export default function PackagesPage() {
                 <Sparkles className="h-4 w-4" />
                 Tour Packages
               </span>
-              <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Handcrafted Travel
                 <span className="block gradient-text mt-1">Packages for You</span>
               </h1>
-              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-400">
                 Choose from our curated packages. Contact us for custom itineraries!
               </p>
             </div>
@@ -297,7 +297,7 @@ export default function PackagesPage() {
             {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className="group relative overflow-hidden rounded-3xl bg-slate-900/80 border border-slate-800 transition-all duration-500 hover:border-slate-700 tap-scale shadow-lg shadow-black/10 hover:shadow-vintage-500/10"
+                className="group relative overflow-hidden rounded-3xl bg-white-900/80 border border-slate-800 transition-all duration-500 hover:border-slate-700 tap-scale shadow-lg shadow-black/10 hover:shadow-vintage-500/10"
               >
                 {/* Image with Link to Details Page */}
                 <Link to={`/packages/${pkg.slug}`} className="block">
@@ -312,19 +312,19 @@ export default function PackagesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
 
                     {/* Tag */}
-                    <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
+                    <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-gray-900 shadow-lg`}>
                       {pkg.tag}
                     </span>
 
                     {/* Rating */}
                     <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1">
                       <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                      <span className="text-xs font-medium text-white">{pkg.rating}</span>
+                      <span className="text-xs font-medium text-gray-900">{pkg.rating}</span>
                     </div>
 
                     {/* Package name */}
                     <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white font-playfair">{pkg.name}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">{pkg.name}</h3>
                     </div>
                   </div>
                 </Link>
@@ -332,7 +332,7 @@ export default function PackagesPage() {
                 {/* Details */}
                 <div className="p-4 sm:p-5 flex flex-col gap-3 min-h-[180px] sm:min-h-[200px]">
                   {/* Duration & Group */}
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400">
+                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-400">
                     <span className="flex items-center gap-1.5">
                       <Clock className="h-4 w-4 text-vintage-400" />
                       {pkg.duration}
@@ -346,13 +346,13 @@ export default function PackagesPage() {
                   {/* Destinations */}
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {pkg.destinations.slice(0, 3).map((d) => (
-                      <span key={d} className="flex items-center gap-1 rounded-full bg-slate-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-slate-300">
+                      <span key={d} className="flex items-center gap-1 rounded-full bg-white-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-300">
                         <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-400" />
                         {d}
                       </span>
                     ))}
                     {pkg.destinations.length > 3 && (
-                      <span className="rounded-full bg-slate-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-400 font-medium">
+                      <span className="rounded-full bg-white-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-400 font-medium">
                         +{pkg.destinations.length - 3} more
                       </span>
                     )}
@@ -361,7 +361,7 @@ export default function PackagesPage() {
                   {/* Includes */}
                   <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
                     {pkg.includes.map((item) => (
-                      <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-slate-400">
+                      <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-400">
                         <Check className="h-3 w-3 text-vintage-400" />
                         {item}
                       </span>
@@ -375,7 +375,7 @@ export default function PackagesPage() {
                       e.stopPropagation();
                       onRequestCallback(`${pkg.name} Package`);
                     }}
-                    className="mt-auto w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
+                    className="mt-auto w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-gray-900 shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
                   >
                     <Phone className="h-4 w-4" />
                     Request a Call Back
@@ -392,7 +392,7 @@ export default function PackagesPage() {
                 <Sparkles className="h-4 w-4" />
                 FAQ
               </span>
-              <h2 className="mt-4 font-playfair text-3xl sm:text-4xl font-bold text-white">
+              <h2 className="mt-4 font-playfair text-3xl sm:text-4xl font-bold text-gray-900">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -400,12 +400,12 @@ export default function PackagesPage() {
               {faqData.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6"
+                  className="bg-white-900 border border-slate-800 rounded-2xl p-5 sm:p-6"
                 >
-                  <h3 className="font-bold text-lg text-white mb-2">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">
                     {faq.question}
                   </h3>
-                  <p className="text-slate-300">
+                  <p className="text-gray-300">
                     {faq.answer}
                   </p>
                 </div>

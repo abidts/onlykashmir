@@ -148,15 +148,15 @@ export default function Cabs({ showAll = false }: Props) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto reveal">
-          <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+          <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
             <Sparkles className="h-4 w-4" />
             Rental Cabs
           </span>
-          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Explore Our Range of
             <span className="block gradient-text">Premium Cabs</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-400 px-4">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700 px-4">
             Comfortable vehicles with experienced local drivers.
           </p>
         </div>
@@ -169,10 +169,10 @@ export default function Cabs({ showAll = false }: Props) {
           {cabs.map((cab) => (
             <div
               key={cab.name}
-              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] lg:w-auto overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 transition-all duration-500 hover:border-slate-700 snap-start tap-scale"
+              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] lg:w-auto overflow-hidden rounded-3xl bg-white border border-gray-200 transition-all duration-500 hover:border-gray-300 snap-start tap-scale"
             >
               {/* Image */}
-              <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                 <img
                   src={cab.image}
                   alt={cab.name}
@@ -180,7 +180,7 @@ export default function Cabs({ showAll = false }: Props) {
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent" />
                 
                 {/* Type badge */}
                 <span className={`absolute top-3 left-3 rounded-full bg-gradient-to-r ${cab.color} px-2.5 py-1 text-[10px] sm:text-xs font-bold text-white`}>
@@ -196,29 +196,29 @@ export default function Cabs({ showAll = false }: Props) {
 
               {/* Content */}
               <div className="p-4 sm:p-5">
-                <h3 className="text-base sm:text-lg font-bold text-white">{cab.name}</h3>
-                <p className="mt-1 text-xs text-vintage-400 font-medium">Best for: {cab.best}</p>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900">{cab.name}</h3>
+                <p className="mt-1 text-xs text-vintage-600 font-medium">Best for: {cab.best}</p>
 
                 {/* Specs Grid */}
                 <div className="mt-3 sm:mt-4 grid grid-cols-3 gap-2">
-                  <div className="flex flex-col items-center rounded-xl bg-slate-800/50 p-2">
-                    <Users className="h-4 w-4 text-sky-400" />
-                    <span className="mt-1 text-[10px] sm:text-xs text-slate-400">{cab.seats}</span>
+                  <div className="flex flex-col items-center rounded-xl bg-gray-100/50 p-2">
+                    <Users className="h-4 w-4 text-sky-600" />
+                    <span className="mt-1 text-[10px] sm:text-xs text-gray-600">{cab.seats}</span>
                   </div>
-                  <div className="flex flex-col items-center rounded-xl bg-slate-800/50 p-2">
-                    <Fuel className="h-4 w-4 text-amber-400" />
-                    <span className="mt-1 text-[10px] sm:text-xs text-slate-400">{cab.fuel}</span>
+                  <div className="flex flex-col items-center rounded-xl bg-gray-100/50 p-2">
+                    <Fuel className="h-4 w-4 text-amber-600" />
+                    <span className="mt-1 text-[10px] sm:text-xs text-gray-600">{cab.fuel}</span>
                   </div>
-                  <div className="flex flex-col items-center rounded-xl bg-slate-800/50 p-2">
-                    <Settings className="h-4 w-4 text-vintage-400" />
-                    <span className="mt-1 text-[10px] sm:text-xs text-slate-400">{cab.transmission}</span>
+                  <div className="flex flex-col items-center rounded-xl bg-gray-100/50 p-2">
+                    <Settings className="h-4 w-4 text-vintage-600" />
+                    <span className="mt-1 text-[10px] sm:text-xs text-gray-600">{cab.transmission}</span>
                   </div>
                 </div>
 
                 {/* CTA Button */}
                 <button
                   onClick={() => onRequestCallback(`${cab.name} Cab Rental`)}
-                  className="mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-vintage-900 to-vintage-700 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-vintage-900/20 transition-all hover:shadow-vintage-900/40 tap-scale btn-ripple"
+                  className="mt-4 w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 tap-scale btn-ripple"
                 >
                   <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Request Call Back
@@ -229,7 +229,7 @@ export default function Cabs({ showAll = false }: Props) {
         </div>
 
         {/* Mobile swipe hint */}
-        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-500 lg:hidden">
+        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-600 lg:hidden">
           <ChevronLeft className="h-4 w-4 swipe-hint" style={{ animationDirection: 'reverse' }} />
           <span>Swipe to see more cabs</span>
           <ChevronRight className="h-4 w-4 swipe-hint" />

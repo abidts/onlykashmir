@@ -74,7 +74,7 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
       <SEO 
         title="Photo Gallery - Beautiful Landscapes of Kashmir | Kashmir Tourism Photos"
         description="View stunning photos of Kashmir's lakes, mountains, and valleys. Explore the beauty of Srinagar, Gulmarg, Pahalgam, and Dal Lake through our Kashmir tourism photo gallery."
@@ -89,7 +89,7 @@ export default function GalleryPage() {
               <Sparkles className="h-4 w-4" />
               Gallery
             </span>
-            <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Captured Moments of
               <span className="block gradient-text">Pure Paradise</span>
             </h1>
@@ -104,7 +104,7 @@ export default function GalleryPage() {
                 className={`flex-shrink-0 rounded-full px-4 py-2.5 text-sm font-medium transition-all tap-scale ${
                   filter === cat
                     ? 'bg-gradient-to-r from-vintage-900 to-vintage-700 text-vintage-500 shadow-lg shadow-vintage-900/30'
-                    : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
+                    : 'bg-white-800 text-gray-400 hover:bg-white-700 hover:text-gray-900'
                 }`}
               >
                 {cat}
@@ -133,16 +133,16 @@ export default function GalleryPage() {
                   }`}
                 />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/60 opacity-0 transition-opacity group-hover:opacity-100 sm:group-hover:opacity-100">
+                <div className="absolute inset-0 flex items-center justify-center bg-white-950/60 opacity-0 transition-opacity group-hover:opacity-100 sm:group-hover:opacity-100">
                   <div className="text-center p-4">
-                    <ZoomIn className="mx-auto h-6 w-6 sm:h-8 sm:w-8 text-white mb-2" />
-                    <p className="text-xs sm:text-sm font-medium text-white">{img.title}</p>
+                    <ZoomIn className="mx-auto h-6 w-6 sm:h-8 sm:w-8 text-gray-900 mb-2" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">{img.title}</p>
                     <span className="text-[10px] sm:text-xs text-violet-400">{img.category}</span>
                   </div>
                 </div>
                 {/* Mobile: Always show title at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/90 to-transparent p-3 sm:hidden">
-                  <p className="text-xs font-medium text-white truncate">{img.title}</p>
+                  <p className="text-xs font-medium text-gray-900 truncate">{img.title}</p>
                 </div>
               </div>
             ))}
@@ -152,7 +152,7 @@ export default function GalleryPage() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-vintage-500">Instagram</p>
-                <h2 className="mt-2 font-playfair text-2xl sm:text-3xl font-bold text-white">Video Moments</h2>
+                <h2 className="mt-2 font-playfair text-2xl sm:text-3xl font-bold text-gray-900">Video Moments</h2>
               </div>
               <a
                 href="https://www.instagram.com/onlykashmirtourandtravels/reels/"
@@ -172,7 +172,7 @@ export default function GalleryPage() {
                   href={video.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition hover:border-vintage-500/40 hover:shadow-lg hover:shadow-vintage-500/10"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-white-900 transition hover:border-vintage-500/40 hover:shadow-lg hover:shadow-vintage-500/10"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
@@ -185,12 +185,12 @@ export default function GalleryPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm ring-2 ring-white/30">
-                        <Play className="ml-1 h-5 w-5 fill-white text-white" />
+                        <Play className="ml-1 h-5 w-5 fill-white text-gray-900" />
                       </div>
                     </div>
                   </div>
                   <div className="p-3">
-                    <p className="text-sm font-semibold text-white">{video.title}</p>
+                    <p className="text-sm font-semibold text-gray-900">{video.title}</p>
                     <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-vintage-500">{video.category}</p>
                   </div>
                 </a>
@@ -207,7 +207,7 @@ export default function GalleryPage() {
           >
             {/* Close button */}
             <button
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition tap-scale z-10"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-gray-900 hover:bg-white/20 transition tap-scale z-10"
               onClick={() => setLightbox(null)}
             >
               <X className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -215,7 +215,7 @@ export default function GalleryPage() {
 
             {/* Navigation arrows */}
             <button
-              className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition tap-scale z-10"
+              className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-gray-900 hover:bg-white/20 transition tap-scale z-10"
               onClick={(e) => {
                 e.stopPropagation();
                 navigateLightbox('prev');
@@ -224,7 +224,7 @@ export default function GalleryPage() {
               <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             <button
-              className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition tap-scale z-10"
+              className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-gray-900 hover:bg-white/20 transition tap-scale z-10"
               onClick={(e) => {
                 e.stopPropagation();
                 navigateLightbox('next');
@@ -243,9 +243,9 @@ export default function GalleryPage() {
 
             {/* Caption */}
             <div className="absolute bottom-6 sm:bottom-8 text-center animate-fade-in-up">
-              <p className="text-base sm:text-lg font-semibold text-white">{filtered[lightbox].title}</p>
+              <p className="text-base sm:text-lg font-semibold text-gray-900">{filtered[lightbox].title}</p>
               <p className="text-sm text-violet-400">{filtered[lightbox].category}</p>
-              <p className="text-xs text-slate-500 mt-1">{lightbox + 1} / {filtered.length}</p>
+              <p className="text-xs text-gray-500 mt-1">{lightbox + 1} / {filtered.length}</p>
             </div>
           </div>
         )}

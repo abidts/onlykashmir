@@ -19,14 +19,7 @@ const navLinks = [
 ];
 
 export default function Navbar({ onRequestCallback }: Props) {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -42,13 +35,15 @@ export default function Navbar({ onRequestCallback }: Props) {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-transparent py-1' : 'bg-transparent py-1.5'}`}>
+      <nav
+        className="relative bg-transparent py-0.5 z-50"
+      >
         <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
               <div className="transition-all group-hover:scale-105">
-                <LogoMark size={150} animate={true} />
+                <LogoMark size={96} animate={true} />
               </div>
             </Link>
 
@@ -60,7 +55,8 @@ export default function Navbar({ onRequestCallback }: Props) {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="relative px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white transition-colors group"
+                    className="relative px-3 py-2 text-lg font-bold text-black hover:text-gray-800 transition-colors group"
+                    style={{ fontFamily: 'Dorsa, sans-serif' }}
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-vintage-400 to-vintage-600 transition-all duration-300 group-hover:left-1 group-hover:w-[calc(100%-8px)]" />
