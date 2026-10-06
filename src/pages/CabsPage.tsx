@@ -139,14 +139,14 @@ const CabsPage: React.FC = () => {
                 { route: 'Srinagar Local Sightseeing', distance: 'Varies', duration: 'Full Day' },
               ].map((trip, index) => (
                 <div key={index} className="bg-white-900 p-6 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all group">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-vintage-400 transition-colors">{trip.route}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-vintage-600 transition-colors">{trip.route}</h3>
                   <div className="flex justify-between text-gray-400 text-sm mb-4">
                     <span>Distance: {trip.distance}</span>
                     <span>Duration: {trip.duration}</span>
                   </div>
                   <button
                     onClick={() => setShowBookingForm(true)}
-                    className="w-full bg-vintage-500/10 hover:bg-vintage-500 text-vintage-400 hover:text-gray-900 font-medium py-2.5 px-4 rounded-xl transition-all border border-vintage-500/20 hover:border-vintage-500"
+                    className="w-full bg-vintage-500/10 hover:bg-vintage-500 text-vintage-600 hover:text-gray-900 font-medium py-2.5 px-4 rounded-xl transition-all border border-vintage-500/20 hover:border-vintage-500"
                   >
                     Book This Route
                   </button>
@@ -188,7 +188,7 @@ const CabsPage: React.FC = () => {
                 },
               ].map((feature, index) => (
                 <div key={index} className="bg-white-900 p-6 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all">
-                  <div className="w-12 h-12 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-400 mb-4">
+                  <div className="w-12 h-12 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-600 mb-4">
                     <feature.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>

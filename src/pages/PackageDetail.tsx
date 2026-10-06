@@ -924,7 +924,7 @@ export default function PackageDetail() {
                 {packageData.tag}
               </span>
               <div className="flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-3 py-1">
-                <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                <Star className="h-4 w-4 fill-amber-400 text-amber-600" />
                 <span className="text-sm font-medium">{packageData.rating}</span>
                 <span className="text-gray-400">({packageData.reviews} reviews)</span>
               </div>
@@ -932,17 +932,17 @@ export default function PackageDetail() {
             <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
               {packageData.name}
             </h1>
-            <div className="flex items-center gap-2 text-vintage-400 mb-3">
+            <div className="flex items-center gap-2 text-vintage-600 mb-3">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">{packageData.destinations.join(' → ')}</span>
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-gray-300">
               <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-vintage-400" />
+                <Clock className="h-4 w-4 text-vintage-600" />
                 {packageData.duration}
               </span>
               <span className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-vintage-400" />
+                <Users className="h-4 w-4 text-vintage-600" />
                 {packageData.groupSize} People
               </span>
             </div>
@@ -981,19 +981,19 @@ export default function PackageDetail() {
               {activeTab === 'overview' && (
                 <div>
                   <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-vintage-400" />
+                    <Sparkles className="h-5 w-5 text-vintage-600" />
                     About This Package
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">{packageData.description}</p>
 
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <Mountain className="h-5 w-5 text-vintage-400" />
+                    <Mountain className="h-5 w-5 text-vintage-600" />
                     Package Highlights
                   </h4>
                   <ul className="space-y-2 mb-6">
                     {packageData.highlights.map((highlight: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-300">{highlight}</span>
                       </li>
                     ))}
@@ -1003,7 +1003,7 @@ export default function PackageDetail() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-vintage-500/20 flex items-center justify-center">
-                        <Bed className="h-5 w-5 text-vintage-400" />
+                        <Bed className="h-5 w-5 text-vintage-600" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400">Accommodation</p>
@@ -1012,7 +1012,7 @@ export default function PackageDetail() {
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-vintage-400/20 flex items-center justify-center">
-                        <Utensils className="h-5 w-5 text-vintage-400" />
+                        <Utensils className="h-5 w-5 text-vintage-600" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400">Meals</p>
@@ -1021,7 +1021,7 @@ export default function PackageDetail() {
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-                        <Car className="h-5 w-5 text-amber-400" />
+                        <Car className="h-5 w-5 text-amber-600" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400">Transport</p>
@@ -1030,7 +1030,7 @@ export default function PackageDetail() {
                     </div>
                     <div className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-rose-500/20 flex items-center justify-center">
-                        <MapPin className="h-5 w-5 text-rose-400" />
+                        <MapPin className="h-5 w-5 text-rose-600" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400">Sightseeing</p>
@@ -1044,7 +1044,7 @@ export default function PackageDetail() {
               {activeTab === 'itinerary' && (
                 <div>
                   <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-vintage-400" />
+                    <Calendar className="h-5 w-5 text-vintage-600" />
                     Day-wise Itinerary
                   </h3>
                   <div className="space-y-6">
@@ -1072,13 +1072,13 @@ export default function PackageDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Check className="h-5 w-5 text-vintage-400" />
+                      <Check className="h-5 w-5 text-vintage-600" />
                       What's Included
                     </h4>
                     <ul className="space-y-3">
                       {packageData.price.includes.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                          <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-300">{item}</span>
                         </li>
                       ))}
@@ -1086,13 +1086,13 @@ export default function PackageDetail() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <X className="h-5 w-5 text-rose-400" />
+                      <X className="h-5 w-5 text-rose-600" />
                       What's Not Included
                     </h4>
                     <ul className="space-y-3">
                       {packageData.price.excludes.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-3">
-                          <X className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
+                          <X className="h-5 w-5 text-rose-600 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-300">{item}</span>
                         </li>
                       ))}
@@ -1163,31 +1163,31 @@ export default function PackageDetail() {
               {/* Why Book With Us */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
                 <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-amber-400" />
+                  <Sparkles className="h-5 w-5 text-amber-600" />
                   Why Book With Us
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3.5 w-3.5 text-vintage-400" />
+                      <Check className="h-3.5 w-3.5 text-vintage-600" />
                     </div>
                     <span className="text-gray-300 text-sm">Best Price Guarantee</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3.5 w-3.5 text-vintage-400" />
+                      <Check className="h-3.5 w-3.5 text-vintage-600" />
                     </div>
                     <span className="text-gray-300 text-sm">No Hidden Charges</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3.5 w-3.5 text-vintage-400" />
+                      <Check className="h-3.5 w-3.5 text-vintage-600" />
                     </div>
                     <span className="text-gray-300 text-sm">24/7 Customer Support</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-6 w-6 rounded-full bg-vintage-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3.5 w-3.5 text-vintage-400" />
+                      <Check className="h-3.5 w-3.5 text-vintage-600" />
                     </div>
                     <span className="text-gray-300 text-sm">Experienced Local Guides</span>
                   </li>

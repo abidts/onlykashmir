@@ -278,7 +278,7 @@ export default function PackagesPage() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6 mb-8">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
                 <Sparkles className="h-4 w-4" />
                 Tour Packages
               </span>
@@ -286,7 +286,7 @@ export default function PackagesPage() {
                 Handcrafted Travel
                 <span className="block gradient-text mt-1">Packages for You</span>
               </h1>
-              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-400">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700">
                 Choose from our curated packages. Contact us for custom itineraries!
               </p>
             </div>
@@ -297,7 +297,7 @@ export default function PackagesPage() {
             {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className="group relative overflow-hidden rounded-3xl bg-white-900/80 border border-slate-800 transition-all duration-500 hover:border-slate-700 tap-scale shadow-lg shadow-black/10 hover:shadow-vintage-500/10"
+                className="group relative overflow-hidden rounded-3xl bg-white border border-gray-200 transition-all duration-500 hover:border-gray-300 tap-scale shadow-lg shadow-black/10 hover:shadow-vintage-500/10"
               >
                 {/* Image with Link to Details Page */}
                 <Link to={`/packages/${pkg.slug}`} className="block">
@@ -309,22 +309,22 @@ export default function PackagesPage() {
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/30 to-transparent" />
 
                     {/* Tag */}
-                    <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-gray-900 shadow-lg`}>
+                    <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
                       {pkg.tag}
                     </span>
 
                     {/* Rating */}
                     <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1">
                       <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                      <span className="text-xs font-medium text-gray-900">{pkg.rating}</span>
+                      <span className="text-xs font-medium text-white">{pkg.rating}</span>
                     </div>
 
                     {/* Package name */}
                     <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">{pkg.name}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white font-playfair">{pkg.name}</h3>
                     </div>
                   </div>
                 </Link>
@@ -332,13 +332,13 @@ export default function PackagesPage() {
                 {/* Details */}
                 <div className="p-4 sm:p-5 flex flex-col gap-3 min-h-[180px] sm:min-h-[200px]">
                   {/* Duration & Group */}
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-400">
+                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
                     <span className="flex items-center gap-1.5">
-                      <Clock className="h-4 w-4 text-vintage-400" />
+                      <Clock className="h-4 w-4 text-vintage-600" />
                       {pkg.duration}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4 text-vintage-400" />
+                      <Users className="h-4 w-4 text-vintage-600" />
                       {pkg.groupSize} People
                     </span>
                   </div>
@@ -346,13 +346,13 @@ export default function PackagesPage() {
                   {/* Destinations */}
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {pkg.destinations.slice(0, 3).map((d) => (
-                      <span key={d} className="flex items-center gap-1 rounded-full bg-white-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-300">
-                        <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-400" />
+                      <span key={d} className="flex items-center gap-1 rounded-full bg-gray-100/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-700">
+                        <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-600" />
                         {d}
                       </span>
                     ))}
                     {pkg.destinations.length > 3 && (
-                      <span className="rounded-full bg-white-800/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-400 font-medium">
+                      <span className="rounded-full bg-gray-100/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-600 font-medium">
                         +{pkg.destinations.length - 3} more
                       </span>
                     )}
@@ -361,8 +361,8 @@ export default function PackagesPage() {
                   {/* Includes */}
                   <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
                     {pkg.includes.map((item) => (
-                      <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-400">
-                        <Check className="h-3 w-3 text-vintage-400" />
+                      <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-600">
+                        <Check className="h-3 w-3 text-vintage-600" />
                         {item}
                       </span>
                     ))}
@@ -375,7 +375,7 @@ export default function PackagesPage() {
                       e.stopPropagation();
                       onRequestCallback(`${pkg.name} Package`);
                     }}
-                    className="mt-auto w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-gray-900 shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
+                    className="mt-auto w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
                   >
                     <Phone className="h-4 w-4" />
                     Request a Call Back
@@ -388,7 +388,7 @@ export default function PackagesPage() {
           {/* FAQ Section */}
           <section className="mt-20 sm:mt-28">
             <div className="text-center mb-10">
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
                 <Sparkles className="h-4 w-4" />
                 FAQ
               </span>

@@ -429,7 +429,7 @@ export default function DestinationDetail() {
           alt={destination.name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
         
         {/* Back Button */}
         <button
@@ -443,11 +443,11 @@ export default function DestinationDetail() {
         {/* Title Overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12">
           <div className="container mx-auto">
-            <div className="flex items-center gap-2 text-vintage-400 mb-3">
+            <div className="flex items-center gap-2 text-vintage-600 mb-3">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">{destination.tagline}</span>
             </div>
-            <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
               {destination.name}
             </h1>
             <div className="flex items-center gap-4">
@@ -455,7 +455,7 @@ export default function DestinationDetail() {
                 <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                 {destination.rating}
               </div>
-              <span className="rounded-full bg-vintage-400/90 px-3 py-1.5 text-xs font-bold">
+              <span className="rounded-full bg-vintage-400/90 px-3 py-1.5 text-xs font-bold text-white">
                 {destination.highlight}
               </span>
             </div>
@@ -466,40 +466,40 @@ export default function DestinationDetail() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Description */}
         <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-gray-300 leading-relaxed mb-8">
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
             {destination.fullDesc}
           </p>
 
           {/* Quick Info Cards */}
           <div className="grid sm:grid-cols-3 gap-4 mb-12">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-              <Calendar className="h-6 w-6 text-vintage-400 mb-3" />
+            <div className="bg-white border border-gray-200 rounded-2xl p-5">
+              <Calendar className="h-6 w-6 text-vintage-600 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Best Time</h3>
-              <p className="text-sm text-gray-400">{destination.bestTime}</p>
+              <p className="text-sm text-gray-600">{destination.bestTime}</p>
             </div>
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-              <Clock className="h-6 w-6 text-vintage-400 mb-3" />
+            <div className="bg-white border border-gray-200 rounded-2xl p-5">
+              <Clock className="h-6 w-6 text-vintage-600 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Duration</h3>
-              <p className="text-sm text-gray-400">{destination.duration}</p>
+              <p className="text-sm text-gray-600">{destination.duration}</p>
             </div>
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-              <Users className="h-6 w-6 text-vintage-400 mb-3" />
+            <div className="bg-white border border-gray-200 rounded-2xl p-5">
+              <Users className="h-6 w-6 text-vintage-600 mb-3" />
               <h3 className="font-semibold text-gray-900 mb-1">Activities</h3>
-              <p className="text-sm text-gray-400">{destination.activities.length}+ Options</p>
+              <p className="text-sm text-gray-600">{destination.activities.length}+ Options</p>
             </div>
           </div>
 
           {/* Activities */}
           <div className="mb-12">
             <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="h-6 w-6 text-vintage-400" />
+              <Sparkles className="h-6 w-6 text-vintage-600" />
               Things to Do
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {destination.activities.map((activity, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 bg-slate-900/50 border border-slate-800 rounded-xl p-4"
+                  className="flex items-center gap-3 bg-white-900/50 border border-gray-800 rounded-xl p-4"
                 >
                   <div className="h-2 w-2 rounded-full bg-vintage-400" />
                   <span className="text-gray-200">{activity}</span>
@@ -510,21 +510,21 @@ export default function DestinationDetail() {
 
           {/* Gulmarg Gondola Guide (only if destination is Gulmarg) */}
           {destination.name === 'Gulmarg' && (
-            <div className="mb-12 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div className="mb-12 bg-white-900 border border-gray-800 rounded-3xl p-6 sm:p-8">
               <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                 Gulmarg Gondola Ticket Guide
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                <div className="p-4 bg-white-950 rounded-2xl border border-gray-800">
                   <h3 className="font-semibold text-gray-900 mb-2">Phase 1: Gulmarg to Kongdori</h3>
-                  <p className="text-gray-300 text-sm">Takes you up to 10,000 ft - beautiful meadows and views!</p>
+                  <p className="text-gray-700 text-sm">Takes you up to 10,000 ft - beautiful meadows and views!</p>
                 </div>
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                <div className="p-4 bg-white-950 rounded-2xl border border-gray-800">
                   <h3 className="font-semibold text-gray-900 mb-2">Phase 2: Kongdori to Affarwat</h3>
-                  <p className="text-gray-300 text-sm">Takes you up to 13,500 ft - breathtaking Himalayan views!</p>
+                  <p className="text-gray-700 text-sm">Takes you up to 13,500 ft - breathtaking Himalayan views!</p>
                 </div>
               </div>
-              <p className="text-gray-300 mt-6 text-sm">
+              <p className="text-gray-700 mt-6 text-sm">
                 We can help you with Gulmarg Gondola ticket bookings in advance! Contact us to add it to your Gulmarg tour package.
               </p>
             </div>
@@ -535,7 +535,7 @@ export default function DestinationDetail() {
             <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
               Plan Your Trip to {destination.name}
             </h2>
-            <p className="text-gray-300 mb-6 max-w-xl mx-auto">
+            <p className="text-gray-700 mb-6 max-w-xl mx-auto">
               Get in touch with our travel experts to customize your perfect Kashmir itinerary
             </p>
             <button

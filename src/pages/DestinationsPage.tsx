@@ -85,7 +85,7 @@ export default function DestinationsPage() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-vintage-400/10 border border-vintage-400/20 px-4 py-1.5 text-sm font-medium text-vintage-400">
+              <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
                 <Sparkles className="h-4 w-4" />
                 Top Destinations
               </span>
@@ -104,7 +104,7 @@ export default function DestinationsPage() {
             {destinations.map((dest, index) => (
               <div
                 key={dest.name}
-                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] lg:w-auto overflow-hidden rounded-3xl bg-white-900 border border-slate-800 transition-all duration-500 hover:border-slate-700 snap-start tap-scale"
+                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] lg:w-auto overflow-hidden rounded-3xl bg-white border border-gray-200 transition-all duration-500 hover:border-gray-300 snap-start tap-scale"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onTouchStart={() => setHoveredIndex(index)}
@@ -122,32 +122,32 @@ export default function DestinationsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
 
                     {/* Rating badge */}
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1 text-sm font-medium text-gray-900">
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1 text-sm font-medium text-white">
                       <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                       {dest.rating}
                     </div>
 
                     {/* Highlight tag */}
                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                      <span className="rounded-full bg-vintage-400/90 px-3 py-1 text-[10px] sm:text-xs font-bold text-gray-900">
+                      <span className="rounded-full bg-vintage-400/90 px-3 py-1 text-[10px] sm:text-xs font-bold text-white">
                         {dest.highlight}
                       </span>
                     </div>
 
                     {/* Location & tagline */}
                     <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4">
-                      <div className="flex items-center gap-1.5 text-vintage-400 mb-1">
+                      <div className="flex items-center gap-1.5 text-vintage-600 mb-1">
                         <MapPin className="h-3.5 w-3.5" />
                         <span className="text-xs sm:text-sm font-medium">{dest.tagline}</span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{dest.name}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">{dest.name}</h3>
                     </div>
                   </div>
                 </Link>
 
                 {/* Content */}
                 <div className="p-4 sm:p-5">
-                  <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">{dest.desc}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">{dest.desc}</p>
 
                   {/* CTA Button - Opens Popup */}
                   <button
@@ -158,8 +158,8 @@ export default function DestinationsPage() {
                     }}
                     className={`mt-4 w-full flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold transition-all ${
                       hoveredIndex === index
-                        ? 'bg-gradient-to-r from-vintage-500 to-vintage-600 text-gray-900 shadow-lg shadow-vintage-500/30'
-                        : 'bg-vintage-500/10 border border-vintage-500/20 text-vintage-400 hover:bg-vintage-500 hover:text-gray-900 hover:border-vintage-500'
+                        ? 'bg-gradient-to-r from-vintage-500 to-vintage-600 text-white shadow-lg shadow-vintage-500/30'
+                        : 'bg-vintage-500/10 border border-vintage-500/20 text-vintage-600 hover:bg-vintage-500 hover:text-white hover:border-vintage-500'
                     }`}
                   >
                     <Phone className="h-4 w-4" />
@@ -171,7 +171,7 @@ export default function DestinationsPage() {
           </div>
 
           {/* Mobile swipe hint */}
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 lg:hidden">
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-600 lg:hidden">
             <span className="opacity-80">Swipe to explore destinations</span>
           </div>
         </div>

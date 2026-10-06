@@ -41,7 +41,7 @@ export default function About() {
         {/* Hero */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="space-y-4">
-            <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-400">
+            <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
               Our Story, Your Journey
             </span>
             <h1 className="font-playfair text-4xl sm:text-5xl font-bold leading-tight">
@@ -64,7 +64,7 @@ export default function About() {
                 { icon: Shield, label: 'Trusted Service', value: 'Since 2025' },
               ].map((item) => (
                 <div key={item.label} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 flex gap-3 items-center">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-vintage-500/10 text-vintage-400">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-vintage-500/10 text-vintage-600">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>

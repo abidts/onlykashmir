@@ -128,18 +128,8 @@ export default function Cabs({ showAll = false }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const cabs = showAll ? allCabs : homeCabs;
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const cardWidth = scrollRef.current.clientWidth < 640 ? 240 : 280;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -cardWidth : cardWidth,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <section id="cabs" className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+    <section id="cabs" className="relative py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#F0D8B6' }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
       
       {/* Background decoration */}

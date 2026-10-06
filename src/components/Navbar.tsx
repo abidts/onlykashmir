@@ -76,7 +76,7 @@ export default function Navbar({ onRequestCallback }: Props) {
                 </button>
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="lg:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 tap-scale border border-white/10"
+                  className="lg:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900 text-white backdrop-blur-sm transition-all hover:bg-gray-800 tap-scale border border-gray-700"
                   aria-label="Toggle menu"
                 >
                   <div className={`transition-transform duration-300 ${menuOpen ? 'rotate-180' : ''}`}>

@@ -68,7 +68,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
 
               {/* Rating badge */}
               <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/60 backdrop-blur-sm px-2 py-0.5 text-xs font-medium text-white">
-                <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                <Star className="h-3 w-3 fill-amber-400 text-amber-600" />
                 {hotel.rating}
               </div>
 

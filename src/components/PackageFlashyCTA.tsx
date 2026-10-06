@@ -44,7 +44,7 @@ export default function PackageFlashyCTA({ className = '' }: Props) {
             </p>
 
             <div className="flex flex-wrap items-center gap-6 text-sm sm:text-base">
-              <span className="flex items-center gap-2 text-amber-400 font-semibold">
+              <span className="flex items-center gap-2 text-amber-600 font-semibold">
                 <Sparkles className="h-5 w-5" /> Instant Customization
               </span>
             </div>

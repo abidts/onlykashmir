@@ -56,7 +56,7 @@ export default function HotelsPage() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-400">
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
                 <Building className="h-4 w-4" />
                 Premium Stays
               </span>
@@ -107,7 +107,7 @@ export default function HotelsPage() {
 
                   {/* Rating badge */}
                   <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1 text-sm font-medium text-gray-900">
-                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-600" />
                     {hotel.rating}
                   </div>
 
@@ -124,7 +124,7 @@ export default function HotelsPage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 font-playfair">{hotel.name}</h3>
-                      <div className="flex items-center gap-1.5 text-emerald-400 mt-1">
+                      <div className="flex items-center gap-1.5 text-emerald-600 mt-1">
                         <MapPin className="h-4 w-4" />
                         <span className="text-sm">{hotel.location}</span>
                       </div>

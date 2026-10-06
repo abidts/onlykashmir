@@ -13,7 +13,7 @@ const ContactPage: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-400">
+          <span className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
             <Mail className="h-4 w-4" />
             Get in Touch
           </span>
@@ -29,27 +29,27 @@ const ContactPage: React.FC = () => {
         {/* Contact Details - Centered */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
           <div className="bg-white-900 p-8 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all text-center group">
-            <div className="w-14 h-14 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-600 mx-auto mb-4 group-hover:scale-110 transition-transform">
               <Phone className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-            <a href="tel:+918899666998" className="text-gray-400 hover:text-vintage-400 transition-colors">
+            <a href="tel:+918899666998" className="text-gray-400 hover:text-vintage-600 transition-colors">
               +91 88996 66998
             </a>
           </div>
 
           <div className="bg-white-900 p-8 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all text-center group">
-            <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 mx-auto mb-4 group-hover:scale-110 transition-transform">
               <Mail className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-            <a href="mailto:info@onlykashmir.com" className="text-gray-400 hover:text-amber-400 transition-colors break-all">
+            <a href="mailto:info@onlykashmir.com" className="text-gray-400 hover:text-amber-600 transition-colors break-all">
               info@onlykashmir.com
             </a>
           </div>
 
           <div className="bg-white-900 p-8 rounded-2xl border border-slate-800 hover:border-vintage-500/30 transition-all text-center group">
-            <div className="w-14 h-14 bg-vintage-900/10 rounded-xl flex items-center justify-center text-vintage-400 mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-vintage-900/10 rounded-xl flex items-center justify-center text-vintage-600 mx-auto mb-4 group-hover:scale-110 transition-transform">
               <MapPin className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
@@ -63,7 +63,7 @@ const ContactPage: React.FC = () => {
         {/* Additional Info */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
           <div className="bg-white-900 p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
-            <div className="w-12 h-12 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-400 shrink-0">
+            <div className="w-12 h-12 bg-vintage-500/10 rounded-xl flex items-center justify-center text-vintage-600 shrink-0">
               <Clock className="h-6 w-6" />
             </div>
             <div>
@@ -74,7 +74,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div className="bg-white-900 p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
-            <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 shrink-0">
+            <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 shrink-0">
               <Phone className="h-6 w-6" />
             </div>
             <div>
@@ -118,7 +118,7 @@ const ContactPage: React.FC = () => {
         {/* Call Back CTA */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-white-900 rounded-3xl border border-slate-800 shadow-2xl p-8 sm:p-12 text-center space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-400">
+            <div className="inline-flex items-center gap-2 rounded-full bg-vintage-500/10 border border-vintage-500/20 px-4 py-1.5 text-sm font-medium text-vintage-600">
               Priority Support
             </div>
             <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-gray-900">

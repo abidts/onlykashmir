@@ -119,8 +119,8 @@ export default function TourPackages() {
 
       <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-4 sm:gap-6 reveal">
-          <div className="max-w-2xl px-4 sm:px-0">
+        <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 reveal">
+          <div className="max-w-2xl px-4 sm:px-0 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
               <Sparkles className="h-4 w-4" />
               Tour Packages
