@@ -5,7 +5,7 @@ import { CallbackContext } from './Layout';
 import { countryCodes } from '../utils/countryCodes';
 
 const heroBanner = {
-  image: 'https://images.unsplash.com/photo-1768147765107-5eef8e032a62?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  image: 'https://res.cloudinary.com/dveg0ai0n/image/upload/v1793898544/okbanner_q8kt3f.jpg',
   title: 'Best Travel Agency in Kashmir',
   subtitle: 'Plan Your Dream Trip to Paradise',
   desc: 'Only Kashmir - Your trusted partner for unforgettable Kashmir tour packages, hotel bookings & taxi services.',
