@@ -39,8 +39,9 @@ export default function Layout({ children }: LayoutProps) {
         className="overflow-hidden py-2 text-xs font-medium text-white sm:text-sm"
         style={{ backgroundColor: '#1F3539' }}
       >
-        <div className="ticker-track">
-          Rates are subject to change depending on the itinerary, hotel availability, and number of guests.
+        <div className="ticker-track" aria-live="polite">
+          <span className="ticker-message">Rates are subject to change depending on the itinerary, hotel availability, and number of guests.</span>
+          <span className="ticker-message">Travel Gift Vouchers for unforgettable Kashmir memories are available.</span>
         </div>
       </aside>
       <Navbar onRequestCallback={() => openCallbackPage()} />

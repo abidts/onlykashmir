@@ -20,6 +20,7 @@ const routes = [
   '/contact',
   '/destinations',
   '/hotels',
+  '/kashmir-travel-gift-vouchers',
   '/packages',
   '/reviews',
   '/request-callback',

@@ -202,9 +202,16 @@ body {
   100% { background-position: 100% 0; }
 }
 
-@keyframes ticker-scroll {
-  0% { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
+@keyframes ticker-message-first {
+  0%, 4% { opacity: 0; }
+  10%, 40% { opacity: 1; }
+  47%, 100% { opacity: 0; }
+}
+
+@keyframes ticker-message-second {
+  0%, 50% { opacity: 0; }
+  56%, 90% { opacity: 1; }
+  97%, 100% { opacity: 0; }
 }
 
 @keyframes seasonal-colors {
@@ -226,9 +233,36 @@ body {
 }
 
 .ticker-track {
-  width: max-content;
-  white-space: nowrap;
-  animation: ticker-scroll 18s linear infinite;
+  display: grid;
+  min-height: 2.5rem;
+  width: 100%;
+  place-items: center;
+}
+
+.ticker-message {
+  grid-area: 1 / 1;
+  padding: 0.25rem 1rem;
+  text-align: center;
+  opacity: 0;
+  animation: ticker-message-first 8s ease-in-out infinite;
+}
+
+.ticker-message:nth-child(2) {
+  animation-name: ticker-message-second;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-message {
+    animation: none;
+  }
+
+  .ticker-message:first-child {
+    opacity: 1;
+  }
+
+  .ticker-message:nth-child(2) {
+    display: none;
+  }
 }
 
 .animate-float { animation: float 6s ease-in-out infinite; }

@@ -11,6 +11,7 @@ import CabsPage from './pages/CabsPage';
 import ContactPage from './pages/ContactPage';
 import RequestCallbackPage from './pages/RequestCallbackPage';
 import NotFoundPage from './pages/NotFoundPage';
+import GiftVouchersPage from './pages/GiftVouchersPage';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <PackagesPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/kashmir-travel-gift-vouchers',
+    element: (
+      <Layout>
+        <GiftVouchersPage />
       </Layout>
     ),
   },

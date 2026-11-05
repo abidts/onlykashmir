@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/destinations' },
   { label: 'Packages', href: '/packages' },
+  { label: 'Gift Vouchers', href: '/kashmir-travel-gift-vouchers' },
   { label: 'Hotels', href: '/hotels' },
   { label: 'Contact', href: '/contact' },
 ];
