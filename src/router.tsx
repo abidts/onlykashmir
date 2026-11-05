@@ -4,10 +4,8 @@ import Layout from './components/Layout';
 import DestinationsPage from './pages/DestinationsPage';
 import DestinationDetail from './pages/DestinationDetail';
 import PackagesPage from './pages/PackagesPage';
-import ReviewsPage from './pages/ReviewsPage';
 import HotelsPage from './pages/HotelsPage';
 import About from './components/About';
-import CabsPage from './pages/CabsPage';
 import ContactPage from './pages/ContactPage';
 import RequestCallbackPage from './pages/RequestCallbackPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -55,14 +53,6 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/reviews',
-    element: (
-      <Layout>
-        <ReviewsPage />
-      </Layout>
-    ),
-  },
-  {
     path: '/hotels',
     element: (
       <Layout>
@@ -75,14 +65,6 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <About />
-      </Layout>
-    ),
-  },
-  {
-    path: '/cabs',
-    element: (
-      <Layout>
-        <CabsPage />
       </Layout>
     ),
   },

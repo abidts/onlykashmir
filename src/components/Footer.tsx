@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const quickLinks = [
   { label: 'About Us', to: '/about' },
   { label: 'Tour Packages', to: '/packages' },
+  { label: 'Gift Vouchers', to: '/kashmir-travel-gift-vouchers' },
   { label: 'Destinations', to: '/destinations' },
   { label: 'Contact', to: '/contact' },
 ];

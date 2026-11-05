@@ -16,13 +16,11 @@ const fallbackPath = path.join(distDir, '404.html');
 const routes = [
   '/',
   '/about',
-  '/cabs',
   '/contact',
   '/destinations',
   '/hotels',
   '/kashmir-travel-gift-vouchers',
   '/packages',
-  '/reviews',
   '/request-callback',
   '/destinations/srinagar',
   '/destinations/gulmarg',

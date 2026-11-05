@@ -203,15 +203,21 @@ body {
 }
 
 @keyframes ticker-message-first {
-  0%, 4% { opacity: 0; }
-  10%, 40% { opacity: 1; }
-  47%, 100% { opacity: 0; }
+  0%, 3% { opacity: 0; }
+  8%, 27% { opacity: 1; }
+  33%, 100% { opacity: 0; }
 }
 
 @keyframes ticker-message-second {
-  0%, 50% { opacity: 0; }
-  56%, 90% { opacity: 1; }
-  97%, 100% { opacity: 0; }
+  0%, 33% { opacity: 0; }
+  41%, 60% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+@keyframes ticker-message-third {
+  0%, 66% { opacity: 0; }
+  74%, 93% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes seasonal-colors {
@@ -234,34 +240,38 @@ body {
 
 .ticker-track {
   display: grid;
-  min-height: 2.5rem;
-  width: 100%;
+  min-height: 1.75rem;
+  min-width: 0;
+  flex: 1;
   place-items: center;
 }
 
 .ticker-message {
   grid-area: 1 / 1;
-  padding: 0.25rem 1rem;
+  padding: 0.125rem 0.75rem;
   text-align: center;
   opacity: 0;
-  animation: ticker-message-first 8s ease-in-out infinite;
+  animation: ticker-message-first 12s ease-in-out infinite;
 }
 
 .ticker-message:nth-child(2) {
   animation-name: ticker-message-second;
 }
 
+.ticker-message:nth-child(3) {
+  animation-name: ticker-message-third;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-message {
     animation: none;
-  }
-
-  .ticker-message:first-child {
+    display: block;
     opacity: 1;
   }
 
-  .ticker-message:nth-child(2) {
-    display: none;
+  .ticker-track {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -529,58 +539,6 @@ body {
 }
 
 .about-page a:hover {
-  color: #405940;
-}
-
-/* ===== CABS PAGE STYLES ===== */
-.cabs-page {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #302f2b;
-}
-
-.cabs-page h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #9c5844;
-  text-align: center;
-}
-
-.cabs-page h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #526b52;
-}
-
-.cabs-page p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  color: #6b625a;
-}
-
-.cabs-page ul {
-  margin: 1.5rem 0;
-  padding-left: 1.5rem;
-}
-
-.cabs-page li {
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #6b625a;
-}
-
-.cabs-page a {
-  color: #526b52;
-  text-decoration: underline;
-}
-
-.cabs-page a:hover {
   color: #405940;
 }
 
