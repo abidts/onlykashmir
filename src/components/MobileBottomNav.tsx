@@ -1,20 +1,17 @@
 import { useState, useEffect, useContext } from 'react';
-import { Home, MapPin, Package, Phone, Menu, X, Mountain, Flame, Car, Camera, MessageSquare, Building, MessageCircle } from 'lucide-react';
+import { Home, MapPin, Package, Phone, Menu, X, Flame, MessageSquare, Building, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { CallbackContext } from './Layout';
 
 const navItems = [
   { icon: MapPin, label: 'Destination', path: '/destinations' },
   { icon: Package, label: 'Package', path: '/packages' },
-  { icon: Car, label: 'Cabs', path: '/cabs' },
   { icon: MessageCircle, label: 'Whatsapp', action: true },
 ];
 
 const moreItems = [
   { icon: Home, label: 'Home', path: '/' },
   { icon: Building, label: 'Hotels', path: '/hotels' },
-  { icon: Mountain, label: 'Adventure', path: '/adventure' },
-  { icon: Camera, label: 'Gallery', path: '/gallery' },
   { icon: Flame, label: 'About', path: '/about' },
   { icon: Phone, label: 'Contact', path: '/contact' },
 ];

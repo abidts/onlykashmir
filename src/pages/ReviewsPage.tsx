@@ -113,7 +113,7 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Reviews & Testimonials - Happy Travelers | Customer Reviews"
         description="Read reviews from our happy travelers. See why Only Kashmir is the top choice for Kashmir tours, hotels, and travel packages. 5-star rated travel agency."

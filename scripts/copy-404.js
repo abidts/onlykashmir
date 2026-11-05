@@ -16,11 +16,9 @@ const fallbackPath = path.join(distDir, '404.html');
 const routes = [
   '/',
   '/about',
-  '/adventure',
   '/cabs',
   '/contact',
   '/destinations',
-  '/gallery',
   '/hotels',
   '/packages',
   '/reviews',
@@ -37,17 +35,6 @@ const routes = [
   '/destinations/drung-fall',
   '/destinations/mughal-gardens',
   '/destinations/amarnath',
-  '/packages/short-adventure-trip',
-  '/packages/jk-bliss',
-  '/packages/honeymoon-special',
-  '/packages/grand-jk',
-  '/packages/family-fun',
-  '/packages/adventure-explorer',
-  '/packages/budget-jk',
-  '/packages/kashmir-with-katra',
-  '/packages/kashmir-with-ladakh',
-  '/packages/srinagar-houseboat',
-  '/packages/gulmarg-snow',
 ];
 
 const siteUrl = 'https://www.onlykashmir.com';

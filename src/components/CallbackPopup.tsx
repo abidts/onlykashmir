@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Phone, Mail, User, Send, CheckCircle, MessageCircle } from 'lucide-react';
+import { countryCodes } from '../utils/countryCodes';
 
 interface Props {
   isOpen: boolean;
@@ -35,6 +36,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
     email: '',
     phone: '',
   });
+  const [countryCode, setCountryCode] = useState('+91');
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +51,8 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
     setSubmitting(true);
 
     try {
+      const fullPhone = `${countryCode}${formData.phone}`.replace(/\s+/g, '');
+
       // Submit to FormSubmit for email notification
       const emailRes = await fetch(FORM_SUBMIT_ACTION, {
         method: 'POST',
@@ -59,7 +63,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: fullPhone,
           subject: subject || 'Call back request',
           _subject: 'Only Kashmir – Call back request',
           _template: 'table',
@@ -79,7 +83,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       googleFormParams.append('pageHistory', '0');
       googleFormParams.append(GOOGLE_FORM_FIELDS.name, formData.name.trim());
       googleFormParams.append(GOOGLE_FORM_FIELDS.email, formData.email.trim());
-      googleFormParams.append(GOOGLE_FORM_FIELDS.phone, formData.phone.trim());
+      googleFormParams.append(GOOGLE_FORM_FIELDS.phone, fullPhone);
 
       await fetch(GOOGLE_FORM_ACTION, {
         method: 'POST',
@@ -89,7 +93,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       });
 
       console.log('✅ Callback form submitted to Google Form');
-      console.log('Name:', formData.name, '| Email:', formData.email, '| Phone:', formData.phone);
+      console.log('Name:', formData.name, '| Email:', formData.email, '| Phone:', fullPhone);
 
       setSubmitted(true);
       // Record the Google Ads lead only after the callback form has been sent.
@@ -101,6 +105,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', phone: '' });
+        setCountryCode('+91');
         onClose();
       }, 2200);
     } catch (err) {
@@ -110,6 +115,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       setTimeout(() => {
         setSubmitted(false);
         setFormData({ name: '', email: '', phone: '' });
+        setCountryCode('+91');
         onClose();
       }, 2200);
     } finally {
@@ -170,7 +176,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Amit Kapoor"
                     required
                     className="w-full rounded-xl bg-slate-800 border border-slate-700 py-3 pl-12 pr-4 text-white placeholder:text-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
                   />
@@ -180,16 +186,27 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-1">Phone Number</label>
-                  <div className="relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+                  <div className="flex gap-2">
+                    <select
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      aria-label="Country calling code"
+                      className="w-24 shrink-0 rounded-xl bg-slate-800 border border-slate-700 px-2 text-sm text-white outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+                    >
+                      {countryCodes.map((country) => (
+                        <option key={country.code} value={country.code} className="bg-slate-900 text-white">
+                          {country.label} {country.code}
+                        </option>
+                      ))}
+                    </select>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="Phone number"
                       required
-                      className="w-full rounded-xl bg-slate-800 border border-slate-700 py-3 pl-12 pr-4 text-white placeholder:text-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+                      className="min-w-0 flex-1 rounded-xl bg-slate-800 border border-slate-700 px-3 py-3 text-white placeholder:text-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
                     />
                   </div>
                 </div>
@@ -202,9 +219,9 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="amitkapoor@gmail.com"
                       required
-                      className="w-full rounded-xl bg-slate-800 border border-slate-700 py-3 pl-12 pr-4 text-white placeholder:text-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+                      className="w-full rounded-xl bg-slate-800 border border-slate-700 py-3 pl-12 pr-4 text-sm text-white placeholder:text-slate-500 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
                     />
                   </div>
                 </div>

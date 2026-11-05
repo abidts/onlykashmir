@@ -72,7 +72,7 @@ export default function DestinationsPage() {
   ];
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Kashmir Destinations - Best Places to Visit in Kashmir | Top Kashmir Places"
         description="Only Kashmir Tours and Travels - Explore Kashmir destinations, best places to visit in Kashmir, Kashmir places, Srinagar, Dal Lake, Gulmarg, Pahalgam & more! Book your Kashmir trip today."

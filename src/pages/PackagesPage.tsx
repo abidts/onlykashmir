@@ -1,6 +1,5 @@
+import { Phone, Sparkles } from 'lucide-react';
 import { useContext } from 'react';
-import { Clock, MapPin, Users, Star, Check, Phone, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { CallbackContext } from '../components/Layout';
 import GetItinerary from '../components/GetItinerary';
 import SEO from '../components/SEO';
@@ -17,7 +16,6 @@ const packages = [
     tag: 'Best Seller',
     tagColor: 'from-vintage-500 to-vintage-600',
     includes: ['Hotel', 'Breakfast', 'Cab', 'Shikara'],
-    slug: 'jk-bliss',
   },
   {
     name: 'Honeymoon Special',
@@ -29,8 +27,7 @@ const packages = [
     reviews: 189,
     tag: 'Romantic',
     tagColor: 'from-rose-500 to-pink-600',
-    includes: ['Luxury Hotel', 'All Meals', 'Houseboat', 'Gondola'],
-    slug: 'honeymoon-special',
+    includes: [],
   },
   {
     name: 'Short & Adventure Trip',
@@ -43,7 +40,6 @@ const packages = [
     tag: 'Adventure',
     tagColor: 'from-orange-500 to-red-600',
     includes: ['Hotel', 'Meal', 'Transfer', 'Sightseeing', 'Activities'],
-    slug: 'short-adventure-trip',
   },
   {
     name: 'Ladakh Escape',
@@ -55,8 +51,7 @@ const packages = [
     reviews: 203,
     tag: 'Premium',
     tagColor: 'from-vintage-900 to-vintage-700',
-    includes: ['Camels', 'Dunes', 'All Meals', 'Transfer', 'Stay', 'Sightseeing'],
-    slug: 'kashmir-with-ladakh',
+    includes: ['Camels', 'Dunes', 'Transfer', 'Stay', 'Sightseeing'],
   },
   {
     name: 'Grand J&K',
@@ -68,8 +63,7 @@ const packages = [
     reviews: 312,
     tag: 'Premium',
     tagColor: 'from-amber-500 to-orange-600',
-    includes: ['5-Star', 'All Meals', 'Flights', 'Guide'],
-    slug: 'grand-jk',
+    includes: ['5-Star', 'Flights', 'Guide'],
   },
   {
     name: 'Family Fun',
@@ -81,8 +75,7 @@ const packages = [
     reviews: 198,
     tag: 'Family',
     tagColor: 'from-sky-500 to-blue-600',
-    includes: ['Family Rooms', 'All Meals', 'Pony Ride', 'Shikara'],
-    slug: 'family-fun',
+    includes: ['Family Rooms', 'Pony Ride', 'Shikara'],
   },
   {
     name: 'Budget J&K',
@@ -95,7 +88,6 @@ const packages = [
     tag: 'Budget',
     tagColor: 'from-teal-500 to-cyan-600',
     includes: ['Hotel', 'Breakfast', 'Cab', 'Sightseeing'],
-    slug: 'budget-jk',
   },
   {
     name: 'Kashmir With Katra',
@@ -107,8 +99,7 @@ const packages = [
     reviews: 178,
     tag: 'Spiritual',
     tagColor: 'from-amber-500 to-orange-600',
-    includes: ['Hotel', 'All Meals', 'Cab', 'Houseboat', 'Vaishno Devi Darshan'],
-    slug: 'kashmir-with-katra',
+    includes: ['Hotel', 'Cab', 'Vaishno Devi Darshan'],
   },
   {
     name: 'Adventure Explorer',
@@ -120,8 +111,7 @@ const packages = [
     reviews: 156,
     tag: 'Adventure',
     tagColor: 'from-orange-500 to-red-600',
-    includes: ['Camp + Hotel', 'All Meals', '4x4 Cab', 'Trek'],
-    slug: 'adventure-explorer',
+    includes: ['Camp + Hotel', '4x4 Cab', 'Trek'],
   },
   {
     name: 'Srinagar Houseboat',
@@ -133,8 +123,7 @@ const packages = [
     reviews: 156,
     tag: 'Luxury',
     tagColor: 'from-vintage-400 to-vintage-600',
-    includes: ['Houseboat', 'All Meals', 'Shikara', 'Sightseeing'],
-    slug: 'srinagar-houseboat',
+    includes: ['Shikara', 'Sightseeing'],
   },
   {
     name: 'Gulmarg Snow',
@@ -146,8 +135,7 @@ const packages = [
     reviews: 178,
     tag: 'Adventure',
     tagColor: 'from-amber-500 to-orange-600',
-    includes: ['Hotel', 'Breakfast', 'Gondola', 'Skiing', 'Cab'],
-    slug: 'gulmarg-snow',
+    includes: ['Hotel', 'Breakfast', 'Skiing', 'Cab'],
   },
 ];
 
@@ -167,8 +155,7 @@ export default function PackagesPage() {
         "@type": "TouristTrip",
         "name": pkg.name,
         "description": `${pkg.duration} tour to ${pkg.destinations.join(', ')}`,
-        "image": pkg.image,
-        "url": `https://www.onlykashmir.com/packages/${pkg.slug}`
+        "image": pkg.image
       }
     }))
   };
@@ -265,7 +252,7 @@ export default function PackagesPage() {
   ];
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Top Tour Packages in Kashmir | Best Travel Packages & Tours and Travels"
         description="Only Kashmir Tours and Travels - Top tour packages in Kashmir! Book travel packages, Kashmir tours, honeymoon packages, Gulmarg tours, Srinagar houseboats, Dal Lake shikara rides & enjoy travel!"
@@ -299,9 +286,8 @@ export default function PackagesPage() {
                 key={pkg.name}
                 className="group relative overflow-hidden rounded-3xl bg-white border border-gray-200 transition-all duration-500 hover:border-gray-300 tap-scale shadow-lg shadow-black/10 hover:shadow-vintage-500/10"
               >
-                {/* Image with Link to Details Page */}
-                <Link to={`/packages/${pkg.slug}`} className="block">
-                  <div className="relative h-44 sm:h-52 lg:h-56 overflow-hidden">
+                {/* Image */}
+                <div className="relative h-44 sm:h-52 lg:h-56 overflow-hidden">
                     <img
                       src={pkg.image}
                       alt={pkg.name}
@@ -311,71 +297,15 @@ export default function PackagesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/30 to-transparent" />
 
-                    {/* Tag */}
-                    <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
-                      {pkg.tag}
-                    </span>
-
-                    {/* Rating */}
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1 rounded-full bg-black/50 backdrop-blur-sm px-2.5 py-1">
-                      <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                      <span className="text-xs font-medium text-white">{pkg.rating}</span>
-                    </div>
-
                     {/* Package name */}
                     <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4">
                       <h3 className="text-xl sm:text-2xl font-bold text-white font-playfair">{pkg.name}</h3>
                     </div>
-                  </div>
-                </Link>
-
-                {/* Details */}
-                <div className="p-4 sm:p-5 flex flex-col gap-3 min-h-[180px] sm:min-h-[200px]">
-                  {/* Duration & Group */}
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="h-4 w-4 text-vintage-600" />
-                      {pkg.duration}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4 text-vintage-600" />
-                      {pkg.groupSize} People
-                    </span>
-                  </div>
-
-                  {/* Destinations */}
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {pkg.destinations.slice(0, 3).map((d) => (
-                      <span key={d} className="flex items-center gap-1 rounded-full bg-gray-100/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-700">
-                        <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-600" />
-                        {d}
-                      </span>
-                    ))}
-                    {pkg.destinations.length > 3 && (
-                      <span className="rounded-full bg-gray-100/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-600 font-medium">
-                        +{pkg.destinations.length - 3} more
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Includes */}
-                  <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                    {pkg.includes.map((item) => (
-                      <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-600">
-                        <Check className="h-3 w-3 text-vintage-600" />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA Button - Opens Popup */}
+                </div>
+                <div className="p-4">
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      onRequestCallback(`${pkg.name} Package`);
-                    }}
-                    className="mt-auto w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
+                    onClick={() => onRequestCallback(`${pkg.name} Package`)}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
                   >
                     <Phone className="h-4 w-4" />
                     Request a Call Back

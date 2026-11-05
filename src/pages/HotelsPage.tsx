@@ -45,7 +45,7 @@ export default function HotelsPage() {
   const hotelTypes = ['All', ...new Set(hotels.map(hotel => hotel.type))];
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Luxury Hotels & Houseboats in Kashmir"
         description="Book the best luxury hotels and traditional houseboats in Srinagar, Gulmarg, and Pahalgam. Experience Kashmiri hospitality with Only Kashmir."

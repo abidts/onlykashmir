@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import LogoMark from './LogoMark';
 
 interface Props {
   onRequestCallback: () => void;
@@ -11,10 +10,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/destinations' },
   { label: 'Packages', href: '/packages' },
-  { label: 'Cabs', href: '/cabs' },
   { label: 'Hotels', href: '/hotels' },
-  { label: 'Adventure', href: '/adventure' },
-  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -36,15 +32,25 @@ export default function Navbar({ onRequestCallback }: Props) {
   return (
     <>
       <nav
-        className="relative bg-transparent py-0.5 z-50"
+        className="relative py-0.5 z-50"
+        style={{ background: 'linear-gradient(110deg, #29434A, #5D8580, #B8C8B2)' }}
       >
         <div className="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center group">
-              <div className="transition-all group-hover:scale-105">
-                <LogoMark size={96} animate={true} />
-              </div>
+            {/* Brand */}
+            <Link
+              to="/"
+              aria-label="Only Kashmir Tour & Travels home"
+              className="group flex flex-col items-start leading-none text-black/80 transition-colors hover:text-black"
+            >
+              <span className="font-playfair text-xl sm:text-2xl font-bold uppercase tracking-wide">
+                Only Kashmir
+              </span>
+              <span className="mt-1.5 flex items-center gap-2 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.28em]">
+                <span className="h-px w-4 bg-current opacity-60 transition-all group-hover:w-6" />
+                Tour &amp; Travels
+                <span className="h-px w-4 bg-current opacity-60 transition-all group-hover:w-6" />
+              </span>
             </Link>
 
             {/* Right side navigation & CTA */}
@@ -55,8 +61,7 @@ export default function Navbar({ onRequestCallback }: Props) {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="relative px-3 py-2 text-lg font-bold text-black hover:text-gray-800 transition-colors group"
-                    style={{ fontFamily: 'Dorsa, sans-serif' }}
+                    className="relative rounded-md px-3 py-2 text-sm font-semibold text-black/80 hover:text-black transition-colors group focus-visible:outline-offset-2"
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-gradient-to-r from-vintage-400 to-vintage-600 transition-all duration-300 group-hover:left-1 group-hover:w-[calc(100%-8px)]" />

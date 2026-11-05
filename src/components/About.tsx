@@ -30,7 +30,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="min-h-screen text-gray-900 py-16 sm:py-24" style={{ backgroundColor: '#F0D8B6' }}>
+    <section id="about" className="min-h-screen text-gray-900 py-16 sm:py-24" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="About Us - Only Kashmir Tour & Travels | Premier Travel Agency in Srinagar"
         description="Learn more about Only Kashmir Tour & Travels. We are a premier travel agency in Srinagar dedicated to providing authentic and luxury travel experiences in Kashmir. Local Kashmir experts since 2025."

@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 export default function NotFoundPage() {
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO
         title="Page Not Found | Only Kashmir Tour & Travels"
         description="The page you requested could not be found. Explore Kashmir tour packages, destinations, hotels, and cab services with Only Kashmir."

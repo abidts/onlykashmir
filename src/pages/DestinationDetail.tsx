@@ -274,7 +274,7 @@ export default function DestinationDetail() {
 
   if (!destination) {
     return (
-      <div className="min-h-screen text-gray-900 flex items-center justify-center" style={{ backgroundColor: '#F0D8B6' }}>
+      <div className="min-h-screen text-gray-900 flex items-center justify-center" style={{ backgroundColor: '#F7F3E9' }}>
         <div className="text-center">
           <h1 className="text-4xl font-playfair font-bold mb-4">Destination Not Found</h1>
           <button
@@ -413,7 +413,7 @@ export default function DestinationDetail() {
   const currentFAQs = destinationFAQs[slug as keyof typeof destinationFAQs] || [];
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title={`${destination.name} - Best Time to Visit & Things to Do | Only Kashmir`}
         description={`Discover ${destination.name} in Kashmir! Find the best time to visit, top things to do & plan your trip with Only Kashmir Travel Agency. ${destination.desc}`}

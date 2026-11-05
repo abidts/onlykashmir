@@ -49,7 +49,7 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
 
   return (
     <div className="py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${showViewAll ? 'lg:grid-cols-[repeat(3,minmax(0,1fr))_3rem]' : ''}`}>
         {featuredHotels.map((hotel) => (
           <div
             key={hotel.name}
@@ -123,20 +123,17 @@ export default function Hotels({ showViewAll = true }: { showViewAll?: boolean }
             </div>
           </div>
         ))}
-      </div>
-
-      {/* View All Link - only show if showViewAll is true */}
-      {showViewAll && (
-        <div className="mt-8 text-center">
+        {showViewAll && (
           <Link
             to="/hotels"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
+            aria-label="View all hotels"
+            title="View all hotels"
+            className="flex h-12 w-12 self-center items-center justify-center justify-self-center rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-white shadow-lg shadow-vintage-500/30 transition-all hover:scale-105 hover:shadow-vintage-500/50 md:col-span-3 lg:col-span-1"
           >
-            View All Hotels
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-5 w-5" />
           </Link>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

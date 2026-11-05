@@ -129,7 +129,7 @@ export default function Cabs({ showAll = false }: Props) {
   const cabs = showAll ? allCabs : homeCabs;
 
   return (
-    <section id="cabs" className="relative py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#F0D8B6' }}>
+    <section id="cabs" className="relative py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#F7F3E9' }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
       
       {/* Background decoration */}

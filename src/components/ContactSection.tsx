@@ -7,7 +7,7 @@ export default function ContactSection() {
   const onRequestCallback = useContext(CallbackContext) || (() => {});
 
   return (
-    <section id="callback" className="relative py-16 sm:py-24 overflow-hidden text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <section id="callback" className="relative py-16 sm:py-24 overflow-hidden text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-vintage-500/50 to-transparent" />
 
       {/* Background */}

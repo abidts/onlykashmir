@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, Users, Check, Phone, ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Phone } from 'lucide-react';
 import { CallbackContext } from './Layout';
 import PackageFlashyCTA from './PackageFlashyCTA';
 
@@ -16,7 +16,7 @@ const packages = [
     reviews: 189,
     tag: 'Romantic',
     tagColor: 'from-rose-500 to-pink-600',
-    includes: ['Luxury Hotel', 'All Meals', 'Houseboat', 'Gondola'],
+    includes: [],
   },
   {
     slug: 'family-fun',
@@ -29,7 +29,7 @@ const packages = [
     reviews: 198,
     tag: 'Family',
     tagColor: 'from-vintage-400 to-vintage-700',
-    includes: ['Family Rooms', 'All Meals', 'Pony Ride', 'Shikara'],
+    includes: ['Family Rooms', 'Pony Ride', 'Shikara'],
   },
   {
     slug: 'short-adventure-trip',
@@ -68,7 +68,7 @@ const packages = [
     reviews: 178,
     tag: 'Spiritual',
     tagColor: 'from-amber-500 to-orange-600',
-    includes: ['Hotel', 'All Meals', 'Cab', 'Houseboat', 'Vaishno Devi Darshan'],
+    includes: ['Hotel', 'Cab', 'Vaishno Devi Darshan'],
   },
   {
     slug: 'adventure-explorer',
@@ -81,9 +81,13 @@ const packages = [
     reviews: 156,
     tag: 'Adventure',
     tagColor: 'from-orange-500 to-red-600',
-    includes: ['Camp + Hotel', 'All Meals', '4x4 Cab', 'Trek'],
+    includes: ['Camp + Hotel', '4x4 Cab', 'Trek'],
   },
 ];
+
+const featuredPackages = packages.filter(({ slug }) =>
+  ['honeymoon-special', 'family-fun', 'budget-jk'].includes(slug)
+);
 
 export default function TourPackages() {
   const onRequestCallback = useContext(CallbackContext) || (() => {});
@@ -97,7 +101,7 @@ export default function TourPackages() {
       // Calculate active card for mobile indicator
       const cardWidth = 300;
       const newActive = Math.round(scrollLeft / cardWidth);
-      setActiveCard(Math.min(newActive, packages.length - 1));
+      setActiveCard(Math.min(newActive, featuredPackages.length - 1));
     }
   };
 
@@ -111,7 +115,7 @@ export default function TourPackages() {
   }, []);
 
   return (
-    <section id="packages" className="relative py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#F0D8B6' }}>
+    <section id="packages" className="relative pt-16 pb-8 sm:pt-24 sm:pb-10 overflow-hidden" style={{ backgroundColor: '#F7F3E9' }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
       {/* Background decoration */}
@@ -120,19 +124,9 @@ export default function TourPackages() {
       <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 reveal">
-          <div className="max-w-2xl px-4 sm:px-0 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-sm font-medium text-amber-600">
-              <Sparkles className="h-4 w-4" />
-              Tour Packages
-            </span>
-            <h2 className="mt-4 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              Handcrafted Travel
-              <span className="block gradient-text">Packages for You</span>
-            </h2>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700">
-              Choose from our curated packages. Contact us for custom itineraries!
-            </p>
-          </div>
+          <h2 className="px-4 text-center font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Tours
+          </h2>
         </div>
 
         {/* Horizontal Slider */}
@@ -150,21 +144,16 @@ export default function TourPackages() {
               marginRight: '-1rem',
             }}
           >
-          {packages.map((pkg, index) => (
+          {featuredPackages.map((pkg, index) => (
             <div
               key={pkg.name}
               className="group relative flex-none w-[280px] sm:w-[360px] overflow-hidden rounded-3xl bg-white/90 border border-gray-200 transition-all duration-500 hover:border-gray-300 snap-start tap-scale"
               style={{
                 transform: activeCard === index ? 'scale(1)' : 'scale(0.98)',
                 opacity: activeCard === index ? 1 : 0.8,
-                marginRight: index < packages.length - 1 ? '1rem' : '0',
+                marginRight: index < featuredPackages.length - 1 ? '1rem' : '0',
               }}
             >
-              <Link 
-                to={`/packages/${(pkg as any).slug || pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
-                className="absolute inset-0 z-10"
-                aria-label={`View details for ${pkg.name} package`}
-              />
               {/* Image */}
               <div className="relative h-44 sm:h-56 overflow-hidden">
                 <img
@@ -176,77 +165,34 @@ export default function TourPackages() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/30 to-transparent" />
                 
-                {/* Tag */}
-                <span className={`absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-gradient-to-r ${pkg.tagColor} px-3 py-1 text-xs font-bold text-white shadow-lg`}>
-                  {pkg.tag}
-                </span>
-                
                 {/* Package name */}
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4">
                   <h3 className="text-xl sm:text-2xl font-bold text-white font-playfair">{pkg.name}</h3>
                 </div>
               </div>
-
-              {/* Details */}
-              <div className="relative p-4 sm:p-5 pb-16 min-h-[180px] sm:min-h-[200px]">
-                {/* Duration & Group */}
-                <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-4 w-4 text-vintage-600" />
-                    {pkg.duration}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Users className="h-4 w-4 text-vintage-600" />
-                    {pkg.groupSize} People
-                  </span>
-                </div>
-
-                {/* Destinations */}
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {pkg.destinations.slice(0, 3).map((d) => (
-                    <span key={d} className="flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[10px] sm:text-xs text-gray-700">
-                      <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-vintage-600" />
-                      {d}
-                    </span>
-                  ))}
-                  {pkg.destinations.length > 3 && (
-                    <span className="rounded-full bg-white/80 px-2.5 py-1 text-[10px] sm:text-xs text-vintage-600 font-medium">
-                      +{pkg.destinations.length - 3} more
-                    </span>
-                  )}
-                </div>
-
-                {/* Includes */}
-                <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                  {pkg.includes.map((item) => (
-                    <span key={item} className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-600">
-                      <Check className="h-3 w-3 text-vintage-600" />
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA Button - Fixed position at bottom */}
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  onRequestCallback(`${pkg.name} Package`);
-                }}
-                className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
+                onClick={() => onRequestCallback(`${pkg.name} Package`)}
+                className="m-4 flex w-[calc(100%-2rem)] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-vintage-500 to-vintage-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-vintage-500/20 transition-all hover:shadow-vintage-500/40 active:scale-[0.98] tap-scale btn-ripple"
               >
                 <Phone className="h-4 w-4" />
                 Request a Call Back
               </button>
             </div>
           ))}
+            <Link
+              to="/packages"
+              aria-label="View all packages"
+              title="View all packages"
+              className="flex h-12 w-12 flex-none self-center items-center justify-center rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 text-white shadow-lg shadow-vintage-500/30 transition-all hover:scale-105 hover:shadow-vintage-500/50"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
 
         {/* Mobile Indicators */}
         <div className="mt-4 flex items-center justify-center gap-2 sm:hidden">
-          {packages.map((_, i) => (
+          {featuredPackages.map((_, i) => (
             <button
               key={i}
               onClick={() => {
@@ -272,17 +218,6 @@ export default function TourPackages() {
           <ChevronLeft className="h-4 w-4 swipe-hint sm:hidden" style={{ animationDirection: 'reverse' }} />
           <span className="sm:hidden">Swipe to explore</span>
           <ChevronRight className="h-4 w-4 swipe-hint sm:hidden" />
-        </div>
-
-        {/* View All Packages */}
-        <div className="mt-8 text-center">
-          <Link
-            to="/packages"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
-          >
-            View All Packages
-            <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
 
         {/* Flashy Package CTA */}

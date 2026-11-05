@@ -8,7 +8,7 @@ export default function RequestCallbackPage() {
   const subject = searchParams.get('subject') || undefined;
 
   return (
-    <div className="min-h-screen px-4 py-28 sm:py-32 text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen px-4 py-28 sm:py-32 text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO
         title="Request a Call Back | Only Kashmir Tour & Travels"
         description="Request a call back from an Only Kashmir travel expert for help planning your Kashmir trip."

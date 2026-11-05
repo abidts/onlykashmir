@@ -4,9 +4,6 @@ import Layout from './components/Layout';
 import DestinationsPage from './pages/DestinationsPage';
 import DestinationDetail from './pages/DestinationDetail';
 import PackagesPage from './pages/PackagesPage';
-import PackageDetail from './pages/PackageDetail';
-import AdventurePage from './pages/AdventurePage';
-import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
 import HotelsPage from './pages/HotelsPage';
 import About from './components/About';
@@ -45,30 +42,6 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <PackagesPage />
-      </Layout>
-    ),
-  },
-  {
-    path: '/packages/:packageName',
-    element: (
-      <Layout>
-        <PackageDetail />
-      </Layout>
-    ),
-  },
-  {
-    path: '/adventure',
-    element: (
-      <Layout>
-        <AdventurePage />
-      </Layout>
-    ),
-  },
-  {
-    path: '/gallery',
-    element: (
-      <Layout>
-        <GalleryPage />
       </Layout>
     ),
   },

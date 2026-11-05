@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 sm:py-24 text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen py-16 sm:py-24 text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Contact Us - Only Kashmir Tour & Travels"
         description="Get in touch with Only Kashmir Tour & Travels. Call us at +91 88996 66998 or email info@onlykashmir.com for booking inquiries and travel assistance."

@@ -90,7 +90,7 @@ const CabsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="min-h-screen text-gray-900" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Car Rental & Taxi Services in Kashmir | Best Cab Service & Taxi Booking"
         description="Reliable and affordable cab services in Srinagar, Gulmarg, and Pahalgam. Book Toyota Innova, Tempo Traveller, or Etios for your Kashmir trip. 24/7 taxi service available."
@@ -225,7 +225,7 @@ const CabsPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white-800 border border-slate-700 rounded-xl text-gray-900 placeholder:text-gray-500 outline-none focus:border-vintage-500 focus:ring-2 focus:ring-vintage-500/20 transition"
-                      placeholder="John Doe"
+                      placeholder="Amit Kapoor"
                       required
                     />
                   </div>
@@ -237,7 +237,7 @@ const CabsPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white-800 border border-slate-700 rounded-xl text-gray-900 placeholder:text-gray-500 outline-none focus:border-vintage-500 focus:ring-2 focus:ring-vintage-500/20 transition"
-                      placeholder="john@example.com"
+                      placeholder="amitkapoor@gmail.com"
                       required
                     />
                   </div>

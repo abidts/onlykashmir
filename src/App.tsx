@@ -1,9 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import HeroSlider from './components/HeroSlider';
-import Cabs from './components/Cabs';
-import Hotels from './components/Hotels';
 import ScrollToTop from './components/ScrollToTop';
 import MobileBottomNav from './components/MobileBottomNav';
 import TourPackages from './components/TourPackages';
@@ -67,7 +63,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative overflow-x-hidden" style={{ backgroundColor: '#F0D8B6' }}>
+    <div className="relative overflow-x-hidden" style={{ backgroundColor: '#F7F3E9' }}>
       <SEO 
         title="Only Kashmir Tours and Travels - Best Travel Agency in Kashmir & Srinagar | Top Tour Packages"
         description="Only Kashmir Tour and Travels - Top Travel Agency in Srinagar & Kashmir. Book top tour packages, explore Kashmir destinations, best places to visit, hotels, houseboats, Dal Lake shikara rides, Gulmarg, Srinagar & enjoy travel!"
@@ -77,41 +73,6 @@ export default function App() {
       <HeroSlider />
       
       <TourPackages />
-
-      <Cabs />
-      <div className="pb-16 text-center" style={{ backgroundColor: '#F0D8B6' }}>
-        <Link
-          to="/cabs"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
-        >
-          View All Cabs
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </div>
-
-      <section className="py-16 sm:py-24 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-              Premium Hotels & Stays
-            </h2>
-            <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-              Luxury hotels, houseboats, and resorts for an unforgettable Kashmir experience
-            </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto rounded-full mt-4" />
-          </div>
-          <Hotels showViewAll={false} />
-          <div className="mt-8 text-center">
-            <Link
-              to="/hotels"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-vintage-500 to-vintage-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-vintage-500/30 transition-all hover:shadow-vintage-500/50 hover:scale-105"
-            >
-              View All Hotels
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Desktop only */}
       <ScrollToTop />

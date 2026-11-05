@@ -34,6 +34,15 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <>
+      <aside
+        aria-label="Rate information"
+        className="overflow-hidden py-2 text-xs font-medium text-white sm:text-sm"
+        style={{ backgroundColor: '#1F3539' }}
+      >
+        <div className="ticker-track">
+          Rates are subject to change depending on the itinerary, hotel availability, and number of guests.
+        </div>
+      </aside>
       <Navbar onRequestCallback={() => openCallbackPage()} />
       <SocialSidebar />
       <CallbackContext.Provider value={openCallbackPage}>

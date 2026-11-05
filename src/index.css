@@ -2,43 +2,52 @@
 
 @theme {
   --font-playfair: 'Playfair Display', serif;
-  --font-inter: 'Raleway', 'Inter', sans-serif;
+  --font-inter: 'Inter', sans-serif;
   --font-dancing: 'Dancing Script', cursive;
 
-  /* Emerald Valley + Gold Color Palette */
-  --color-vintage-900: #0d3b2e;  /* Dark Forest Green - navbar/hero */
-  --color-vintage-500: #f0c040;  /* Gold - primary accent */
-  --color-vintage-700: #1a5c46;  /* Medium Green - secondary */
-  --color-vintage-400: #a8d5c2;  /* Sage Mint - muted accent on dark */
-  --color-vintage-50: #e8f5f0;   /* Light Mint - lightest background */
+  --color-white: #fbf8f1;
+  --color-gray-50: #faf7f0;
+  --color-gray-100: #f2ece1;
+  --color-gray-200: #e7ded0;
+  --color-gray-300: #d6c9b8;
+  --color-gray-400: #b7aa9b;
+  --color-gray-500: #8b8177;
+  --color-gray-600: #6b625a;
+  --color-gray-700: #514a43;
+  --color-gray-800: #3b3732;
+  --color-gray-900: #2e2b27;
 
-  /* Extended palette with variations */
-  --color-vintage-800: #071f18;  /* Deepest Green - darkest bg */
-  --color-vintage-600: #d4a020;  /* Dark Gold */
-  --color-vintage-300: #c5e0d5;  /* Lighter sage */
-  --color-vintage-200: #d8ede6;  /* Very light sage */
-  --color-vintage-100: #eff7f3;  /* Off-white sage */
+  --color-vintage-900: #302f2b;
+  --color-vintage-800: #3b4036;
+  --color-vintage-700: #465b46;
+  --color-vintage-600: #526b52;
+  --color-vintage-500: #607a5d;
+  --color-vintage-400: #8b9b7c;
+  --color-vintage-300: #b3bea4;
+  --color-vintage-200: #d7ddcb;
+  --color-vintage-100: #e9ecdf;
+  --color-vintage-50: #f5f5ec;
 
-  --color-amber-50: #fffbeb;
-  --color-amber-100: #fef3c7;
-  --color-amber-200: #fde68a;
-  --color-amber-300: #fcd34d;
-  --color-amber-400: #fbbf24;
-  --color-amber-500: #f59e0b;
-  --color-amber-600: #d97706;
-  --color-amber-700: #b45309;
-  --color-amber-800: #92400e;
-  --color-amber-900: #78350f;
+  --color-amber-50: #fbf6e9;
+  --color-amber-100: #f3e8c9;
+  --color-amber-200: #ead9a6;
+  --color-amber-300: #ddc17b;
+  --color-amber-400: #cda85d;
+  --color-amber-500: #b88d45;
+  --color-amber-600: #98703a;
+  --color-amber-700: #795a33;
+  --color-amber-800: #61482e;
+  --color-amber-900: #4a3826;
 
-  --color-rose-50: #fff1f2;
-  --color-rose-100: #ffe4e6;
-  --color-rose-400: #fb7185;
-  --color-rose-500: #f43f5e;
-  --color-rose-600: #e11d48;
+  --color-rose-50: #faf0eb;
+  --color-rose-100: #f2ded4;
+  --color-rose-400: #c9846b;
+  --color-rose-500: #b96c54;
+  --color-rose-600: #9c5844;
 
-  --color-gold: #f0c040;
-  --color-gold-light: #f5d47a;
-  --color-gold-dark: #d4a020;
+  --color-gold: #b88d45;
+  --color-gold-light: #ddc17b;
+  --color-gold-dark: #98703a;
 }
 
 html {
@@ -46,9 +55,37 @@ html {
 }
 
 body {
-  font-family: 'Raleway', 'Inter', sans-serif;
+  min-height: 100vh;
+  background-color: #f7f3e9;
+  color: #302f2b;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #526b52;
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: #d7ddcb;
+  color: #302f2b;
 }
 
 /* Prevent pull-to-refresh on mobile */
@@ -166,8 +203,8 @@ body {
 }
 
 @keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes seasonal-colors {
@@ -190,8 +227,8 @@ body {
 
 .ticker-track {
   width: max-content;
-  min-width: 100%;
-  animation: ticker-scroll 22s linear infinite;
+  white-space: nowrap;
+  animation: ticker-scroll 18s linear infinite;
 }
 
 .animate-float { animation: float 6s ease-in-out infinite; }
@@ -414,14 +451,14 @@ body {
   padding: 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
-  color: #f1f5f9;
+  color: #302f2b;
 }
 
 .about-page h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #E64833;
+  color: #9c5844;
   text-align: center;
 }
 
@@ -430,14 +467,14 @@ body {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #90AEAD;
+  color: #526b52;
 }
 
 .about-page p {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
-  color: #cbd5e1;
+  color: #6b625a;
 }
 
 .about-page ul {
@@ -449,16 +486,16 @@ body {
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #6b625a;
 }
 
 .about-page a {
-  color: #E64833;
+  color: #526b52;
   text-decoration: underline;
 }
 
 .about-page a:hover {
-  color: #c43d2b;
+  color: #405940;
 }
 
 /* ===== CABS PAGE STYLES ===== */
@@ -466,14 +503,14 @@ body {
   padding: 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
-  color: #f1f5f9;
+  color: #302f2b;
 }
 
 .cabs-page h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #E64833;
+  color: #9c5844;
   text-align: center;
 }
 
@@ -482,14 +519,14 @@ body {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #90AEAD;
+  color: #526b52;
 }
 
 .cabs-page p {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
-  color: #cbd5e1;
+  color: #6b625a;
 }
 
 .cabs-page ul {
@@ -501,24 +538,24 @@ body {
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #6b625a;
 }
 
 .cabs-page a {
-  color: #E64833;
+  color: #526b52;
   text-decoration: underline;
 }
 
 .cabs-page a:hover {
-  color: #c43d2b;
+  color: #405940;
 }
 
 .contact-section {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: rgba(230, 72, 51, 0.1);
+  background: rgba(185, 108, 84, 0.1);
   border-radius: 0.75rem;
-  border: 1px solid rgba(230, 72, 51, 0.2);
+  border: 1px solid rgba(185, 108, 84, 0.22);
 }
 
 /* ===== VERTICAL TEXT FOR SOCIAL SIDEBAR ===== */
