@@ -30,26 +30,28 @@ export default function HeroSlider() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setSubmitError('');
   };
 
   const handleDateFocus = () => setDateFocused(true);
   const handleDateBlur = () => setDateFocused(false);
   
   // Google Form field mappings - matching your exact Google Form fields
-  // Form: https://docs.google.com/forms/d/e/1FAIpQLScjwudFNg5Di3hqd8iShpQjCah7oUPDFk7Xv9r0H2RNsLxraQ/viewform
+  // Form: https://docs.google.com/forms/d/e/1FAIpQLSdK5NaeXZFIgbTnTxfrcaAZoAyqnnfZI9F1EzoR2PVEQNwAKg/viewform
   const GOOGLE_FORM_FIELDS = {
-    name: 'entry.2005620554',            // Name
-    email: 'entry.1045781291',           // Email
-    phone: 'entry.1166974658',           // Phone number
-    message: 'entry.839337160',          // Message
-    guests: 'entry.745970777',           // No. of Guests
-    address: 'entry.48943999',           // Address
-    dateYear: 'entry.1065046570_year',   // Date Year
-    dateMonth: 'entry.1065046570_month', // Date Month
-    dateDay: 'entry.1065046570_day',     // Date Day
+    name: 'entry.1739141671',            // Name
+    email: 'entry.1955574433',            // Email
+    phone: 'entry.1201347221',           // Phone number
+    message: 'entry.1283268798',           // Message
+    guests: 'entry.472669248',          // Guest
+    address: 'entry.572650292',          // Address
+    dateYear: 'entry.1066060936_year',   // Date Year
+    dateMonth: 'entry.1066060936_month', // Date Month
+    dateDay: 'entry.1066060936_day',     // Date Day
    
     
     
@@ -61,46 +63,17 @@ export default function HeroSlider() {
     e.preventDefault();
     if (submitting) return;
 
+    setSubmitError('');
     setSubmitting(true);
 
     try {
-      // Submit to FormSubmit for email notification
-      const emailRes = await fetch('https://formsubmit.co/ajax/info@onlykashmir.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: countryCode + formData.phone,
-          date: formData.date,
-          guests: formData.guests,
-          address: formData.address,
-          message: formData.message,
-          subject: 'New Trip Inquiry from Website',
-          _subject: 'Only Kashmir – New Trip Inquiry',
-          _template: 'table',
-          _captcha: 'false',
-          _next: 'false',
-        }),
-      });
-
-      if (!emailRes.ok) {
-        console.warn(`Email notification failed: ${emailRes.status}`);
-      }
+      const fullPhone = `${countryCode}${formData.phone}`.replace(/\s+/g, '');
 
       // Submit to Google Forms — must use URLSearchParams + application/x-www-form-urlencoded
       // Google Forms does NOT accept multipart/form-data (FormData). URLSearchParams is required.
       const googleFormParams = new URLSearchParams();
-      const fullPhone = `${countryCode}${formData.phone}`.replace(/\s+/g, '');
 
-      // Required Google Forms hidden session fields
-      googleFormParams.append('fvv', '1');
-      googleFormParams.append('pageHistory', '0');
-      googleFormParams.append('fbzx', Math.floor(Math.random() * -9e15).toString());
-      googleFormParams.append('draftResponse', '[null,null,"' + Math.floor(Math.random() * 9e15).toString() + '"]');
+      // Google session fields are page-specific; do not fabricate them.
       googleFormParams.append(GOOGLE_FORM_FIELDS.name, formData.name.trim());
       googleFormParams.append(GOOGLE_FORM_FIELDS.phone, fullPhone);
       
@@ -117,16 +90,24 @@ export default function HeroSlider() {
       googleFormParams.append(GOOGLE_FORM_FIELDS.address, formData.address.trim());
       googleFormParams.append(GOOGLE_FORM_FIELDS.message, formData.message.trim());
 
-      console.log('Submitting Plan Your Trip — Phone:', fullPhone);
+      let googleFormSubmissionError: Error | undefined;
+      try {
+        await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdK5NaeXZFIgbTnTxfrcaAZoAyqnnfZI9F1EzoR2PVEQNwAKg/formResponse', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: googleFormParams.toString(),
+        });
+      } catch (backupError) {
+        console.warn('Trip inquiry backup form submission failed', backupError);
+        googleFormSubmissionError = backupError instanceof Error
+          ? backupError
+          : new Error('The trip inquiry could not be sent to Google Forms.');
+      }
 
-      await fetch('https://docs.google.com/forms/d/e/1FAIpQLScjwudFNg5Di3hqd8iShpQjCah7oUPDFk7Xv9r0H2RNsLxraQ/formResponse', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: googleFormParams.toString(),
-      });
-
-      console.log('✅ Plan Your Trip form submitted to Google Form');
+      if (googleFormSubmissionError) {
+        throw googleFormSubmissionError;
+      }
 
       setSubmitted(true);
       // Conversion for trip inquiry / plan your trip
@@ -139,15 +120,9 @@ export default function HeroSlider() {
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
       console.error('Form submission error:', error);
-      // Even if submission fails, show success since no-cors doesn't return status
-      setSubmitted(true);
-      try {
-        (window as any).sendConversion?.('plan_trip', 1.0, 'INR');
-      } catch (e) {
-        console.warn('sendConversion failed', e);
-      }
-      setFormData({ name: '', date: '', guests: '', phone: '', address: '', message: '', email: '' });
-      setTimeout(() => setSubmitted(false), 5000);
+      setSubmitError(error instanceof Error
+        ? `${error.message} Please contact us by phone or WhatsApp if the problem continues.`
+        : 'We could not send your enquiry. Please contact us by phone or WhatsApp.');
     } finally {
       setSubmitting(false);
     }
@@ -353,6 +328,7 @@ export default function HeroSlider() {
                         </>
                       )}
                     </button>
+                    {submitError && <p className="text-sm text-amber-300" role="alert">{submitError}</p>}
                   </form>
                 )}
               </div>
@@ -487,6 +463,7 @@ export default function HeroSlider() {
                         </>
                       )}
                     </button>
+                    {submitError && <p className="text-xs text-amber-300" role="alert">{submitError}</p>}
                   </form>
                 )}
               </div>

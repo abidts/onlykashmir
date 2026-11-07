@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Phone, Mail, User, Send, CheckCircle, MessageCircle } from 'lucide-react';
+import { X, Mail, User, Send, CheckCircle, MessageCircle } from 'lucide-react';
 import { countryCodes } from '../utils/countryCodes';
 
 interface Props {
@@ -9,20 +9,19 @@ interface Props {
   embedded?: boolean;
 }
 
-const FORM_SUBMIT_ACTION = 'https://formsubmit.co/ajax/info@onlykashmir.com';
-const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSc0o5tr9oybaZicDd4AIqeSQWX8YWpSNQkNiw-NZTwj26rr8A/formResponse';
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSezP1LKvDRaI4UiLP_mqYyEne5hAhaMNVkTqCizZSmvJappxA/formResponse';
 
 // Google Form field mapping - these need to match your actual Google Form fields
 // Your form has 3 fields: FULL NAME, EMAIL, PHONE NUMBER
 // To find correct field IDs:
-// 1. Open your Google Form in browser: https://docs.google.com/forms/d/e/1FAIpQLSc0o5tr9oybaZicDd4AIqeSQWX8YWpSNQkNiw-NZTwj26rr8A/viewform
+// 1. Open your Google Form in browser: https://docs.google.com/forms/d/e/1FAIpQLSezP1LKvDRaI4UiLP_mqYyEne5hAhaMNVkTqCizZSmvJappxA/viewform
 // 2. Open browser console (F12)
 // 3. Right-click each input and inspect → look for name="entry.XXXXXXX"
 // 4. Update the IDs below accordingly (verify these match the new form)
 const GOOGLE_FORM_FIELDS = {
-  name: 'entry.2005620554',    // FULL NAME  ← verify with new form
-  email: 'entry.1045781291',   // EMAIL       ← verify with new form
-  phone: 'entry.1166974658'    // PHONE NUMBER ← verify with new form
+  name: 'entry.1063111954',    // FULL NAME
+  email: 'entry.1792736805',   // EMAIL
+  phone: 'entry.1275567781'    // PHONE NUMBER
 };
 
 // FormSubmit expects plain keys, keep names explicit for clarity
@@ -41,6 +40,7 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,29 +53,6 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
     try {
       const fullPhone = `${countryCode}${formData.phone}`.replace(/\s+/g, '');
 
-      // Submit to FormSubmit for email notification
-      const emailRes = await fetch(FORM_SUBMIT_ACTION, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: fullPhone,
-          subject: subject || 'Call back request',
-          _subject: 'Only Kashmir – Call back request',
-          _template: 'table',
-          _captcha: 'false',
-          _next: 'false',
-        }),
-      });
-
-      if (!emailRes.ok) {
-        console.warn(`Email notification failed: ${emailRes.status}`);
-      }
-
       // Submit to Google Forms — must use URLSearchParams + application/x-www-form-urlencoded
       // Google Forms does NOT accept multipart/form-data (FormData). URLSearchParams is required.
       const googleFormParams = new URLSearchParams();
@@ -85,15 +62,26 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       googleFormParams.append(GOOGLE_FORM_FIELDS.email, formData.email.trim());
       googleFormParams.append(GOOGLE_FORM_FIELDS.phone, fullPhone);
 
-      await fetch(GOOGLE_FORM_ACTION, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: googleFormParams.toString(),
-      });
+      let googleFormSubmissionError: Error | undefined;
+      try {
+        await fetch(GOOGLE_FORM_ACTION, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: googleFormParams.toString(),
+        });
+      } catch (backupError) {
+        console.warn('Callback backup form submission failed', backupError);
+        googleFormSubmissionError = backupError instanceof Error
+          ? backupError
+          : new Error('The callback request could not be sent to Google Forms.');
+      }
 
-      console.log('✅ Callback form submitted to Google Form');
-      console.log('Name:', formData.name, '| Email:', formData.email, '| Phone:', fullPhone);
+      if (googleFormSubmissionError) {
+        throw googleFormSubmissionError;
+      }
+
+      console.log('Callback request submitted successfully.');
 
       setSubmitted(true);
       // Record the Google Ads lead only after the callback form has been sent.
@@ -110,14 +98,9 @@ export default function CallbackPopup({ isOpen, onClose, subject, embedded = fal
       }, 2200);
     } catch (err) {
       console.error('Failed to submit callback form', err);
-      // Do not report an Ads conversion when the submission itself throws an error.
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({ name: '', email: '', phone: '' });
-        setCountryCode('+91');
-        onClose();
-      }, 2200);
+      setError(err instanceof Error
+        ? `${err.message} Please contact us by phone or WhatsApp if the problem continues.`
+        : 'We could not send your request. Please contact us by phone or WhatsApp.');
     } finally {
       setSubmitting(false);
     }
